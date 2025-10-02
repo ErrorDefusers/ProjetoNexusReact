@@ -1,0 +1,77 @@
+header {
+     /* position: fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+   
+}
+
+.header-nav {
+    background-color: #7E00FF;
+    height: 60px;
+    width: 97%;
+    border-radius: 20px;
+    border: 2px solid #562984;
+    opacity: 0.8;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.div-img {
+    display: flex;
+    align-items: center;
+ 
+}
+
+.menu-desktop ul {
+    list-style-type: none;
+
+}
+
+.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 40px;
+
+}
+
+.menu-desktop ul li a{
+    color: white;
+    text-decoration: none;
+   
+}
+
+.menu-desktop img {
+    align-items: self-end;
+    width: 54px;
+    height: 54px;
+   
+   
+}
+
+.div-img img{
+    padding-left: 15px;
+    
+}
+
+nav.menu-desktop {
+    display: flex;
+    align-items: center;
+    
+}
+
+.barradepesquisa input {
+    border-radius: 20px;
+    height: 35px;
+    width: 350px;
+    border: none;
+    opacity: 70%;
+    padding: 10px 10px 10px 35px; /* espaço para o ícone */
+    background: white url('../../assets/img/Lupa.svg') no-repeat 5px center;
+    background-size: 25px; /* tamanho da lupa */
+    
+}
+
