@@ -29,6 +29,7 @@ header {
 
 .menu-desktop ul {
     list-style-type: none;
+    margin-bottom: 0;
 
 }
 
