@@ -5,7 +5,7 @@ import "./footer.css";
 // Importando a imagem corretamente
 // import ChatGPTLogo from "../../assets/IMG/ChatGPT_logo.png";
 
-export default function Footer() {
+export const Footer = (props) => {
   return (
     <footer className="footer">
       <img src={logo} alt="Logo ChatGPT" className="footer-logo" />

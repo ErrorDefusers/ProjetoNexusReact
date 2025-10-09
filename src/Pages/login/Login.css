@@ -89,29 +89,32 @@
 }
 
 
-
-.login-right img {
-    height: 750px;
+.login-right {
+    /* height: 750px;
     margin-right: 50px;
-    background-position-x: right;
+    background-position-x: right; */
 }
 
 .img_desfoque {
     background-image: url("../../assets/img/Ellipse22.svg");
     background-size: 600px;
-    background-position: 700px;
+    background-position: 100px;
     background-repeat: no-repeat;
-    width: 100%;
+    flex: 1;
     padding: 100px 0;
     background-position-y: 50px;
+
 }
 
 .img_desfoque2 {
     background-image: url("../../assets/img/Ellipse22.svg");
     background-size: 600px;
-    background-position: 700px;
+    background-position: 100px;
     background-repeat: no-repeat;
     width: 100%;
-    padding: 100px 0;
-    /* background-position-y: 40px; */
+    /* padding: 100px 0; */
+    background-position-y: 140px;
+
+    display: flex;
+    justify-content: center;
 }

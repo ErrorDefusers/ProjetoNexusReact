@@ -36,13 +36,13 @@ export const Login = (props) => {
                 <div className="img_desfoque">
 
                     <div className="img_desfoque2">
-
-
-
                         {/* {/ Lado Direito */}
-                        <div className="login-right">
+                        {/* <div className="login-right"> */}
                             <img src={loginImage} alt="Login visual" />
-                        </div>
+                        {/* </div> */}
+
+
+
                     </div>
                 </div>
             </div>

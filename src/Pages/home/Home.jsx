@@ -2,12 +2,14 @@ import { Header } from "../../Components/Header/header";
 import Banner from "../../assets/img/BannerHome.svg";
 import ImagemHome from "../../assets/img/ImgHome.svg";
 import IconDiscord from "../../assets/img/IconDiscord.svg";
-import Footer from "../../Components/Footer/footer"
+import { Footer } from "../../Components/Footer/footer";
 import logo from "../../assets/img/Logo.svg"
 import React from 'react';
 // import 'bootstrap/dist/css/bootstrap.css';
-import Carousel from 'react-bootstrap/Carousel';
 import "./Home.css";
+
+
+
 
 export const Home = (props) => {
 
@@ -42,9 +44,9 @@ export const Home = (props) => {
 
 
 
-                        <div className="container_ferramentas">
+                    <div className="container_ferramentas">
 
-                    <div className="fundo_ferramentas">
+                        <div className="fundo_ferramentas">
 
 
                             <div className="ferramentas_titulo">
@@ -53,61 +55,7 @@ export const Home = (props) => {
                             </div>
                             <div className="carrosel_d_ferramentas">
 
-                                <Carousel>
-                                    <Carousel.Item>
-                                        <button className="Ferramenta">
-                                            <img
-                                            className="carrosel_ferramentas"
-                                            src={IconDiscord}
-                                            alt="Primeiro Slide"
-                                        />
-                                        </button>
-                                        <Carousel.Caption>
-                                            
-
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-
-                                    <Carousel.Item>
-                                        <button className="Ferramenta">
-                                        <img
-                                            className="carrosel_ferramentas"
-                                            src={IconDiscord}
-                                            alt="Segundo Slide"
-                                        />
-                                        </button>
-                                        <Carousel.Caption>
-                                            
-
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-
-                                    <Carousel.Item>
-                                        <button className="Ferramenta">
-                                            <img
-                                            className="carrosel_ferramentas"
-                                            src={IconDiscord}
-                                            alt="Terceiro Slide"
-                                        /></button>
-                                        <Carousel.Caption>
-                                            {/* <h3>Discord</h3> */}
-
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-
-                                    <Carousel.Item>
-                                        <button className="Ferramenta">
-                                            <img
-                                            className="carrosel_ferramentas"
-                                            src={IconDiscord}
-                                            alt="Quarto Slide"
-                                        /></button>
-                                        <Carousel.Caption>
-                                            {/* <h3>Discord</h3> */}
-
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-                                </Carousel>
+                             
 
 
                             </div>
@@ -124,7 +72,7 @@ export const Home = (props) => {
                 </div>
 
             </main >
-        <Footer/>
+            <Footer />
 
         </>
 

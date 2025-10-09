@@ -52,8 +52,6 @@ main {
 .campo_img {
     border-radius: 0 20px 20px 0;
     background-color: #74747450;
-
-
 }
 
 
@@ -65,7 +63,7 @@ main {
 .campo_home img {
     height: 300px;
     border-radius: 20px;
-
+    max-width: none;
 }
 
 .campo_home p {
@@ -188,9 +186,7 @@ main {
     left: 200px;
     margin-bottom: 50px;
 }
-.Ferramenta{
 
-}
 
 button.Ferramenta {
     /* height: 158px; */
