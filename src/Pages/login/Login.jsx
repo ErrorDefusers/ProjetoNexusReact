@@ -7,7 +7,7 @@ export const Login = (props) => {
     return (
         <>
             <div className="login-container">
-                {/* {/* Lado Esquerdo /} */}
+                
                 <div className="login-left">
                     <div className="logo-box">
                         <img src={logoo} alt="" />

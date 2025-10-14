@@ -5,16 +5,18 @@ import {Login} from "./Pages/login/Login"
 import {Ferramentas} from "./Pages/ferramenta/Ferramenta";
 import {Cursos} from "./Pages/curso/Curso";
 import {Cadastro} from "./Pages/cadastroFunc/CadastroFunc";
+import { Modulos } from "./Pages/Modulos/modulos";
+
 
 function App() {
   return (
     <>
      {/* <Header/> */}
      {/* <Home/> */}
-     <Login/>
+     {/* <Login/> */}
      {/* <Ferramentas/> */}
      {/* <Cursos/> */}
-     {/* <Cadastro/> */}
+     <Modulos />
     </>
   )
 }

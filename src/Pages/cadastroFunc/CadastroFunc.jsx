@@ -64,6 +64,8 @@ export const Cadastro = () => {
                                 </div>
                             </div>
 
+                            
+
                             <div className='inputs_divisoria4'>
 
                                 <Botao
@@ -74,6 +76,8 @@ export const Cadastro = () => {
                         </div>
 
                     </div>
+
+                    <div className="img_curso2"></div>
                 </div>
                 <Footer/>
 

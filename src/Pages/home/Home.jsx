@@ -9,13 +9,9 @@ import React from 'react';
 import "./Home.css";
 
 
-
-
 export const Home = (props) => {
 
-
     //js
-
 
     return (
 
@@ -43,7 +39,6 @@ export const Home = (props) => {
                     </div>
 
 
-
                     <div className="container_ferramentas">
 
                         <div className="fundo_ferramentas">
@@ -51,12 +46,8 @@ export const Home = (props) => {
 
                             <div className="ferramentas_titulo">
                                 <h1>Ferramentas</h1>
-
                             </div>
                             <div className="carrosel_d_ferramentas">
-
-                             
-
 
                             </div>
 
@@ -64,19 +55,11 @@ export const Home = (props) => {
 
                     </div>
 
-
-
-
-
-
                 </div>
 
             </main >
             <Footer />
-
         </>
-
     )
-
 }
 
