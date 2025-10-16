@@ -1,51 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import secureLocalStorage from "react-secure-storage";
+import api from "../../Services/services";
+import { userDecodeToken } from "../../Auth";
 import "./Login.css";
-import loginImage from "../../assets/img/ImgLogin.png"; // coloque sua imagem aqui
-import logoo from "../../assets/img/Logo.svg";
+import Logo from "../../assets/img/Logo.svg";
+import LoginImage from "../../assets/img/ImgLogin.png";
 
-export const Login = (props) => {
-    return (
-        <>
-            <div className="login-container">
-                
-                <div className="login-left">
-                    <div className="logo-box">
-                        <img src={logoo} alt="" />
-                        <p className="subtitle">Acesse sua conta!</p>
-                        <hr className="divider" />
-                    </div>
+export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState(""); // continua usando "senha" no estado
+  const navigate = useNavigate();
 
-                    <form className="login-form">
-                        <label htmlFor="email">E-mail:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="fulano@gmail.com"
-                            required
-                        />
+  async function realizarAutenticacao(e) {
+    e.preventDefault();
 
-                        <label htmlFor="password">Senha:</label>
-                        <input type="password" id="password" placeholder="**" required />
+    if (!email || !senha) {
+      return Swal.fire("Erro!", "Preencha email e senha.", "warning");
+    }
 
-                        <button type="submit" className="login-btn">
-                            Entrar
-                        </button>
-                    </form>
-                </div>
+    try {
+      // **Alteração importante**: enviar "Password" em vez de "senha"
+      const resposta = await api.post("/Login", {
+        email: email,
+        password: senha
+      });
 
-                <div className="img_desfoque">
+      console.log(resposta);
 
-                    <div className="img_desfoque2">
-                        {/* {/ Lado Direito */}
-                        {/* <div className="login-right"> */}
-                            <img src={loginImage} alt="Login visual" />
-                        {/* </div> */}
+      // Decodificar o token
+      const usuario = userDecodeToken(resposta.data.token);
 
+      const tipoUsuarioToken = resposta.data.tipo;
+      const nomeToken = resposta.data.nome;
 
+      // Salva token seguro
+      secureLocalStorage.setItem("tokenLogin", JSON.stringify(usuario));
+      secureLocalStorage.setItem("tipoUsario", JSON.stringify(tipoUsuarioToken));
 
-                    </div>
-                </div>
+      // Feedback de sucesso
+      Swal.fire({
+        icon: "success",
+        title: "Login realizado!",
+        timer: 1500,
+        showConfirmButton: false
+      });
+
+      // Redireciona conforme tipo de usuário
+      if (usuario.tipo === "Aluno") {
+        navigate("/ListagemEventos");
+      } else {
+        navigate("/CadastrarEvento");
+      }
+    } catch (error) {
+      Swal.fire("Erro!", "Email ou senha incorretos.", "error");
+      console.log(error);
+    }
+  }
+
+  return (
+    <main className="main_login">
+      <div className="logo_banner">
+        <img src={LoginImage} alt="Banner login" />
+      </div>
+      <section className="section_login">
+        <img src={Logo} alt="Logo" />
+        <form className="form_login" onSubmit={realizarAutenticacao}>
+          <div className="campos_login">
+            <div className="campo_input">
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-        </>
-    );
-}
+            <div className="campo_input">
+              <input
+                type="password"
+                placeholder="Senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+            </div>
+          </div>
+          <button type="submit" className="login-btn">
+            Entrar
+          </button>
+        </form>
+      </section>
+    </main>
+  );
+};
+
+export default Login;

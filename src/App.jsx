@@ -1,24 +1,12 @@
-import './App.css'
-import {Header} from "./Components/Header/header";
-import {Home} from "./Pages/home/Home";
-import {Login} from "./Pages/login/Login"
-import {Ferramentas} from "./Pages/ferramenta/Ferramenta";
-import {Cursos} from "./Pages/curso/Curso";
-import {Cadastro} from "./Pages/cadastroFunc/CadastroFunc";
-import { Modulos } from "./Pages/Modulos/modulos";
-
+import './App.css';
+import { Rotas } from "../src/Routes/routes";
 
 function App() {
   return (
     <>
-     {/* <Header/> */}
-     {/* <Home/> */}
-     {/* <Login/> */}
-     {/* <Ferramentas/> */}
-     {/* <Cursos/> */}
-     <Modulos />
+      <Rotas />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
