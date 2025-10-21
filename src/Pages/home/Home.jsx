@@ -1,12 +1,15 @@
 import { Header } from "../../Components/Header/header";
-import Banner from "../../assets/img/BannerHome.svg";
+import Banner from "../../assets/img/Home.png";
 import ImagemHome from "../../assets/img/ImgHome.svg";
 import IconDiscord from "../../assets/img/IconDiscord.svg";
 import { Footer } from "../../Components/Footer/footer";
 import logo from "../../assets/img/Logo.svg"
+
+// import {Carousel} from "../../Components/Carousel/carousel.jsx";
 import React from 'react';
 // import 'bootstrap/dist/css/bootstrap.css';
 import "./Home.css";
+import Carousel from "../../Components/Carousel/carousel";
 
 
 export const Home = (props) => {
@@ -46,6 +49,7 @@ export const Home = (props) => {
 
                             <div className="ferramentas_titulo">
                                 <h1>Ferramentas</h1>
+                                <Carousel/>
                             </div>
                             <div className="carrosel_d_ferramentas">
 

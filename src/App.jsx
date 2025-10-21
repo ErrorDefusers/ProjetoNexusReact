@@ -6,7 +6,8 @@ import {Ferramentas} from "./Pages/ferramenta/Ferramenta";
 import {Cursos} from "./Pages/curso/Curso";
 import {Cadastro} from "./Pages/cadastroFunc/CadastroFunc";
 import { Modulos } from "./Pages/Modulos/modulos";
-
+import {Setor_Grafico} from "./Pages/Setor_grafico/Setor_Grafico";
+import Gestor from "./Pages/Gestor/gestor";
 
 function App() {
   return (
@@ -16,9 +17,12 @@ function App() {
      {/* <Login/> */}
      {/* <Ferramentas/> */}
      {/* <Cursos/> */}
-     <Modulos />
+     {/* <Modulos /> */}
+     <Setor_Grafico />
+     {/* <Gestor /> */}
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;

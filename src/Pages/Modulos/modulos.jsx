@@ -1,15 +1,15 @@
 import React from 'react'
 import "./Modulos.css"
 import { Header } from '../../Components/Header/header'
-import Footer from '../../Components/Footer/footer'
-import Texto from '../../Components/Modulos/Texto/Texto'
-import Video from '../../Components/Modulos/Video/Video'
+import {Footer} from '../../Components/Footer/footer'
+import {Texto} from '../../Components/Modulos/Texto/Texto'
+import {Video} from '../../Components/Modulos/Video/Video'
 // import Fosco from '../../Components/Modulos/Fosco/fosco'
 
 export const Modulos = () => {
     return (
         <>
-            <Header />
+            <Header/>
             <div className='main_modulos'>
 
                             {/* <Fosco/> */}

@@ -1,5 +1,5 @@
-.botao{
-    background-color: #79367D;
+.botao {
+    background-color: #ffffff;
     border-radius: 9px;
     width: 100px;
     height: 28px;
@@ -7,4 +7,5 @@
     border: none;
     cursor: pointer;
     margin-bottom: 20px;
+    color: #551A94;
 }

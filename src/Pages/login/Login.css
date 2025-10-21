@@ -1,48 +1,52 @@
+/* Layout geral */
 .login-container {
-    display: flex;
+    display: flex
+;
     height: 100vh;
     background: #000;
     color: white;
     font-family: Arial, sans-serif;
     width: 1536px;
 }
-
-/* / Coluna da esquerda / */
+.logo_banner {
+    display: flex
+;
+}
+/* Coluna da esquerda */
 .login-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 60px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
 }
 
 .logo-box {
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* / Ajuste o tamanho da logo / */
 .logo-img {
-    width: 120px;
-    margin-bottom: 15px;
+  width: 120px; /* Ajuste o tamanho da logo */
+  margin-bottom: 15px;
 }
 
 .subtitle {
-    font-size: 1.5rem;
-    margin: 5px 0;
-    color: #ddd;
+  font-size: 1.5rem;
+  margin: 5px 0;
+  color: #ddd;
 }
 
 .divider {
-    border: none;
-    border-bottom: 2px solid #7c3aed;
-    width: 250px;
-    margin-top: 8px;
+  border: none;
+  border-bottom: 2px solid #7c3aed;
+  width: 250px;
+  margin-top: 8px;
 }
 
-/* / Formulário / */
+/* Formulário */
 .login-form {
     display: flex;
     gap: 15px;
@@ -59,15 +63,15 @@
 }
 
 .login-form input {
-    padding: 12px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    background: #bbb;
-
-    width: 100%;
-    box-sizing: border-box;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #bbb;
+  color: #000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .login-btn {
@@ -85,30 +89,63 @@
 }
 
 .login-btn:hover {
-    background: #5b21b6;
+  background: #5b21b6;
 }
 
+/* Coluna da direita */
 
 
-.img_desfoque {
-    background-image: url("../../assets/img/Ellipse22.svg");
-    background-size: 600px;
-    background-position: 100px;
-    background-repeat: no-repeat;
-    flex: 1;
-    padding: 100px 0;
-    background-position-y: 50px;
-
-}
-
-.img_desfoque2 {
-    background-image: url("../../assets/img/Ellipse22.svg");
-    background-size: 600px;
-    background-position: 100px;
-    background-repeat: no-repeat;
+.side-image {
     width: 100%;
-    background-position-y: 140px;
+    max-width: 548px;
+    height: 688px;
+}
 
+main {
+    background-color: black;
     display: flex;
-    justify-content: center;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.section_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form.form_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 170px;
+    justify-content: space-between;
+}
+
+.campos_login {
+    width: 400px;
+}
+
+input.Inpp {
+    width: 400px;
+    background: none;
+    border-radius: 10px;
+    height: 40px;
+}
+
+section.section_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 520px;
+    justify-content: space-evenly;
+}
+
+.campos_login {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
