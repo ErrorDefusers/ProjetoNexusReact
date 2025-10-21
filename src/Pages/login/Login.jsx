@@ -10,7 +10,7 @@ import LoginImage from "../../assets/img/ImgLogin.png";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState(""); // continua usando "senha" no estado
+  const [senha, setSenha] = useState(""); 
   const navigate = useNavigate();
 
   async function realizarAutenticacao(e) {
