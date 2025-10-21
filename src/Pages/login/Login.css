@@ -89,7 +89,6 @@
 }
 
 
-
 .img_desfoque {
     background-image: url("../../assets/img/Ellipse22.svg");
     background-size: 600px;
@@ -98,7 +97,6 @@
     flex: 1;
     padding: 100px 0;
     background-position-y: 50px;
-
 }
 
 .img_desfoque2 {
