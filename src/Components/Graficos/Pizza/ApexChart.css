@@ -1,0 +1,99 @@
+/* ===========================
+   🌌 Estilo Geral
+=========================== */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem;
+  background-color: #1b1129;
+  border-radius: 16px;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===========================
+   🪄 Filtro
+=========================== */
+/* .filter-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-container label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.filter-container select {
+  background: #2b1f3d;
+  color: #ffffff;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #7b2ff7;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-container select:hover {
+  background: #3a2a4f;
+  border-color: #b55bff;
+} */
+
+/* filtro */
+.filter-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-container label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.filter-container select {
+  background: #2b1f3d;
+  color: #ffffff;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #7b2ff7;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+
+/* ===========================
+   📊 Gráfico
+=========================== */
+.chart-wrap {
+  background: #2b1f3d;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(146, 77, 255, 0.3);
+}
+
+/* ===========================
+   📱 Responsividade
+=========================== */
+@media (max-width: 480px) {
+  .chart-container {
+    padding: 1.2rem;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .filter-container select {
+    width: 100%;
+  }
+}
