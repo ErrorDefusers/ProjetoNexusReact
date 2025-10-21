@@ -6,6 +6,9 @@ import "./Curso.css";
 import foto from "../../assets/img/ImgCurso.svg";
 
 export const Cursos = () => {
+        
+    
+     
     return (
         <>
             <Header />

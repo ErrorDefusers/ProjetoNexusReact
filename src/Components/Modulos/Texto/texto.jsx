@@ -24,4 +24,6 @@ import "./Texto.css"
     )
 }
 
+export default Texto;
+
  
