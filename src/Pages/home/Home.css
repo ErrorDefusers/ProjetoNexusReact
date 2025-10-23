@@ -1,33 +1,44 @@
 main.main-home {
     background-color: black;
     display: flex;
-    height: 161vh;
+    height: 210vh;
     justify-content: space-around;
     align-items: center;
     /* width: 1000px; */
     flex-direction: column;
+    width: 100%;
 }
+
+.banner-home{
+    background-image: url("../../assets/img/Imagens/Banner/bannerDesktop.png");
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+}
+
 
 .banner-home {
     display: flex;
     justify-content: center;
+    width: 100%;
 
 }
 
 .banner-home img {
-    width: 1000px;
-    height: 350px;
+    width: 100%;
+    height: 550px;
     /* margin-left: 170px; */
 }
 
-.container_home {
+/* .container_home {
     background-image: url("../../assets/img/Ellipse22.svg");
     background-size: 600px;
     background-position: -350px;
     background-repeat: no-repeat;
     width: 100%;
     padding: 100px 0;
-}
+} */
 
 .campo_home {
     height: 300px;
@@ -41,12 +52,18 @@ main.main-home {
 }
 
 .campo_paragrafo {
-    border-radius: 20px 0 0 20px;
-    background-color: #74747440;
+    /* border-radius: 20px 0 0 20px;
+    background-color: #74747440; */
     height: 100%;
     display: flex;
     align-items: center;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
+
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
 }
 
 .campo_paragrafo p {
@@ -56,15 +73,24 @@ main.main-home {
 }
 
 .campo_img {
-    border-radius: 0 20px 20px 0;
-    background-color: #74747450;
+    /* border-radius: 0 20px 20px 0;
+    background-color: #74747450; */
+
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
 }
 
 
 .fundo_home {
     width: 100%;
-    background-image: url("../../assets/img/Home.png");;
     /* opacity: 25%; */
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .campo_home img {
@@ -94,7 +120,7 @@ main.main-home {
     border-radius: 20px;
 } */
 
-.container_ferramentas {
+/* .container_ferramentas {
     background-image: url("../../assets/img/Ellipse22.svg");
     background-size: 600px;
     background-position: 1100px;
@@ -104,22 +130,28 @@ main.main-home {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 .fundo_ferramentas {
-    border-radius: 20px 0 0 20px;
-    background-color: #74747440;
+    /* border-radius: 20px 0 0 20px;
+    background-color: #74747440; */
     height: 100%;
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    width: 70%;
+    /* backdrop-filter: blur(10px); */
+    /* border-radius: 20px; */
+    width: 95%;
+    max-width: 1200px;
 
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
+
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
 }
 
 .fundo_ferramentas h1 {
@@ -131,7 +163,7 @@ main.main-home {
     margin-top: 15px;
 } */
 
-.carrosel_d_ferramentas carousel{
+.carrosel_d_ferramentas carousel {
     margin-bottom: 15px;
 }
 
@@ -148,11 +180,11 @@ main.main-home {
     width: 110px;
     height: 110px;
     padding-right: 40px;
-   
+
 }
 
 .carrosel_ferramentas {
- margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .carrosel_ferramentas {
@@ -203,3 +235,10 @@ button.Ferramenta {
     background-color: #00000000;
     border: none;
 }
+
+.container_ferramentas {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 0px; */
+}
+

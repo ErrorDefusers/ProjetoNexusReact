@@ -15,8 +15,8 @@ export const Setor_Grafico = () => {
       <main className="main-grafico">
 
         <div className="titulo">
-          <h1>Gráfico</h1>
-          <hr />
+          <h1>Gráficos</h1>
+          {/* <hr /> */}
         </div>
 
           {/* <div className="img_ferramentas"></div>

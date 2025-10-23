@@ -1,8 +1,8 @@
 import { Header } from "../../Components/Header/header";
-import Banner from "../../assets/img/Home.png";
+import Banner from "../../assets/img/Imagens/Banner/bannerDesktop.png";
 import ImagemHome from "../../assets/img/ImgHome.svg";
 import IconDiscord from "../../assets/img/IconDiscord.svg";
-import { Footer } from "../../Components/Footer/footer";
+import {Footer}  from "../../Components/Footer/footer";
 import logo from "../../assets/img/Logo.svg"
 
 // import {Carousel} from "../../Components/Carousel/carousel.jsx";
@@ -12,18 +12,18 @@ import "./Home.css";
 import Carousel from "../../Components/Carousel/carousel";
 
 
-export const Home = (props) => {
+export const Home = () => {
 
     //js
 
     return (
 
         <>
-            <Header />
+            <Header/>
 
             <main className="main-home">
                 <div className="banner-home">
-                    <img src={Banner} alt="Banner da página home" />
+                    {/* <img src={Banner} alt="Banner da página home" /> */}
                 </div>
                 <div className="fundo_home">
                     <div className="container_home">

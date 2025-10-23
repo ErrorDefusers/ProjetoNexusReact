@@ -1,9 +1,3 @@
-/* @import "tailwindcss"; */
-
-#root {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    overflow-x: hidden;
+body {
+    background: linear-gradient(to bottom, #0C0414, #1B092E, #220C39, #40156B);
 }

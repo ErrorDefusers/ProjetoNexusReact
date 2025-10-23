@@ -13,12 +13,12 @@ function App() {
   return (
     <>
      {/* <Header/> */}
-     {/* <Home/> */}
+     <Home/>
      {/* <Login/> */}
      {/* <Ferramentas/> */}
      {/* <Cursos/> */}
      {/* <Modulos /> */}
-     <Setor_Grafico />
+     {/* <Setor_Grafico /> */}
      {/* <Gestor /> */}
 
     </>
