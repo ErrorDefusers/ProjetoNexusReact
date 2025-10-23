@@ -21,7 +21,11 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.9.3",
     "react-secure-storage": "^1.3.2",
+<<<<<<< HEAD
     "sweetalert2": "^11.26.3",
+=======
+    "sweetalert2": "^11.26.2",
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {

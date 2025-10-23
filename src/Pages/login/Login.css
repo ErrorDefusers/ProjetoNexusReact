@@ -94,8 +94,26 @@
 
 /* Coluna da direita */
 
+<<<<<<< HEAD
 
 .side-image {
+=======
+.img_desfoque {
+    background-image: url("../../assets/img/Ellipse22.svg");
+    background-size: 600px;
+    background-position: 100px;
+    background-repeat: no-repeat;
+    flex: 1;
+    padding: 100px 0;
+    background-position-y: 50px;
+}
+
+.img_desfoque2 {
+    background-image: url("../../assets/img/Ellipse22.svg");
+    background-size: 600px;
+    background-position: 100px;
+    background-repeat: no-repeat;
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
     width: 100%;
     max-width: 548px;
     height: 688px;

@@ -1,5 +1,9 @@
 body{
+<<<<<<< HEAD
     background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
+=======
+    background-color: black;
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
 }
 
 .titulo h1 {
@@ -55,6 +59,7 @@ margin-top: 25px;
     z-index: 0;
 }
 
+<<<<<<< HEAD
 .section_grafico {
     display: flex;
     align-items: center;
@@ -65,26 +70,52 @@ margin-top: 25px;
     
 .grafico_2 {
     /* background-color: #747474; */
+=======
+.section_grafico{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 60px;
+}
+
+.grafico_1{
+    background-color: #747474;
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
     width: 500px;
     height: 420px;
     border-radius: 15px;
     overflow: hidden;
+<<<<<<< HEAD
     background: linear-gradient(to bottom, #551A94, #551A94, #551A94,);
     border: 1px solid #551A940D;
 }
 
 .grafico_2 {
     /* background-color: #747474; */
+=======
+}
+
+.grafico_2{
+    background-color: #747474;
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
     width: 500px;
     height: 420px;
     border-radius: 15px;
     overflow: hidden;
+<<<<<<< HEAD
     background: linear-gradient(to bottom, #551A94, #551A94, #551A94,);
     border: 1px solid #551A940D;
 }
 
 .carrossel {
     background-color: #1c1c1c47;
+=======
+
+}
+
+.carrossel{
+    background-color: #747474;
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
     width: 140px;
     height: 420px;
     border-radius: 15px;
@@ -123,6 +154,7 @@ margin-top: 25px;
 .imagem_carrossel2 img{
     width: 65px;
     height: 65px;
+<<<<<<< HEAD
 }
 
 main {
@@ -132,4 +164,6 @@ main {
     align-items: center;
     background: linear-gradient(to bottom, #0C0414, #1B092E, #220C39, #40156B);
     flex-direction: column;
+=======
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
 }

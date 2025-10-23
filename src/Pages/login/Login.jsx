@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -5,6 +6,15 @@ import secureLocalStorage from "react-secure-storage";
 import api from "../../Services/services";
 import { userDecodeToken } from "../../Auth";
 import "./Login.css";
+=======
+import "./Login.css";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import secureLocalStorage from "react-secure-storage";
+import api from "../../Services/services";
+import { userDecodeToken } from "../../Auth";
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
 import Logo from "../../assets/img/Logo.svg";
 import LoginImage from "../../assets/img/ImgLogin.png";
 
@@ -21,7 +31,11 @@ export const Login = () => {
     }
 
     try {
+<<<<<<< HEAD
       // **Alteração importante**: enviar "Password" em vez de "senha"
+=======
+     
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
       const resposta = await api.post("/Login", {
         email: email,
         password: senha
@@ -29,17 +43,29 @@ export const Login = () => {
 
       console.log(resposta);
 
+<<<<<<< HEAD
       // Decodificar o token
+=======
+     
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
       const usuario = userDecodeToken(resposta.data.token);
 
       const tipoUsuarioToken = resposta.data.tipo;
       const nomeToken = resposta.data.nome;
 
+<<<<<<< HEAD
       // Salva token seguro
       secureLocalStorage.setItem("tokenLogin", JSON.stringify(usuario));
       secureLocalStorage.setItem("tipoUsario", JSON.stringify(tipoUsuarioToken));
 
       // Feedback de sucesso
+=======
+      
+      secureLocalStorage.setItem("tokenLogin", JSON.stringify(usuario));
+      secureLocalStorage.setItem("tipoUsario", JSON.stringify(tipoUsuarioToken));
+
+     
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
       Swal.fire({
         icon: "success",
         title: "Login realizado!",
@@ -47,7 +73,11 @@ export const Login = () => {
         showConfirmButton: false
       });
 
+<<<<<<< HEAD
       // Redireciona conforme tipo de usuário
+=======
+      
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
       if (usuario.tipo === "Aluno") {
         navigate("/ListagemEventos");
       } else {
@@ -69,8 +99,12 @@ export const Login = () => {
         <form className="form_login" onSubmit={realizarAutenticacao}>
           <div className="campos_login">
             <div className="campo_input">
+<<<<<<< HEAD
               <input 
                 className="Inpp"
+=======
+              <input
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
                 type="email"
                 placeholder="Email"
                 value={email}
@@ -79,7 +113,10 @@ export const Login = () => {
             </div>
             <div className="campo_input">
               <input
+<<<<<<< HEAD
                 className="Inpp"
+=======
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
                 type="password"
                 placeholder="Senha"
                 value={senha}

@@ -4,7 +4,10 @@ import ImagemHome from "../../assets/img/ImgHome.svg";
 import IconDiscord from "../../assets/img/IconDiscord.svg";
 import { Footer } from "../../Components/Footer/footer";
 import logo from "../../assets/img/Logo.svg"
+<<<<<<< HEAD
 
+=======
+>>>>>>> a34e466af638070dc469ce1bec98e8f9a09f584b
 // import {Carousel} from "../../Components/Carousel/carousel.jsx";
 import React from 'react';
 // import 'bootstrap/dist/css/bootstrap.css';
