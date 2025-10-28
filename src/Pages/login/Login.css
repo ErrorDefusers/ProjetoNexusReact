@@ -8,10 +8,7 @@
     font-family: Arial, sans-serif;
     width: 1536px;
 }
-.logo_banner {
-    display: flex
-;
-}
+
 /* Coluna da esquerda */
 .login-left {
   flex: 1;
@@ -99,53 +96,4 @@
     width: 100%;
     max-width: 548px;
     height: 688px;
-}
-
-main {
-    background-color: black;
-    display: flex;
-    height: 100vh;
-    justify-content: space-around;
-    align-items: center;
-}
-
-section.section_login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-form.form_login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 170px;
-    justify-content: space-between;
-}
-
-.campos_login {
-    width: 400px;
-}
-
-input.Inpp {
-    width: 400px;
-    background: none;
-    border-radius: 10px;
-    height: 40px;
-}
-
-section.section_login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 520px;
-    justify-content: space-evenly;
-}
-
-.campos_login {
-    width: 400px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }

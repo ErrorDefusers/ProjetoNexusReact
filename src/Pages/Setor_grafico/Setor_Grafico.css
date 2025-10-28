@@ -1,5 +1,6 @@
-body {
+body{
     background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
+
 }
 
 .titulo h1 {
@@ -20,7 +21,6 @@ body {
     justify-content: center;
     flex-direction: column;
 }
-
 
 .img_ferramentas {
     background-image: url(../../assets/img/Ellipse22.png);
@@ -55,6 +55,7 @@ body {
     z-index: 0;
 }
 
+
 .section_grafico {
     display: flex;
     align-items: center;
@@ -63,12 +64,35 @@ body {
     justify-content: space-around;
 }
 
-.grafico_2 {
-    /* background-color: #747474; */
+.section_grafico{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 60px;
+}
+
+.grafico_1{
+    background-color: #747474;
+
+    width: 500px;
+    height: 420px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    background: linear-gradient(to bottom, #551A94, #551A94, #551A94,);
+    border: 1px solid #551A940D;
+}
+
+
+
+.grafico_2{
+    background-color: #747474;
+
     width: 500px;
     height: 420px;
     /* border-radius: 15px;
     overflow: hidden;
+
     background: linear-gradient(to bottom, #551A94, #551A94, #551A94,);
     border: 1px solid #551A940D; */
 
@@ -95,8 +119,10 @@ body {
     backdrop-filter: blur(5px);
 }
 
-.carrossel {
-    /* background-color: #1c1c1c47; */
+
+.carrossel{
+    background-color: #747474;
+
     width: 140px;
     height: 420px;
     /* border-radius: 15px; */
@@ -145,11 +171,12 @@ body {
     height: 65px;
 }
 
-main {
+.main {
     display: flex;
     height: 100vh;
     justify-content: space-evenly;
     align-items: center;
     background: linear-gradient(to bottom, #0C0414, #1B092E, #220C39, #40156B);
     flex-direction: column;
+
 }

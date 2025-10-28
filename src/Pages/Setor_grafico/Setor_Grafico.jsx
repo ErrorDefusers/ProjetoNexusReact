@@ -17,10 +17,11 @@ export const Setor_Grafico = () => {
         <div className="titulo">
           <h1>Gráficos</h1>
           {/* <hr /> */}
+          <hr />
         </div>
 
-          {/* <div className="img_ferramentas"></div>
-          <div className="img_ferramentas2"></div> */}
+          <div className="img_ferramentas"></div>
+          <div className="img_ferramentas2"></div>
         <div className="section_grafico">
           <div className="grafico_1">
             <ApexChart />
