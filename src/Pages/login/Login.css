@@ -1,12 +1,11 @@
 /* Layout geral */
 .login-container {
-    display: flex
-;
-    height: 100vh;
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-    width: 1536px;
+  display: flex;
+  height: 100vh;
+  background: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 1536px;
 }
 
 /* Coluna da esquerda */
@@ -25,8 +24,18 @@
   align-items: center;
 }
 
+.logo-box img {
+  width: 70px;
+  height: 70px;
+}
+
+.logo-box p {
+  color: #808080;
+}
+
 .logo-img {
-  width: 120px; /* Ajuste o tamanho da logo */
+  width: 120px;
+  /* Ajuste o tamanho da logo */
   margin-bottom: 15px;
 }
 
@@ -45,44 +54,54 @@
 
 /* Formulário */
 .login-form {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-form label {
-    font-size: 1rem;
-    margin-right: 338px;
+  font-size: 1rem;
+  margin-right: 338px;
 }
 
 .login-form input {
   padding: 12px;
-  border-radius: 12px;
-  border: none;
+  /* border-radius: 12px; */
+  /* border: none; */
   outline: none;
   font-size: 1rem;
-  background: #bbb;
-  color: #000;
+  /* background: #bbb; */
+  color: white;
   width: 100%;
   box-sizing: border-box;
+
+  border-radius: 8px;
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  backdrop-filter: blur(5px);
 }
 
 .login-btn {
-    margin-top: 15px;
-    padding: 14px;
-    background: #7c3aed;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 70%;
+  margin-top: 15px;
+  padding: 14px;
+  /* background: #7c3aed; */
+  /* border: none; */
+  /* border-radius: 12px; */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 70%;
+
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: #551A94;
 }
 
 .login-btn:hover {
@@ -95,5 +114,5 @@
 .side-image {
     width: 100%;
     max-width: 548px;
-    height: 688px;
+    height: 100%;
 }

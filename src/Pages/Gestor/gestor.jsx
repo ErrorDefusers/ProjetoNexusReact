@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import api from "../../Services/services"; 
 import Swal from "sweetalert2";
 
-export default function Gestor() {
+export const Gestor = () => {
   const [funcionarios, setFuncionarios] = useState([]);
   const [tipos, setTipos] = useState([]);
   const [editarFunc, setEditarFunc] = useState(null); // funcionário sendo editado

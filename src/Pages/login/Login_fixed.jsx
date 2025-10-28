@@ -1,24 +1,16 @@
-import "./login.css";
-// import loginImage from "../assets/img/fundoLogin.svg";
-import loginImage from "../../assets/img/fundoLogin.svg"
-import logoo from "../../assets/img/Logotipo/Logotipo SVG/pictogramaClaro.svg";
+import "../styles/login.css";
+import loginImage from "../assets/IMG/Group55.svg"; // coloque sua imagem aqui
+import logoo from "../assets/IMG/ChatGPT_logo.png";
 
-export const  Login = () => {
+function Login() {
   return (
     <div className="login-container">
       {/* Lado Esquerdo */}
       <div className="login-left">
-        <img src={loginImage} alt="Login visual" className="side-image" />
-      </div>
-      
-
-      {/* Lado Direito */}
-      <div className="login-right">
-        
-      <div className="logo-box">
+        <div className="logo-box">
           <img src={logoo} alt="" />
-          <h1 className="subtitle">Acesse sua conta!</h1>
-          <p>Insira seus dados para acessar sua conta.</p>
+          <p className="subtitle">Acesse sua conta!</p>
+          <hr className="divider" />
         </div>
 
         <form className="login-form">
@@ -37,7 +29,14 @@ export const  Login = () => {
             Entrar
           </button>
         </form>
-    </div>
+      </div>
+
+      {/* Lado Direito */}
+      <div className="login-right">
+        <img src={loginImage} alt="Login visual" className="side-image" />
+      </div>
     </div>
   );
 }
+
+export default Login;
