@@ -18,7 +18,7 @@ export default function Carousel() {
   const itemsPerPage = 5;
 
   const nextSlide = () => {
-    // Só avança se não estiver no fim
+    
     if (current + itemsPerPage < images.length) {
       setDirection("next");
       setCurrent((prev) => prev + itemsPerPage);
@@ -26,7 +26,7 @@ export default function Carousel() {
   };
 
   const prevSlide = () => {
-    // Só volta se não estiver no início
+    
     if (current > 0) {
       setDirection("prev");
       setCurrent((prev) => prev - itemsPerPage);

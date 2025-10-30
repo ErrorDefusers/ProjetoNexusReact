@@ -25,7 +25,7 @@ export const Login = () => {
         password: senha,
       });
 
-      // Salva o token JWT puro no storage
+      
       secureLocalStorage.setItem("tokenLogin", resposta.data.token);
 
       Swal.fire({
@@ -35,7 +35,7 @@ export const Login = () => {
         showConfirmButton: false,
       });
 
-      navigate("/Perfil"); // redireciona para Perfil
+      navigate("/Perfil"); 
     } catch (error) {
       Swal.fire("Erro!", "Email ou senha incorretos.", "error");
       console.log(error);

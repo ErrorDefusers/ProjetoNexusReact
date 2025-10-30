@@ -3,13 +3,13 @@ import Logo from "../../assets/img/Logo.svg";
 import Perfil from "../../assets/img/IconUsuario.png";
 import Lupa from "../../assets/img/Lupa.svg";
 
-export const Header = (props) => {
+const Header = () => {
  return(
-    
-    <header>
+
+    <header className="header">
     <div className="header-nav">
         <div className="div-img">
-        <img src={Logo} alt="Logo do Nexus" />
+        <img src={Logo} alt="Logo do ValueWork" />
 
         </div>
 
@@ -26,7 +26,7 @@ export const Header = (props) => {
                 type="text" 
                 className="pesquisar"
                  ></input>
-        
+
 
         </div>
 
@@ -35,7 +35,7 @@ export const Header = (props) => {
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Ferramentas</a></li>
                     <li><a href="#">Cursos</a></li>
-                    <li><a href="#">Usuário</a></li>
+                    <li className="Usuario"><a href="#">Usuário</a></li>
                 </ul>
 
                 <img src={Perfil} alt="Imagem do usuário"/>
@@ -43,6 +43,7 @@ export const Header = (props) => {
     </div>
 
     </header>
-    
+
  )
 }
+export default Header;

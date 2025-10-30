@@ -1,107 +1,126 @@
-.main_cadastro {
-    background-color: #000000;
-    color: aliceblue;
+/* Fundo geral */
+.cadastro-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 20px;
     flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(162deg, #0C0414 12%, #1B092E 27%, #220C39 68%, #40156B 86%);
 }
 
-.titulo_cadastro {
-    margin-top: 80px;
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+/* Card */
+.cadastro-card {
+    padding: 40px 50px;
+    max-width: 850px;
+    width: 100%;
+    border-radius: 16px;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
 }
 
-.hr_cadastro {
-    border: 2px solid #B13D7E;
-    width: 160px;
-    border-radius: 45px;
-}
-
-.sessao_cadastro {
-    background-color: #74747440;
-    backdrop-filter: blur(10px);
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
+/* Título */
+.cadastro-card h2 {
     text-align: center;
-    flex-wrap: wrap;
-    border-radius: 15px;
-    margin-bottom: 200px;
-    width: 100%;
-    height: 500px;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 
-.inputs_cadastro {
+/* Grid do formulário */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+}
+
+.field {
     display: flex;
     flex-direction: column;
-    text-align: start;
-    margin: 20px;
-    height: 90px;
 }
 
-.input_cadastro {
+.field label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+/* Inputs e selects com glassmorphism */
+.field input, .field select {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    transition: border 0.2s, background 0.2s;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+}
+
+.field input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.field input:focus,
+.field select:focus {
+    outline: none;
+    border-color: #b650e5;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Options do select */
+.field select option {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+/* Botão */
+.actions {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background: rgba(182, 80, 229, 0.8);
+    color: white;
+    padding: 14px 40px;
     border: none;
-    border-radius: 9px;
-    width: 400px;
-    height: 40px;
-    backdrop-filter: blur(10px);
-    border: none;
-    background-color: white;
-}
-
-.inputs_divisoria2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.inputs_divisoria4 {
-    margin-bottom: 45px;
-}
-
-.img_curso1 {
-    background-image: url(../../assets/img/Ellipse22.svg);
-    background-size: 690px;
-    background-position: 1200px;
-    background-repeat: no-repeat;
+    border-radius: 70px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
     width: 100%;
-    height: 700px;
-    padding: 290px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+    max-width: 366px;
 }
 
-.img_curso2 {
-    background-image: url(../../assets/img/Ellipse22.svg);
-    background-size: contain;
-    background-position: -200px;
-    background-repeat: no-repeat;
-    height: 700px;
-    /* padding: 290px 0; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 350px;
-    left: 0;
-    z-index: 0;
+.btn-primary:hover {
+    background: rgba(182, 80, 229, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(182, 80, 229, 0.5);
 }
 
-.botao {
-    width: 366px;
-    height: 45px;
+/* Responsivo */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cadastro-card {
+        padding: 25px 20px;
+        max-width: 425px;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        border-radius: 35px;
+        font-size: 0.9rem;
+    }
 }
 
-.footer {
-    width: 100%;
+/* Cor do título */
+.CorT {
+    color: white;
 }

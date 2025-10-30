@@ -1,87 +1,178 @@
-import React from 'react'
-import "./CadastroFunc.css";
-import {Header} from "../../Components/Header/header";
-import {Footer} from "../../Components/Footer/footer";
-import { Botao } from "../../Components/Botao/botao";
+import React, { useEffect, useState } from "react";
+import "../cadastroFunc/CadastroFunc.css";
+import Swal from "sweetalert2";
 
+export default function CadastroAdm() {
+  const [setores, setSetores] = useState([]);
+  const [cargos, setCargos] = useState([]);
 
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [idade, setIdade] = useState("");
+  const [setorSelecionado, setSetorSelecionado] = useState("");
+  const [cargoSelecionado, setCargoSelecionado] = useState("");
 
-export const Cadastro = () => {
-    return (
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IktheWt5IiwiZW1haWwiOiJrYXlreW5hc2NpbWVudG9lcEBnbWFpbC5jb20iLCJyb2xlIjoiVXN1YXJpbyIsIm5iZiI6MTc2MTgzMzk3OCwiZXhwIjoxNzYxODM3NTc4LCJpYXQiOjE3NjE4MzM5NzgsImlzcyI6Ik5leHVzQVBJIiwiYXVkIjoiTmV4dXNBUElVc3VhcmlvcyJ9.64bPz8MXdggl5RNi2Qi8_z1CyTta5wXjl_x35upfr7I";
 
-        <>
-            <Header/>
+  useEffect(() => {
+    fetch("https://localhost:7079/api/Funcionarios/setores", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(res => res.json())
+      .then(data => setSetores(data))
+      .catch(err => console.error("Erro ao carregar setores:", err));
 
-            <main className="main_cadastro">
+    fetch("https://localhost:7079/api/Funcionarios/cargos", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(res => res.json())
+      .then(data => setCargos(data))
+      .catch(err => console.error("Erro ao carregar cargos:", err));
+  }, []);
 
+  const calcularDataNascimento = (idade) => {
+    const anoAtual = new Date().getFullYear();
+    const anoNascimento = anoAtual - idade;
+    return `${anoNascimento}-01-01`;
+  };
 
-                <div className='main_cadastro'>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-                    <div className='titulo_cadastro'>
-                        <h2>Cadastro</h2>
-                        <hr className='hr_cadastro' />
-                    </div>
+    if (!idade || !setorSelecionado || !cargoSelecionado || !nome || !email || !senha) {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Preencha todos os campos!',
+        showConfirmButton: false,
+        timer: 2500,
+        background: 'rgba(182, 80, 229, 0.9)',
+        color: 'white',
+        showClass: { popup: 'swal2-show-animation' },
+        hideClass: { popup: 'swal2-hide-animation' }
+      });
+      return;
+    }
 
-                    <div className="img_curso1"></div>
+    const cargoSelecionadoNome = cargos.find(c => c.idTipoFuncionario === cargoSelecionado)?.tipoDeFuncionario || "";
+    const dataNascimento = calcularDataNascimento(Number(idade));
 
-                    <div className='sessao_cadastro'>
+    const url = new URL("https://localhost:7079/api/Funcionarios/criar");
+    url.searchParams.append("nome", nome);
+    url.searchParams.append("email", email);
+    url.searchParams.append("senha", senha);
+    url.searchParams.append("dataNascimento", dataNascimento);
+    url.searchParams.append("cargo", cargoSelecionadoNome);
+    url.searchParams.append("tipoFuncionarioId", cargoSelecionado);
+    url.searchParams.append("setorId", setorSelecionado);
+    url.searchParams.append("role", "Usuario");
 
-                        <div className='inputs_divisoria1'>
+    Swal.fire({
+      title: 'Enviando cadastro...',
+      allowOutsideClick: false,
+      didOpen: () => Swal.showLoading(),
+      background: 'rgba(182, 80, 229, 0.1)',
+      color: 'white'
+    });
 
-                            <div className='inputs_cadastro'>
-                                <label>Nome:</label>
-                                <input type="text" placeholder='Insira Aqui' className='input_cadastro' />
-                            </div>
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` }
+      });
 
-                            <div className='inputs_cadastro'>
-                                <label>E-mail:</label>
-                                <input type="email" placeholder='Insira Aqui' className='input_cadastro' />
-                            </div>
+      if (!res.ok) throw new Error("Erro ao cadastrar funcionário");
 
-                            <div className='inputs_cadastro'>
-                                <label>Senha:</label>
-                                <input type="password" placeholder='Insira Aqui' className='input_cadastro' />
-                            </div>
+      const data = await res.text();
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Funcionário cadastrado com sucesso!',
+        showConfirmButton: false,
+        timer: 2500,
+        background: 'rgba(75, 0, 130, 0.9)',
+        color: 'white',
+        showClass: { popup: 'swal2-show-animation' },
+        hideClass: { popup: 'swal2-hide-animation' }
+      });
 
-                            <div className='inputs_cadastro'>
-                                <label>Idade:</label>
-                                <input type="text" placeholder='Insira Aqui' className='input_cadastro' />
-                            </div>
-                        </div>
+      setNome("");
+      setEmail("");
+      setSenha("");
+      setIdade("");
+      setSetorSelecionado("");
+      setCargoSelecionado("");
 
-                        <div className='inputs_divisoria2'>
+    } catch (err) {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Erro ao cadastrar!',
+        text: err.message,
+        showConfirmButton: false,
+        timer: 3000,
+        background: 'rgba(255, 0, 0, 0.9)',
+        color: 'white',
+        showClass: { popup: 'swal2-show-animation' },
+        hideClass: { popup: 'swal2-hide-animation' }
+      });
+    }
+  };
 
-                            <div className='inputs_divisoria3'>
+  return (
+    <section className="cadastro-container">
+      <h2 className='CorT'>Cadastro</h2>
+      <div className="cadastro-card">
+        <form className="form-grid" onSubmit={handleSubmit}>
+          <div className="field">
+            <label>Nome:</label>
+            <input type="text" value={nome} onChange={e => setNome(e.target.value)} placeholder="Digite seu nome" />
+          </div>
 
-                                <div className='inputs_cadastro'>
-                                    <label>Cargo</label>
-                                    <select name="" id="" className='input_cadastro'>U.I.A</select>
-                                </div>
+          <div className="field">
+            <label>Setor:</label>
+            <select value={setorSelecionado} onChange={e => setSetorSelecionado(e.target.value)}>
+              <option value="">Selecione</option>
+              {setores.map(s => (
+                <option key={s.idSetor} value={s.idSetor}>{s.tipoSetor}</option>
+              ))}
+            </select>
+          </div>
 
-                                <div className='inputs_cadastro'>
-                                    <label >Setor</label>
-                                    <select name="" id="" className='input_cadastro'>Agricultura</select>
-                                </div>
-                            </div>
+          <div className="field">
+            <label>E-mail:</label>
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite seu email" />
+          </div>
 
-                            
+          <div className="field">
+            <label>Cargo:</label>
+            <select value={cargoSelecionado} onChange={e => setCargoSelecionado(e.target.value)}>
+              <option value="">Selecione</option>
+              {cargos.map(c => (
+                <option key={c.idTipoFuncionario} value={c.idTipoFuncionario}>{c.tipoDeFuncionario}</option>
+              ))}
+            </select>
+          </div>
 
-                            <div className='inputs_divisoria4'>
+          <div className="field">
+            <label>Idade:</label>
+            <input type="number" value={idade} onChange={e => setIdade(e.target.value)} min="18" max="100" placeholder="Digite sua idade" />
+          </div>
 
-                                <Botao
-                                    nomeBotao="Cadastrar" />
+          <div className="field">
+            <label>Senha:</label>
+            <input type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Digite sua senha" />
+          </div>
 
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div className="img_curso2"></div>
-                </div>
-                <Footer/>
-
-            </main>
-        </>
-    )
+          <div className="actions">
+            <button type="submit" className="btn-primary">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
 }
