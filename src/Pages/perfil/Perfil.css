@@ -5,18 +5,25 @@ main.backgroundImagem {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 0;
-    background-color: #f5f5f5; /* fundo neutro para destacar a janela */
+    padding: 120px 0 50px;
+    background: linear-gradient(
+        161.96deg,
+        #0C0414 12.28%,
+        #1B092E 27.17%,
+        #220C39 68.12%,
+        #40156B 86.73%
+    );
+    color: #fff;
 }
 
 /* Janela do perfil */
 .Janela_Perfil {
     border-radius: 16px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.4) inset, 
-                0 -2px 4px rgba(0, 0, 0, 0.2) inset;
-    backdrop-filter: blur(5px);
+    border: 1px solid rgba(182, 80, 229, 0.25);
+    background: rgba(182, 80, 229, 0.1);
+    box-shadow: 0 4px 12px rgba(182, 80, 229, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 1200px;
     padding: 60px 30px 40px;
     display: flex;
@@ -27,32 +34,67 @@ main.backgroundImagem {
 
 /* Foto redonda do perfil */
 .BolinhaFoto {
+    position: relative; /* necessário para o overlay */
     height: 160px;
     width: 160px;
     border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -80px; /* sobe a foto */
+    margin-top: -80px;
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
     border: 3px solid #b650e5;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
+/* Foto dentro da bolinha */
 .imagemperfiiil {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: filter 0.3s;
 }
 
-/* Input de arquivo invisível */
+/* Escurece a foto ao passar o mouse */
+.BolinhaFoto:hover .imagemperfiiil {
+    filter: brightness(60%);
+}
+
+/* Overlay de texto "Trocar Foto" */
+.BolinhaFoto::after {
+    content: "Trocar Foto";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+/* Mostrar overlay ao passar o mouse */
+.BolinhaFoto:hover::after {
+    opacity: 1;
+}
+
+/* Input de arquivo cobre toda a bolinha */
 .BolinhaFoto input[type="file"] {
-    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
 }
 
-/* Botão de trocar foto */
+/* Botão de trocar foto (opcional se quiser deixar separado) */
 button.botaoperfil {
     margin-top: 15px;
     padding: 12px 25px;
@@ -63,16 +105,18 @@ button.botaoperfil {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(182, 80, 229, 0.4);
 }
 
 button.botaoperfil:hover {
-    background-color: #a03cd8;
+    background-color: #9a3fd4;
+    box-shadow: 0 6px 14px rgba(182, 80, 229, 0.6);
 }
 
 /* Título da foto */
 h2.FotoPerfil {
     margin-top: 20px;
-    color: #333;
+    color: #e4d1ff;
     font-size: 22px;
     text-align: center;
 }
@@ -87,20 +131,23 @@ h2.FotoPerfil {
     gap: 20px;
 }
 
-/* Quadrados com informações */
+/* Quadrados de informações */
 .Quadrado,
 .Quadradoinf,
 .QuadradoULT {
     height: 70px;
     width: calc(33% - 20px);
-    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(182, 80, 229, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     font-size: 18px;
-    color: #000;
+    color: #e6e0ff;
 }
 
 /* Ajustes específicos */
@@ -111,7 +158,7 @@ h2.FotoPerfil {
 .h1dequadrado {
     font-size: 18px;
     font-weight: 500;
-    color: #333;
+    color: #e4d1ff;
 }
 
 /* Responsividade */
@@ -137,6 +184,11 @@ h2.FotoPerfil {
     .BolinhaFoto {
         height: 120px;
         width: 120px;
+        margin-top: -60px;
+    }
+
+    .BolinhaFoto::after {
+        font-size: 12px;
     }
 
     button.botaoperfil {

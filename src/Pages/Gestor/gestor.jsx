@@ -3,7 +3,7 @@ import "../../Pages/Gestor/gestor.css";
 import Editar from "../../assets/img/Editar.svg";
 
 import ApexChart from "../../Components/Graficos/Pizza/ApexChart.jsx";
-import { Footer } from "../../Components/Footer/footer";
+import  Footer  from "../../Components/Footer/footer";
 import  Header  from "../../Components/Header/header.jsx";
 import Carousel from "../../Components/Carousel/carousel.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
