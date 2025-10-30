@@ -1,81 +1,77 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import "./ApexChart.css";
+import api from "../../../Services/services"; 
+import "../Pizza/ApexChart.css";
 
 export default function ApexChart() {
-  // datasets de exemplo
-  const datasets = {
-    vendas: [44, 55, 13, 33],
-    marketing: [20, 35, 45, 15],
-    financeiro: [60, 25, 40, 10],
-    suporte: [30, 20, 50, 25],
-  };
+  const [series, setSeries] = useState([]);
+  const [labels, setLabels] = useState([]);
+  
+  useEffect(() => {
+    const fetchDados = async () => {
+      try {
+        const response = await api.get("/Acessos/estatisticas");
+        const data = response.data;
 
-  // estado só para a série atual (array de números)
-  const [filtro, setFiltro] = useState("vendas");
-  const [series, setSeries] = useState(datasets[filtro]);
+        // extrai os nomes das ferramentas como labels
+        setLabels(data.map(item => item.nomeFerramenta));
 
-  // options memoizadas (não re-criar toda vez)
-  const options = useMemo(
-    () => ({
-      chart: {
-        width: 380,
-        type: "donut",
+        // extrai os acessos (soma se tiver múltiplos dias)
+        setSeries(data.map(item => item.acessos.reduce((a,b) => a+b, 0)));
+      } catch (error) {
+        console.error("Erro ao buscar dados:", error);
+        setLabels(["Erro"]);
+        setSeries([1]);
+      }
+    };
+
+    fetchDados();
+  }, []);
+  
+  const options = {
+    chart: {
+      type: "donut",
+      width: "100%",
+      background: "transparent",
+      toolbar: { show: false },
+    },
+    labels: labels,
+    colors: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"],
+    dataLabels: {
+      enabled: true,
+      style: { fontSize: "14px", colors: ["#fff"] },
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["rgba(255,255,255,0.3)"], // borda clara ao redor do donut
+    },
+    legend: {
+      position: "bottom",
+      fontSize: "14px",
+      labels: { colors: "#333" },
+      markers: { width: 12, height: 12, radius: 6 },
+      formatter: function(val, opts) {
+        return val + ": " + opts.w.globals.series[opts.seriesIndex];
       },
-      labels: ["Setor A", "Setor B", "Setor C", "Setor D"],
-      dataLabels: {
-        enabled: false,
-      },
-      legend: {
-        position: "right",
-        offsetY: 0,
-        height: 230,
-        labels: {
-          colors: "#fff",
-          useSeriesColors: false,
+    },
+    tooltip: {
+      y: { formatter: val => val + " acessos" },
+    },
+    responsive: [
+      {
+        breakpoint: 600,
+        options: {
+          chart: { width: 350 },
+          legend: { position: "bottom" },
         },
       },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 250,
-            },
-            legend: {
-              show: true,
-              position: "bottom",
-            },
-          },
-        },
-      ],
-    }),
-    []
-  );
-
-  // quando o filtro muda: atualiza filtro e série
-  const handleFiltroChange = (e) => {
-    const novoFiltro = e.target.value;
-    setFiltro(novoFiltro);
-    setSeries(datasets[novoFiltro]);
-    console.log("Filtro:", novoFiltro, "-> series:", datasets[novoFiltro]);
+    ],
   };
 
   return (
-    <div className="chart-container">
-      <div className="filter-container">
-        <label htmlFor="filtro">Filtrar por:</label>
-        <select id="filtro" value={filtro} onChange={handleFiltroChange}>
-          <option value="vendas">Vendas</option>
-          <option value="marketing">Marketing</option>
-          <option value="financeiro">Financeiro</option>
-          <option value="suporte">Suporte</option>
-        </select>
-      </div>
-
-      <div className="chart-wrap">
-        <ReactApexChart options={options} series={series} type="donut" width={370} />
-      </div>
+    <div className="grafico-card-modern">
+      <ReactApexChart options={options} series={series} type="donut" height={409} width="1000" />
     </div>
   );
 }

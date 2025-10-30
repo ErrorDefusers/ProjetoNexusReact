@@ -1,12 +1,10 @@
-import React from 'react'
-import "./botao.css"
+import React from 'react';
+import "./botao.css";
 
-export const Botao = (props) => {
+export const Botao = ({ nomeBotao, onClick }) => {
   return (
-    <>
-      <button className='botao'>
-        {props.nomeBotao}
-      </button>
-    </>
-  )
-}
+    <button className='botao' onClick={onClick}>
+      {nomeBotao}
+    </button>
+  );
+};

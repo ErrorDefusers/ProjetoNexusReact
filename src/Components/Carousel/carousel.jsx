@@ -1,7 +1,5 @@
-
-
 import React, { useState } from "react";
-import "./carousel.css";
+import "./Carousel.css";
 import SetaE from "../../assets/IMG/setaE.svg";
 import SetaR from "../../assets/IMG/setaR.svg";
 
@@ -17,7 +15,7 @@ const images = [
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState("next");
-  const itemsPerPage = 3;
+  const itemsPerPage = 5;
 
   const nextSlide = () => {
     // Só avança se não estiver no fim

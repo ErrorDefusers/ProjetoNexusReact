@@ -1,16 +1,15 @@
-import "./Login.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import secureLocalStorage from "react-secure-storage";
 import api from "../../Services/services";
-import { userDecodeToken } from "../../Auth";
-import Logo from "../../assets/img/Logo.svg";
-import LoginImage from "../../assets/img/ImgLogin.png";
+import ".././login/Login.css";
+import loginImage from "../../assets/img/ImgLogin.png";
+import logoo from "../../assets/img/ChatGPT_logo.png";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState(""); 
+  const [senha, setSenha] = useState("");
   const navigate = useNavigate();
 
   async function realizarAutenticacao(e) {
@@ -21,38 +20,22 @@ export const Login = () => {
     }
 
     try {
-     
       const resposta = await api.post("/Login", {
         email: email,
-        password: senha
+        password: senha,
       });
 
-      console.log(resposta);
+      // Salva o token JWT puro no storage
+      secureLocalStorage.setItem("tokenLogin", resposta.data.token);
 
-     
-      const usuario = userDecodeToken(resposta.data.token);
-
-      const tipoUsuarioToken = resposta.data.tipo;
-      const nomeToken = resposta.data.nome;
-
-      
-      secureLocalStorage.setItem("tokenLogin", JSON.stringify(usuario));
-      secureLocalStorage.setItem("tipoUsario", JSON.stringify(tipoUsuarioToken));
-
-     
       Swal.fire({
         icon: "success",
         title: "Login realizado!",
         timer: 1500,
-        showConfirmButton: false
+        showConfirmButton: false,
       });
 
-      
-      if (usuario.tipo === "Aluno") {
-        navigate("/ListagemEventos");
-      } else {
-        navigate("/CadastrarEvento");
-      }
+      navigate("/Perfil"); // redireciona para Perfil
     } catch (error) {
       Swal.fire("Erro!", "Email ou senha incorretos.", "error");
       console.log(error);
@@ -60,37 +43,45 @@ export const Login = () => {
   }
 
   return (
-    <main className="main_login">
-      <div className="logo_banner">
-        <img src={LoginImage} alt="Banner login" />
-      </div>
-      <section className="section_login">
-        <img src={Logo} alt="Logo" />
-        <form className="form_login" onSubmit={realizarAutenticacao}>
-          <div className="campos_login">
-            <div className="campo_input">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="campo_input">
-              <input
-                type="password"
-                placeholder="Senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-              />
-            </div>
-          </div>
+    <div className="login-container">
+      <div className="login-left">
+        <div className="logo-box">
+          <img src={logoo} alt="Logo" className="logo-img" />
+          <p className="subtitle">Acesse sua conta!</p>
+          <hr className="divider" />
+        </div>
+
+        <form className="login-form" onSubmit={realizarAutenticacao}>
+          <label htmlFor="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="fulano@gmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <label htmlFor="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="********"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            required
+          />
+
           <button type="submit" className="login-btn">
             Entrar
           </button>
         </form>
-      </section>
-    </main>
+      </div>
+
+      <div className="login-right">
+        <img src={loginImage} alt="Login visual" className="side-image" />
+      </div>
+    </div>
   );
 };
 

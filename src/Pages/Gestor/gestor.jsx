@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../Pages/Gestor/gestor.css";
 import Editar from "../../assets/img/Editar.svg";
 
-import ApexChart from "../../Components/Graficos/Linha/ApexChartsGestor.jsx";
+import ApexChart from "../../Components/Graficos/Pizza/ApexChart.jsx";
 import { Footer } from "../../Components/Footer/footer";
 import { Header } from "../../Components/Header/header.jsx";
 import Carousel from "../../Components/Carousel/carousel.jsx";
@@ -14,7 +14,7 @@ import Swal from "sweetalert2";
 export default function Gestor() {
   const [funcionarios, setFuncionarios] = useState([]);
   const [tipos, setTipos] = useState([]);
-  const [editarFunc, setEditarFunc] = useState(null); // funcionário sendo editado
+  const [editarFunc, setEditarFunc] = useState(null); 
 
   useEffect(() => {
     async function carregarFuncionarios() {
@@ -58,12 +58,12 @@ export default function Gestor() {
 
       Swal.fire("Sucesso!", "Funcionário atualizado.", "success");
 
-      // Atualiza o estado local para refletir na tela
+      
       setFuncionarios(prev =>
         prev.map(f => f.idFuncionario === editarFunc.idFuncionario ? editarFunc : f)
       );
 
-      setEditarFunc(null); // fecha modal
+      setEditarFunc(null); 
     } catch (erro) {
       console.error("Erro ao atualizar funcionário:", erro);
       Swal.fire("Erro!", "Não foi possível atualizar o funcionário.", "error");
