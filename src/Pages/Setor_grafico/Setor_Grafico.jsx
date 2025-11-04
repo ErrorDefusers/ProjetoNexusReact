@@ -1,14 +1,14 @@
-import { Header } from "../../Components/Header/header.jsx"
-import { Footer } from "../../Components/Footer/footer.jsx"
+import  Header  from "../../Components/Header/header.jsx"
+import Footer from "../../Components/Footer/footer.jsx"
 import "./Setor_Grafico.css"
-import ApexChart from "../../Components/Graficos/pizza/ApexChart.jsx"
+// import ApexChart from "../../Components/Graficos/pizza/ApexChart.jsx"
 import ApexChart2 from "../../Components/Graficos/Linha/ApexChart.jsx"
 import imagem from "../../assets/img/excel.svg"
 import imagem2 from "../../assets/img/meet.svg"
 import imagem3 from "../../assets/img/drive.svg"
 import CarouselV from "../../Components/CarouselV/carouselV.jsx"
 
-export const Setor_Grafico = () => {
+export default function Setor_Grafico  ()  {
   return (
     <>
       <Header />
@@ -41,4 +41,6 @@ export const Setor_Grafico = () => {
     </>
   )
 }
+
+
 

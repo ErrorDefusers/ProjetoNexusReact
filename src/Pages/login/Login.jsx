@@ -2,13 +2,18 @@ import "./login.css";
 // import loginImage from "../assets/img/fundoLogin.svg";
 import loginImage from "../../assets/img/fundoLogin.svg"
 import logoo from "../../assets/img/Logotipo/Logotipo SVG/pictogramaClaro.svg";
+import Logo from "../../assets/img/imgLogin.png"
 
 export const  Login = () => {
   return (
     <div className="login-container">
+      
       {/* Lado Esquerdo */}
+      <div className="fundoLogin">
+
+      </div>
       <div className="login-left">
-        <img src={loginImage} alt="Login visual" className="side-image" />
+      <img src={Logo} alt="Login visual" className="side-image" />
       </div>
       
 
@@ -16,7 +21,7 @@ export const  Login = () => {
       <div className="login-right">
         
       <div className="logo-box">
-          <img src={logoo} alt="" />
+          <img src={logoo} alt="logo VenueWork" />
           <h1 className="subtitle">Acesse sua conta!</h1>
           <p>Insira seus dados para acessar sua conta.</p>
         </div>

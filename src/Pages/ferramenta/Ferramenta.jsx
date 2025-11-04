@@ -1,12 +1,12 @@
 import React from 'react'
 import "./Ferramenta.css"
 import imgCard from "../../assets/img/IconDiscord.svg";
-import { Header } from "../../Components/Header/header";
-import { Footer } from "../../Components/Footer/footer";
+import  Header  from "../../Components/Header/header.jsx";
+import Footer from "../../Components/Footer/footer.jsx"
 // import { Botao } from "../../Components/Botao/botao";
 import { Card } from "../../Components/Card/Card.jsx";
 
- export const Ferramentas = () => {
+ export default function Ferramentas ()  {
   return (
     <>
     <Header/>
@@ -17,7 +17,6 @@ import { Card } from "../../Components/Card/Card.jsx";
 
         <div className='titulo_ferramentas'>
             <h2>Ferramentas</h2>
-            <hr className='hr_ferramentas'/>
         </div>
 
          {/* <div className="img_ferramentas2"></div> */}

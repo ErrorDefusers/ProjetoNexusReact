@@ -1,21 +1,36 @@
 /* Layout geral */
 .login-container {
   display: flex;
-  height: 100vh;
-  background: #000;
+  height: 98vh;
+  /* background: #000; */
   color: white;
   font-family: Arial, sans-serif;
-  width: 1536px;
+  width: 1524px;
 }
 
-/* Coluna da esquerda */
-.login-left {
-  flex: 1;
+.login-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 60px;
+  width: 800px;
 }
+
+.login-left img {
+  width: 600px;
+  height: 720px;
+}
+
+.login-container {
+  background-image: url("../../assets/img//fundoLogin.svg");
+  flex: 1;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
 
 .logo-box {
   margin-bottom: 40px;
@@ -112,7 +127,17 @@
 
 
 .side-image {
-    width: 100%;
-    max-width: 548px;
+  width: 100%;
+  max-width: 548px;
+  height: 100%;
+}
+
+div#root {
+    width: 1521px;
     height: 100%;
+}
+
+body {
+    background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
+    height: 776px;
 }

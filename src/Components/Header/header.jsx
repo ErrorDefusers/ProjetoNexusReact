@@ -3,7 +3,7 @@ import Logo from "../../assets/img/Logotipo/Logotipo SVG/logotipoClaro.svg";
 import Perfil from "../../assets/img/IconUsuario.png";
 import Lupa from "../../assets/img/Lupa.svg";
 
-export const Header = () => {
+const Header = () => {
  return(
     
     <header className="header">
@@ -46,3 +46,4 @@ export const Header = () => {
     
  )
 }
+export default Header;

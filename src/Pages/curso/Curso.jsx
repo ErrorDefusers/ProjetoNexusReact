@@ -1,11 +1,11 @@
 import React from 'react'
-import { Header } from '../../Components/Header/header';
-import { Footer } from '../../Components/Footer/footer';
-import { Botao } from '../../Components/Botao/botao';
+import  Header  from '../../Components/Header/header';
+import Footer from '../../Components/Footer/footer';
+import  {Botao}  from '../../Components/Botao/botao';
 import "./Curso.css";
 import foto from "../../assets/img/ImgCurso.svg";
 
-export const Cursos = () => {
+export default function Cursos  ()  {
         
     
      
@@ -20,17 +20,17 @@ export const Cursos = () => {
                     <h3>
                         Cursos
                     </h3>
-                    <hr className='hr_cursos' />
+                  
                 </div>
 
-                <div className="img_curso2"></div>
+                {/* <div className="img_curso2"></div> */}
                 <div className='quadro_cursos'>
 
                     <div className='cursos'>
                         <img src={foto} />
                         <p>Inteligência Artificial Descomplicada</p>
                         <Botao
-                            nomeBotao="Acessar"
+                            nomeBotao="Acessar ao curso"
                         />
                     </div>
 
@@ -38,7 +38,7 @@ export const Cursos = () => {
                         <img src={foto} />
                         <p>Inteligência Artificial Descomplicada</p>
                         <Botao
-                            nomeBotao="Acessar"
+                            nomeBotao="Acessar ao curso"
                         />
                     </div>
 
@@ -46,7 +46,7 @@ export const Cursos = () => {
                         <img src={foto} />
                         <p>Inteligência Artificial Descomplicada</p>
                         <Botao
-                            nomeBotao="Acessar"
+                            nomeBotao="Acessar curso"
                         />
                     </div>
 
