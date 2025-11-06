@@ -63,11 +63,7 @@ export default function Perfil() {
       .catch((err) => console.error("❌ Erro ao buscar funcionário:", err));
   }, [email]);
 
-  if (!usuario) {
-    return <div>Carregando...</div>;
-  }
 
-  
   const imagemPerfil = novaImagem
     ? URL.createObjectURL(novaImagem)
     : usuario.imagemPerfil

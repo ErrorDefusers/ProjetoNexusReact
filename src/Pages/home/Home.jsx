@@ -4,16 +4,14 @@ import ImagemHome from "../../assets/img/ImgHome.svg";
 import IconDiscord from "../../assets/img/IconDiscord.svg";
 import { Footer } from "../../Components/Footer/footer";
 import logo from "../../assets/img/Logo.svg"
-// import {Carousel} from "../../Components/Carousel/carousel.jsx";
+
 import React from 'react';
-// import 'bootstrap/dist/css/bootstrap.css';
+
 import "./Home.css";
 import Carousel from "../../Components/Carousel/carousel";
 
 
 export const Home = (props) => {
-
-    //js
 
     return (
 
