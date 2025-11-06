@@ -10,6 +10,7 @@ export const Card = (props) => {
                         <p>{props.Titulo}</p>
                         <Botao
                         nomeBotao = "Acessar"
+                        class_btn = {props.classbtncard}
                         />
         </div>
         </>

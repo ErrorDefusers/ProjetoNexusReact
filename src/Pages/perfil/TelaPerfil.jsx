@@ -105,7 +105,6 @@ export default function Perfil() {
     return <div>Carregando...</div>;
   }
 
-
   const imagemPerfil = novaImagem
     ? URL.createObjectURL(novaImagem)
     : usuario.imagemPerfil

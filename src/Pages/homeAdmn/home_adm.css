@@ -1,0 +1,487 @@
+.backgroundImagem {
+    /* background-image: url("../assets/IMG/fundoHOMEADM.svg"); */
+    height: 1370px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.AttBodyADMH {
+    height: 1482px;
+}
+
+.Janela_HomeAdm {
+    height: 1300PX;
+    width: 1230px;
+    /* background-color: rgba(255, 255, 255, 0.15); */
+    border-radius: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* 
+.BolinhaFoto {
+    height: 160px;
+    width: 160px;
+    /* background-color: white; */
+/* border-radius: 50%; */
+/* margin-right: 20px; */
+/* } */
+*/ .Quadrado {
+    height: 70px;
+    background-color: #ffffff;
+    width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: 2px solid white;
+}
+
+.Setores {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 20px;
+    border-radius: 10px;
+    gap: 15px;
+    width: 1170px;
+    background-color: transparent;
+    padding-left: 20px;
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
+    height: 130px;
+}
+
+.h1dequadrado {
+    font-size: 20px;
+    color: #000000;
+}
+
+.Quadradoinf {
+    height: 70px;
+    background-color: #ffffff;
+    width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    margin-top: -100px;
+}
+
+.QuadradoULT {
+    height: 70px;
+    background-color: #ffffff;
+    width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    margin-top: -100px;
+    margin-right: 50%;
+}
+
+button.botaoperfil {
+    height: 192px;
+    width: 181px;
+    /* border-radius: 220px; */
+    margin-left: 0px;
+    background: border-box;
+    border-radius: 100px;
+}
+
+.imagemperfiiil {
+    margin-left: -23px;
+    background-color: none;
+}
+
+.div-img img {
+    padding-left: 15px;
+    height: 70px;
+}
+
+.menu-desktop img {
+    align-items: self-end;
+    width: 54px;
+    height: 54px;
+    margin-right: 11px;
+    margin-top: 4px;
+}
+
+/* .HR {
+    width: 200px;
+    border: 2px solid white;
+    opacity: inherit;
+} */
+
+.Listagem {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.ListagemQuadro {
+    width: 95%;
+    height: 50%;
+    background-color: #ffffff0f;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
+}
+
+
+
+.quadradosetores {
+    height: 100px;
+    width: 100px;
+    background-color: aliceblue;
+}
+
+
+.quadrinhojuntar {
+    height: 100px;
+    width: 1050px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.quadradoCad {
+    height: 150px;
+    width: 460px;
+    background-color: #ffffff24;
+    /* margin-bottom: 210px; */
+    margin-top: -50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
+}
+
+.imagemss {
+    height: 110px;
+    margin-bottom: -20px;
+}
+
+button,
+.Att,
+.Pv {
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button:focus,
+.Att:focus,
+.Pv:focus {
+    outline: none;
+}
+
+button:active,
+.Att:active,
+.Pv:active {
+    outline: none;
+}
+
+.Pv {
+    pointer-events: none;
+}
+
+
+button.Att {
+    height: 150px;
+    width: 460px;
+    background: none;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border: none;
+    /* margin-right: 10px; */
+    margin-left: 70px;
+    cursor: pointer;
+}
+
+.Pv {
+    font-size: 25px;
+    color: white;
+    width: 230px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PConfL {
+    color: white;
+    font-size: 30px;
+}
+
+h1.LDP {
+    /* justify-content: center; */
+    margin-left: 75px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.arrumar {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    margin-top: 10px;
+}
+
+.arrumarn {
+    /* height: 310px; */
+    /* width: 40px; */
+    display: flex;
+    justify-content: center;
+}
+
+.Listagemdentro {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+main.backgroundImagem {
+    /* background-image: url(../assets/IMG/fundoHOMEADM.svg); */
+    height: 1300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    width: 170px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
+}
+
+.carousel.slide-next {
+    width: 940px;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    width: 170px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.Botaofunc {
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none;
+}
+
+/* Impede qualquer elemento de parecer editável */
+* {
+    caret-color: transparent;
+    /* esconde o cursor de digitação */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+    user-select: none;
+    /* impede seleção de texto */
+}
+
+/* Remove contornos e focos feios */
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* ---------------------- */
+/* CELULARES (até 768px)  */
+/* ---------------------- */
+@media (max-width: 768px) {
+    main.backgroundImagem {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .Janela_HomeAdm {
+        width: 95%;
+        height: auto;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Separador {
+        width: 100%;
+        align-items: center;
+    }
+
+    .Listagem {
+        width: 100%;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .ListagemQuadro {
+        width: 100%;
+        height: 700px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    h1.LDP {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .Listagemdentro {
+        gap: 15px;
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+
+    .Nome,
+    .Setor,
+    .Cargo,
+    .Editar,
+    .Excluir {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quadrinhojuntar {
+        width: 60%;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        height: 400px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .quadradoCad {
+        width: 85%;
+        height: 100px;
+    }
+
+    button.Att {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .imagemss {
+        height: 60px;
+        margin: 0 10px 0 0;
+    }
+
+    .Pv {
+        font-size: 20px;
+    }
+
+    button.Botaofunc {
+        width: 40px;
+        height: 40px;
+    }
+    
+}
+
+/* ---------------------- */
+/* CELULARES PEQUENOS (até 480px) */
+/* ---------------------- */
+@media (max-width: 480px) {
+    .Janela_HomeAdm {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .Listagem {
+        font-size: 18px;
+    }
+
+    .Pv {
+        font-size: 18px;
+    }
+
+    .imagemss {
+        height: 50px;
+    }
+
+    h1.LDP {
+        font-size: 20px;
+    }
+
+    .quadradoCad {
+        width: 100%;
+        height: 90px;
+    }
+
+    .Listagemdentro h5 {
+        font-size: 14px;
+    }
+
+    .Nome,
+    .Setor,
+    .Cargo,
+    .Editar,
+    .Excluir {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

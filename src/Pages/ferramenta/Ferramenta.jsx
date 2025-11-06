@@ -26,21 +26,38 @@ import { Card } from "../../Components/Card/Card.jsx";
 
         <Card 
         Titulo= "Discord"
+        // Botao= "Acessar"
+        classbtncard = "botaoFerramenta"
         />
+
         <Card
         Titulo= "Discord"
+        // Botao= "Acessar"
+        classbtncard = "botaoFerramenta"
         />
+
         <Card 
         Titulo= "Discord"
+        // Botao= "Acessar"
+        classbtncard = "botaoFerramenta"
         />
+
         <Card
         Titulo= "Discord"
+        // Botao= "Acessar"
+        classbtncard = "botaoFerramenta"
         />
+
         <Card 
         Titulo= "Discord"
+        // Botao= "Acessar"
+        classbtncard = "botaoFerramenta"
         />
+        
         <Card
         Titulo= "Discord"
+        // Botao= "Acessar"
+        classbtncard = "botaoFerramenta"
         />
 
           </div>

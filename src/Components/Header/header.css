@@ -33,7 +33,7 @@ header {
     cursor: pointer;
 }
 
-.Usuario{
+.Usuario {
     margin-left: 150px;
     margin-right: 0 auto;
     margin-right: -50px;
@@ -106,3 +106,78 @@ option {
     color: black;
 }
 
+/* @media screen and (max-width: 420px){
+    
+body{
+    height: 700px;
+}
+
+.div-img img {
+    padding-left: auto;
+    height: 50px;
+}
+
+.header-nav {
+    width: 95%;
+}
+
+} */
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .menu-desktop ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        display: none;
+    }
+
+    .barradepesquisa input {
+        width: 90%;
+        max-width: 320px;
+        display: none;
+    }
+
+    .Usuario {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header-nav {
+        padding: 10px;
+    }
+
+    .header-nav img {
+        width: 140px;
+        margin-left: 0;
+
+
+    }
+
+    .barradepesquisa input {
+        width: 100%;
+        font-size: 0.9rem;
+        background-size: 18px;
+    }
+
+    .menu-desktop ul li a {
+        font-size: 0.9rem;
+    }
+
+    .menu-desktop img {
+        width: 40px;
+        height: 40px;
+        display: none;
+
+    }
+
+    .menu-desktop {
+        background-image: url(../../assets//img/menu-burger.png);
+    }
+}

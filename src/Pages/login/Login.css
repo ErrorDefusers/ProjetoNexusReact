@@ -1,4 +1,8 @@
 /* Layout geral */
+
+body{
+      height: 776px;
+}
 .login-container {
   display: flex;
   height: 98vh;
@@ -139,5 +143,82 @@ div#root {
 
 body {
     background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
-    height: 776px;
+    height: none;
+}
+
+/* @media screen and (max-width: 768px){
+  .login-container{
+    display: block;
+    background-image: none;
+  }
+
+  .fundoLogin {
+    background-image: none;
+  }
+} */
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column-reverse; /* formulário em cima, imagem embaixo (ajusta se preferir inverso) */
+    align-items: center;
+    padding: 16px;
+    gap: 18px;
+    min-height: 100vh;
+  }
+
+  .login-right {
+        padding: 6px;
+        height: 100px;
+    }
+
+
+  .login-left img {
+    width: 100%;
+    display: none;
+    max-width: 420px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .login-form {
+    max-width: 420px;
+    padding: 0 8px;
+  }
+
+  .login-form label { margin-right: 0; text-align: left; font-size: 0.95rem;}
+  .login-btn { width: 90%; max-width: none; padding: 12px; }
+}
+
+/* Celulares pequenos (<= 420px) */
+@media (max-width: 420px) {
+  .login-container {
+        /* padding: 12px; */
+        /* gap: 10px; */
+        height: 100px;
+    }div#root {
+    width: 1521px;
+    height: 689.6px;
+}
+body {
+    height: 689px;
+}
+  .login-left {display: none;}
+  .login-right { padding: 6px;  height: 100px; flex: 1 1 auto;
+    width: 100%;
+    max-width: 560px;
+    padding: 8px 12px;
+    justify-content: none;
+  }
+  .login-form { width: 100%; max-width: 100%; gap: 10px; }
+  .login-btn { width: 100%; padding: 12px; font-size: 1rem; }
+  .logo-img { width: 100px; }
+  .subtitle { font-size: 1.05rem; }
+
+  div#root {
+    width: 1521px;
+    height: 689.6px;
+}
+body {
+    height: 689px;
+}
 }

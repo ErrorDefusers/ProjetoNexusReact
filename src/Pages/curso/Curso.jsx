@@ -11,6 +11,9 @@ export default function Cursos  ()  {
      
     return (
         <>
+        <body className='alt'>
+            
+        
             <Header />
 
             <div className='main_cursos'>
@@ -27,23 +30,32 @@ export default function Cursos  ()  {
                 <div className='quadro_cursos'>
 
                     <div className='cursos'>
-                        <img src={foto} />
+                        <img className='cursos_img' src={foto} />
                         <p>Inteligência Artificial Descomplicada</p>
                         <Botao
-                            nomeBotao="Acessar ao curso"
+                            nomeBotao="Acessar curso"
+                            
                         />
                     </div>
 
                     <div className='cursos'>
-                        <img src={foto} />
+                        <img className='cursos_img' src={foto} />
                         <p>Inteligência Artificial Descomplicada</p>
                         <Botao
-                            nomeBotao="Acessar ao curso"
+                            nomeBotao="Acessar curso"
                         />
                     </div>
 
                     <div className='cursos'>
-                        <img src={foto} />
+                        <img className='cursos_img' src={foto} />
+                        <p>Inteligência Artificial Descomplicada</p>
+                        <Botao
+                            nomeBotao="Acessar curso"
+                        />
+                    </div>
+
+                    <div className='cursos'>
+                        <img className='cursos_img'src={foto} />
                         <p>Inteligência Artificial Descomplicada</p>
                         <Botao
                             nomeBotao="Acessar curso"
@@ -54,6 +66,7 @@ export default function Cursos  ()  {
 
             </div>
             <Footer />
+            </body>
         </>
     )
 }

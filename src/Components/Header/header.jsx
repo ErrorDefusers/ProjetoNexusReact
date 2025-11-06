@@ -2,6 +2,7 @@ import "./header.css";
 import Logo from "../../assets/img/Logotipo/Logotipo SVG/logotipoClaro.svg";
 import Perfil from "../../assets/img/IconUsuario.png";
 import Lupa from "../../assets/img/Lupa.svg";
+// import menu from "../../assets/img/menu-burguer.png";
 
 const Header = () => {
  return(
@@ -40,7 +41,11 @@ const Header = () => {
 
                 <img src={Perfil} alt="Imagem do usuário"/>
         </nav>
+
     </div>
+        {/* <div className="menu">
+            <img src={menu} alt="icon menu lateral" />
+        </div> */}
 
     </header>
     

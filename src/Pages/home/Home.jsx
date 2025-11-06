@@ -1,8 +1,8 @@
-import { Header } from "../../Components/Header/header";
+import  Header  from "../../Components/Header/header";
 import Banner from "../../assets/img/Imagens/Banner/bannerDesktop.png";
 import ImagemHome from "../../assets/img/ImgHome.svg";
 import IconDiscord from "../../assets/img/IconDiscord.svg";
-import {Footer}  from "../../Components/Footer/footer";
+import Footer  from "../../Components/Footer/footer";
 import logo from "../../assets/img/Logo.svg"
 // import {Carousel} from "../../Components/Carousel/carousel.jsx";
 import React from 'react';
@@ -28,7 +28,7 @@ export const Home = () => {
                     <div className="container_home">
                         <div className="campo_home">
                             <div className="campo_paragrafo">
-                                <p>O Nexus nasceu com a ideia de simplificar o acesso às ferramentas digitais mais utilizadas no dia a dia.
+                                <p>A VenueWork nasceu com a ideia de simplificar o acesso às ferramentas digitais mais utilizadas no dia a dia.
                                     Em vez de perder tempo navegando entre várias plataformas diferentes, oferecemos um espaço único e integrado, onde o usuário pode encontrar tudo o que precisa de forma rápida, organizada e prática.
                                     Nosso objetivo é otimizar o tempo e aumentar a produtividade, criando uma experiência fluida que une tecnologia, design e funcionalidade.
 

@@ -4,7 +4,7 @@ import "./botao.css"
 export const Botao = (props) => {
   return (
     <>
-      <button className='botao'>
+      <button className={props.class_btn}>
         {props.nomeBotao}
       </button>
     </>

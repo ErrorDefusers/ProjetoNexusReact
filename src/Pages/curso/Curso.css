@@ -8,7 +8,7 @@
     /* background-image: "../../"; */
     /* height: 100%; */
 
-    
+
 }
 
 .img_curso {
@@ -75,7 +75,7 @@
     /* border-radius: 15px; */
     margin-bottom: 200px;
     width: 70%;
-    height: 100%;
+    height: 1000px;
 
     border-radius: 8px;
     border: 0.5px solid rgba(85, 26, 148, 0.05);
@@ -119,9 +119,9 @@
     margin-bottom: 10px; */
     height: 277px;
     width: 320px;
-    margin-bottom:  0 ;
+    margin-bottom: 0;
     border-radius: 13.31px;
-    overflow: hidden;  
+    overflow: hidden;
     margin: 20px auto;
     display: block;
 
@@ -137,5 +137,116 @@ button.botao {
     height: 42px;
 }
 
+.alt {
+    background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
+    height: 100%;
+}
 
-body{height: 1391px;}
+/* body{height: 1391px;} */
+
+
+@media (max-width: 1024px) {
+    .subtexto_cursos h3 {
+        font-size: 1.5rem;
+    }
+
+    .quadro_cursos {
+        width: 90%;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .cursos {
+        width: 280px;
+        height: 320px;
+    }
+
+    .cursos img {
+        height: 240px;
+    }
+
+    .img_curso {
+        background-size: 500px;
+        background-position: right top;
+    }
+
+    .img_curso2 {
+        background-size: 500px;
+        background-position: left center;
+    }
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+    .subtexto_cursos h3 {
+        font-size: 1.3rem;
+    }
+
+    .quadro_cursos {
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        padding: 20px;
+    }
+
+    .cursos {
+        width: 90%;
+        height: auto;
+    }
+
+    .cursos img {
+        height: 220px;
+    }
+
+    .cursos p {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    button.botao {
+        width: 380px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    .img_curso,
+    .img_curso2 {
+        background-size: 400px;
+        background-position: center;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    .subtexto_cursos h3 {
+        font-size: 1.1rem;
+    }
+
+    .hr_cursos {
+        width: 100px;
+    }
+
+    .quadro_cursos {
+        width: 95%;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .cursos img {
+        height: 180px;
+    }
+
+    .cursos p {
+        font-size: 0.85rem;
+    }
+
+    button.botao {
+        font-size: 0.85rem;
+    }
+
+    .img_curso,
+    .img_curso2 {
+        background-size: 300px;
+        opacity: 0.3;
+    }
+}

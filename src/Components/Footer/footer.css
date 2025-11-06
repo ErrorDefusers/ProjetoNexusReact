@@ -15,10 +15,7 @@
     height: 80px;
 }
 
-img.footer-logo {
-    margin-right: 50px;
-    margin-top: 10px;
-}
+
 
 .body{
     height: 713px;
@@ -41,4 +38,46 @@ div#root {
     height: 50px;
     border-left: 1px solid #7E00FF;
     width: 100px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 10px;
+    gap: 15px;
+  }
+
+  .footer img {
+    width: 120px;
+    height: auto;
+  }
+
+  p.fooooter {
+    width: 80%;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .divvaziabarra {
+    display: none; /* some para economizar espaço */
+  }
+}
+
+/* --- Celulares pequenos (até 480px) --- */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .footer img {
+    width: 100px;
+  }
+
+  p.fooooter {
+    font-size: 13px;
+    width: 90%;
+  }
 }

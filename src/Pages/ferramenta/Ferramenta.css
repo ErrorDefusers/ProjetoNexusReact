@@ -8,6 +8,8 @@
     height: 1000px;
 }
 
+
+
 .titulo_ferramentas {
     margin-top: 70px;
     margin-bottom: 30px;
@@ -84,7 +86,7 @@
     z-index: 0;
 }
 
-Footer{
+Footer {
     margin-top: 0;
 }
 
@@ -103,4 +105,42 @@ Footer{
     top: 0;
     left: 0;
     z-index: 0;
+}
+
+/* button.botao {
+    margin-top: 0;
+    width: 179px;
+    height: 52px;
+}
+
+card Botao {
+    margin-top: 0;
+    width: 179px;
+    height: 52px;
+} */
+
+.sessao_ferramentas Botao {
+    margin-top: 0;
+    width: 179px;
+    height: 52px;
+}
+
+button.botao {
+    margin-top: 0;
+    width: 179px;
+    height: 54px;
+}
+
+.botaoFerramenta {
+    background-color: white;
+    margin-top: 0;
+    width: 179px;
+    height: 54px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: #FFF;
+}
+
+.botaoFerramenta p {
+    color: blueviolet;
 }

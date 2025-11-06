@@ -1,7 +1,7 @@
 import  Header  from "../../Components/Header/header.jsx"
 import Footer from "../../Components/Footer/footer.jsx"
 import "./Setor_Grafico.css"
-// import ApexChart from "../../Components/Graficos/pizza/ApexChart.jsx"
+import ApexChart from "../../Components/Graficos/Pizza/ApexChart.jsx"
 import ApexChart2 from "../../Components/Graficos/Linha/ApexChart.jsx"
 import imagem from "../../assets/img/excel.svg"
 import imagem2 from "../../assets/img/meet.svg"

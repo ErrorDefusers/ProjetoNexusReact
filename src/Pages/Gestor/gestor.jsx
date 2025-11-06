@@ -144,6 +144,9 @@ export default function Gestor() {
 
   return (
     <>
+    <body className="BodyAt">
+      
+    
       <Header />
       <main className="backgroundImagemM">
         <div className="Janela_Gestor">
@@ -151,8 +154,9 @@ export default function Gestor() {
             <h1 className="Marketing">Marketing</h1>
             <div className="quadrado">
               <div className="ListaFunc">
+                <div className="arruuumar">
                 <h2 className="LDE">Lista de Empregados</h2>
-
+                </div>
                 {/* Cabeçalho */}
                 <div className="Topicos">
                   <div className="Nomes"><h4>Nome</h4></div>
@@ -222,6 +226,7 @@ export default function Gestor() {
           </div>
         </div>
       )}
+      </body>
     </>
   );
 }

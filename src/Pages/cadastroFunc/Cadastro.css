@@ -144,3 +144,44 @@ margin-top: 90px;
 }
 
 .CorT{color: white;}
+
+@media (max-width: 600px) {
+
+  body{
+    height: 900px;
+  }
+  .cadastro-container {
+    padding: 20px;
+  }
+
+  .cadastro-card {
+    padding: 25px 20px;
+    max-width: 95%;
+    width: 295px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field label {
+    font-size: 0.9rem;
+  }
+
+  .field input,
+  .field select {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    max-width: 250px;
+    height: 40px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}

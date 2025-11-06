@@ -242,3 +242,113 @@ button.Ferramenta {
     /* margin-top: 0px; */
 }
 
+
+@media (max-width: 420px) {
+
+  main.main-home {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+  }
+
+  .campo_img img{
+    display: none;
+  }
+
+  .banner-home {
+    background-image: url("../../assets/img/Imagens/Banner/bannerMobile.png");
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-home img {
+    height: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .campo_home {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    margin-top: 30px;
+  }
+
+  .campo_paragrafo {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .campo_paragrafo p {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .campo_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .campo_home img {
+    width: 90%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .fundo_home {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .ferramentas {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .fundo_ferramentas {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .fundo_ferramentas h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .icons_ferramentas {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .icons_ferramentas img {
+    width: 70px;
+    height: 70px;
+    padding-right: 0;
+  }
+
+  .carrosel_ferramentas {
+    margin: 20px auto;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none; /* Esconde setas no mobile */
+  }
+
+  button.Ferramenta {
+    width: 90%;
+    height: auto;
+  }
+
+  .titulo h1 {
+    font-size: 22px;
+  }
+}
