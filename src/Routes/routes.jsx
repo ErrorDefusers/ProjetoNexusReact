@@ -9,6 +9,7 @@ import HomeAdmn from "../Pages/homeAdmn/Home_ADM";
 import  Ferramentas  from "../Pages/ferramenta/Ferramenta";
 import  Setor_Grafico  from "../Pages/Setor_grafico/Setor_Grafico";
 import Perfil from "../Pages/perfil/TelaPerfil";
+import CadastroCurso from "../Pages/cadastroCurso/CadastroCurso";
 
 
 export const Rotas = () => {
@@ -24,6 +25,7 @@ export const Rotas = () => {
         <Route path="/HomeAdmn" element={<HomeAdmn/>} />
         <Route path="/Ferramentas" element={<Ferramentas/>} />
         <Route path="/Setor" element={<Setor_Grafico/>} />
+        <Route path="/CCurso" element={<CadastroCurso/>} />
       </Routes>
     // </BrowserRouter>
   );

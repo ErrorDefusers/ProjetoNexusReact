@@ -17,6 +17,7 @@ body{
   flex-direction: column;
   justify-content: center;
   width: 800px;
+  margin-bottom: 215px;
 }
 
 .login-left img {

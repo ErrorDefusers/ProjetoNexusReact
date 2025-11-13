@@ -88,10 +88,14 @@
    📊 Gráfico
 =========================== */
 .chart-wrap {
-  background: #2b1f3d;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(146, 77, 255, 0.3);
+    background: #2b1f3d;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(146, 77, 255, 0.3);
+    width: 95%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
 }
 
 /* ===========================

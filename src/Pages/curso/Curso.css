@@ -137,6 +137,18 @@ button.botao {
     height: 42px;
 }
 
+button, .Att, .Pv {
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+    width: 317px;
+    border-radius: 6.655px;
+    color: #551A94;
+    background: #FFF;
+    box-shadow: 0 3.327px 3.327px 0 rgba(0, 0, 0, 0.25);
+    height: 50px;
+}
+
 .alt {
     background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
     height: 100%;

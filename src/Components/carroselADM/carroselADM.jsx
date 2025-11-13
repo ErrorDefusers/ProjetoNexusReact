@@ -39,7 +39,7 @@ export default function CarouselADM() {
   const visibleImages = images.slice(current, current + itemsPerPage);
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container carousel-adm">
       <button
         className="arrow left"
         onClick={prevSlide}

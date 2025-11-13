@@ -1,5 +1,5 @@
 main.main-home {
-    background-color: black;
+    background: linear-gradient(to bottom, #0C0414, #1B092E, #220C39, #40156B);
     display: flex;
     height: 210vh;
     justify-content: space-around;

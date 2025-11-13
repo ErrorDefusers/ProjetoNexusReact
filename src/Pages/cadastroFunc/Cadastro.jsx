@@ -5,12 +5,12 @@
 // export const Cadastro = () => {
 //   return (
 //     <>
-   
+
 //       <Header/>
 //     <main className="cadastro-container">
 //       <h2 className='CorT'>Cadastro</h2>
 //       <div className="cadastro-card">
-        
+
 
 //         <form className="form-grid" onSubmit={(e) => e.preventDefault()}>
 //           <div className="field">
@@ -194,58 +194,64 @@ export default function CadastroAdm() {
 
   return (
     <>
-  <Header/>
-    <main className="cadastro-container">
-      <h2 className='CorT'>Cadastro</h2>
-      <div className="cadastro-card">
-        <form className="form-grid" onSubmit={handleSubmit}>
-          <div className="field">
-            <label>Nome:</label>
-            <input type="text" value={nome} onChange={e => setNome(e.target.value)} placeholder="Digite seu nome" />
-          </div>
+      <Header
+        Gestao="Gestão"
+        Home="Home"
+        Curso="Curso"
+        Usuario="Usuário"
+        Ferramenta="Ferramentas"
+      />
+      <main className="cadastro-container">
+        <h2 className='CorT'>Cadastro</h2>
+        <div className="cadastro-card">
+          <form className="form-grid" onSubmit={handleSubmit}>
+            <div className="field">
+              <label>Nome:</label>
+              <input type="text" value={nome} onChange={e => setNome(e.target.value)} placeholder="Digite seu nome" />
+            </div>
 
-          <div className="field">
-            <label>Setor:</label>
-            <select value={setorSelecionado} onChange={e => setSetorSelecionado(e.target.value)}>
-              <option value="">Selecione</option>
-              {setores.map(s => (
-                <option key={s.idSetor} value={s.idSetor}>{s.tipoSetor}</option>
-              ))}
-            </select>
-          </div>
+            <div className="field">
+              <label>Setor:</label>
+              <select value={setorSelecionado} onChange={e => setSetorSelecionado(e.target.value)}>
+                <option value="">Selecione</option>
+                {setores.map(s => (
+                  <option key={s.idSetor} value={s.idSetor}>{s.tipoSetor}</option>
+                ))}
+              </select>
+            </div>
 
-          <div className="field">
-            <label>E-mail:</label>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite seu email" />
-          </div>
+            <div className="field">
+              <label>E-mail:</label>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite seu email" />
+            </div>
 
-          <div className="field">
-            <label>Cargo:</label>
-            <select value={cargoSelecionado} onChange={e => setCargoSelecionado(e.target.value)}>
-              <option value="">Selecione</option>
-              {cargos.map(c => (
-                <option key={c.idTipoFuncionario} value={c.idTipoFuncionario}>{c.tipoDeFuncionario}</option>
-              ))}
-            </select>
-          </div>
+            <div className="field">
+              <label>Cargo:</label>
+              <select value={cargoSelecionado} onChange={e => setCargoSelecionado(e.target.value)}>
+                <option value="">Selecione</option>
+                {cargos.map(c => (
+                  <option key={c.idTipoFuncionario} value={c.idTipoFuncionario}>{c.tipoDeFuncionario}</option>
+                ))}
+              </select>
+            </div>
 
-          <div className="field">
-            <label>Idade:</label>
-            <input type="number" value={idade} onChange={e => setIdade(e.target.value)} min="18" max="100" placeholder="Digite sua idade" />
-          </div>
+            <div className="field">
+              <label>Idade:</label>
+              <input type="number" value={idade} onChange={e => setIdade(e.target.value)} min="18" max="100" placeholder="Digite sua idade" />
+            </div>
 
-          <div className="field">
-            <label>Senha:</label>
-            <input type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Digite sua senha" />
-          </div>
+            <div className="field">
+              <label>Senha:</label>
+              <input type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Digite sua senha" />
+            </div>
 
-          <div className="actions">
-            <button type="submit" className="btn-primary">Cadastrar</button>
-          </div>
-        </form>
-      </div>
-    </main>
-    <Footer/>
-        </>
+            <div className="actions">
+              <button type="submit" className="btn-primary">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -11,13 +11,13 @@
 }
 
 .quadrado {
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    height: 740px;
-    width: 500px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(85, 26, 148, 0.05);
+  background: rgba(182, 80, 229, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  backdrop-filter: blur(5px);
+  height: 740px;
+  width: 500px;
 }
 
 .Janela_Gestor {
@@ -32,9 +32,9 @@
 /* =================== ÁREA DE GRÁFICOS =================== */
 
 .grafico {
-  width: 700px;
+  width: 800px;
   height: 450px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -111,12 +111,11 @@
 }
 
 .ListaFunc {
-    /* margin-top: 20px; */
-    height: 250px;
-    display: flex
-;
-    flex-direction: column;
-    justify-content: space-evenly;
+  /* margin-top: 20px; */
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 
@@ -129,17 +128,17 @@
 }
 
 .LDE {
-    color: white;
-    width: 350px;
-    height: 79px;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: white;
+  width: 350px;
+  height: 79px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(85, 26, 148, 0.05);
+  background: rgba(182, 80, 229, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* =================== JANELA DE MARKETING =================== */
@@ -160,46 +159,59 @@
 }
 
 .Arrumar {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .Ferramntasexemplo {
-    height: 100px;
-    /* background-color: black; */
-    width: 820px;
-    height: 115px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
+  height: 100px;
+  /* background-color: black; */
+  width: 820px;
+  height: 115px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 0.5px solid rgba(85, 26, 148, 0.05);
+  background: rgba(182, 80, 229, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
 }
 
 .testee {
-    height: 600px;
-    width: 820px;
-    display: flex;
-    align-content: center;
-    background-color: black;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    flex-direction: column;
+  height: 600px;
+  width: 820px;
+  display: flex;
+  align-content: center;
+  background-color: black;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 8px;
+  border: 0.5px solid rgba(85, 26, 148, 0.05);
+  background: rgba(182, 80, 229, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  backdrop-filter: blur(5px);
+  flex-direction: column;
 }
 
 .BodyAt {
-    height: 1141px;
+  height: 1141px;
 }
 
 .arruuumar {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem;
+  background-color: #1b1129;
+  border-radius: 16px;
+  color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
 }

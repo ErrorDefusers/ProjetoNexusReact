@@ -145,43 +145,88 @@ export default function Perfil() {
 
   return (
     <>
-      <Header />
-      <main className="backgroundImagem">
-        <div className="Janela_Perfil">
-          <div className="BolinhaFoto">
-            <img src={imagemPerfil} alt="Perfil" className="imagemperfiiil" />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => setNovaImagem(e.target.files[0])}
-            />
-          </div>
-          <button onClick={trocarImagem} className="botaoperfil">
-            Trocar Foto
-          </button>
+      <body className="ArrumarTamanhoBodyTelaPerfil">
+        <Header
+          Gestao="Gestão"
+          Home="Home"
+          Curso="Curso"
+          // Usuario="Usuário"
+          Ferramenta="Ferramentas"
+        />
+        <main className="backgroundImagem">
+          <div className="Janela_Perfil">
+            <div className="BolinhaFoto">
+              <img
+                src={imagemPerfil}
+                alt="Perfil"
+                className="imagemperfiiil"
+                onClick={() => document.getElementById("inputImagem").click()}
+              />
 
-          <h2 className="FotoPerfil">Foto de Perfil</h2>
+              <input
+                id="inputImagem"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={(e) => {
+                  const arquivo = e.target.files[0];
+                  if (arquivo) {
+                    setNovaImagem(arquivo);
+                    // Chama o upload automaticamente
+                    const formData = new FormData();
+                    formData.append("imagem", arquivo);
+                    formData.append("id", usuario.idFuncionario);
 
-          <div className="Informações">
-            <div className="Quadrado">
-              <h1 className="h1dequadrado">{usuario.nome}</h1>
+                    fetch("https://localhost:7079/api/Funcionarios/atualizar-imagem", {
+                      method: "PUT",
+                      body: formData,
+                    })
+                      .then((res) => {
+                        if (!res.ok) {
+                          throw new Error(`Erro HTTP ${res.status}`);
+                        }
+                        return res.json();
+                      })
+                      .then((data) => {
+                        setUsuario({ ...usuario, imagemPerfil: data.imagemPerfil });
+                        setNovaImagem(null);
+                        alert("Imagem atualizada com sucesso!");
+                      })
+                      .catch((err) =>
+                        console.error("❌ Erro ao atualizar imagem:", err)
+                      );
+                  }
+                }}
+              />
             </div>
-            <div className="Quadrado">
-              <h1 className="h1dequadrado">{idade} Anos</h1>
-            </div>
-            <div className="Quadradoinf">
-              <h1 className="h1dequadrado">{usuario.email}</h1>
-            </div>
-            <div className="Quadradoinf">
-              <h1 className="h1dequadrado">{usuario.cargo}</h1>
-            </div>
-            <div className="QuadradoULT">
-              <h1 className="h1dequadrado">{usuario.setor?.tipoSetor}</h1>
+
+
+
+            <h2 className="FotoPerfil">Foto de Perfil</h2>
+
+            <div className="Informações">
+              <div className="arrumandobugsdeespaco">
+                <div className="Quadrado">
+                  <h1 className="h1dequadrado">{usuario.nome}</h1>
+                </div>
+                <div className="Quadrado">
+                  <h1 className="h1dequadrado">{idade} Anos</h1>
+                </div>
+                <div className="Quadradoinf">
+                  <h1 className="h1dequadrado">{usuario.email}</h1>
+                </div>
+                <div className="Quadradoinf">
+                  <h1 className="h1dequadrado">{usuario.cargo}</h1>
+                </div>
+                <div className="QuadradoULT">
+                  <h1 className="h1dequadrado">{usuario.setor?.tipoSetor}</h1>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </body>
     </>
   );
 }

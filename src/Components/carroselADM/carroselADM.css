@@ -1,19 +1,17 @@
 .carousel-container {
-    display: flex
-;
-    align-items: center;
-    justify-content: space-around;
-    padding-right: 20px;
-    border-radius: 10px;
-    gap: 15px;
-    width: 1170px;
-    background-color: transparent;
-    padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 20px;
+  border-radius: 10px;
+  gap: 15px;
+  width: 820px;
+  background-color: transparent;
+  padding-left: 20px;
 }
 
-
 .carousel.slide-prev {
-    width: 1040px;
+  width: 1040px;
 }
 
 .carousel {
@@ -56,14 +54,16 @@
   background-color: white;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 35px;
   cursor: pointer;
   transition: background 0.2s ease;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
 
 .arrow:hover {
   background-color: #e0e0e0;
@@ -88,6 +88,7 @@
     transform: translateX(80px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -99,6 +100,7 @@
     transform: translateX(-80px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -106,20 +108,19 @@
 }
 
 .Setores {
-    display: flex
-;
-    justify-content: center;
-    padding-right: 20px;
-    border-radius: 10px;
-    gap: 15px;
-    width: 1170px;
-    background-color: transparent;
-    padding-left: 20px;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    height: 130px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+  border-radius: 10px;
+  gap: 15px;
+  width: 1170px;
+  background-color: transparent;
+  padding-left: 20px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(85, 26, 148, 0.05);
+  background: rgba(182, 80, 229, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  backdrop-filter: blur(5px);
+  height: 130px;
+  align-items: center;
 }

@@ -144,88 +144,93 @@ export default function Gestor() {
 
   return (
     <>
-    <body className="BodyAt">
-      
-    
-      <Header />
-      <main className="backgroundImagemM">
-        <div className="Janela_Gestor">
-          <div className="janelaMarketing">
-            <h1 className="Marketing">Marketing</h1>
-            <div className="quadrado">
-              <div className="ListaFunc">
-                <div className="arruuumar">
-                <h2 className="LDE">Lista de Empregados</h2>
-                </div>
-                {/* Cabeçalho */}
-                <div className="Topicos">
-                  <div className="Nomes"><h4>Nome</h4></div>
-                  <div className="Cargos"><h4>Cargo</h4></div>
-                  <div className="Editar"><h4>Editar</h4></div>
-                </div>
+      <body className="BodyAt">
 
-                {funcionarios.length > 0 ? (
-                  funcionarios.map((func) => (
-                    <div key={func.idFuncionario} className="Topicos">
-                      <div className="Nomes"><p>{func.nome}</p></div>
-                      <div className="Cargos"><p>{func.tipoFuncionario?.tipoDeFuncionario || "Sem cargo"}</p></div>
-                      <div className="Editar">
-                        <button className="BotaoEditar" onClick={() => setEditarFunc(func)}>
-                          <img src={Editar} alt="Editar" />
-                        </button>
+
+        <Header
+          Home="Home"
+          Curso="Curso"
+          Usuario="Usuário"
+          Ferramenta="Ferramentas"
+        />
+        <main className="backgroundImagemM">
+          <div className="Janela_Gestor">
+            <div className="janelaMarketing">
+              <h1 className="Marketing">Marketing</h1>
+              <div className="quadrado">
+                <div className="ListaFunc">
+                  <div className="arruuumar">
+                    <h2 className="LDE">Lista de Empregados</h2>
+                  </div>
+                  {/* Cabeçalho */}
+                  <div className="Topicos">
+                    <div className="Nomes"><h4>Nome</h4></div>
+                    <div className="Cargos"><h4>Cargo</h4></div>
+                    <div className="Editar"><h4>Editar</h4></div>
+                  </div>
+
+                  {funcionarios.length > 0 ? (
+                    funcionarios.map((func) => (
+                      <div key={func.idFuncionario} className="Topicos">
+                        <div className="Nomes"><p>{func.nome}</p></div>
+                        <div className="Cargos"><p>{func.tipoFuncionario?.tipoDeFuncionario || "Sem cargo"}</p></div>
+                        <div className="Editar">
+                          <button className="BotaoEditar" onClick={() => setEditarFunc(func)}>
+                            <img src={Editar} alt="Editar" />
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  ))
-                ) : (
-                  <p style={{ textAlign: "center", marginTop: "10px" }}>Nenhum funcionário encontrado.</p>
-                )}
+                    ))
+                  ) : (
+                    <p style={{ textAlign: "center", marginTop: "10px" }}>Nenhum funcionário encontrado.</p>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="FerramentasGrafico">
+              <h1>Ferramentas</h1>
+              <div className="Ferramntasexemplo"><Carousel /></div>
+              <div className="grafico"><ApexChart /></div>
+            </div>
+          </div>
+        </main>
+        <Footer />
+
+        {/* Modal de edição */}
+        {editarFunc && (
+          <div className="modalBackground">
+            <div className="modalContainer">
+              <h2>Editar Funcionário</h2>
+
+              <label>Nome:</label>
+              <input
+                type="text"
+                value={editarFunc.nome}
+                onChange={e => setEditarFunc({ ...editarFunc, nome: e.target.value })}
+              />
+
+              <label>Cargo:</label>
+              <input
+                type="text"
+                value={editarFunc.cargo}
+                onChange={e => setEditarFunc({ ...editarFunc, cargo: e.target.value })}
+              />
+
+              <label>Role:</label>
+              <input
+                type="text"
+                value={editarFunc.role}
+                onChange={e => setEditarFunc({ ...editarFunc, role: e.target.value })}
+              />
+
+              <div className="modalButtons">
+                <button onClick={salvarEdicao}>Salvar</button>
+                <button onClick={() => setEditarFunc(null)}>Cancelar</button>
               </div>
             </div>
           </div>
-
-          <div className="FerramentasGrafico">
-            <h1>Ferramentas</h1>
-            <div className="Ferramntasexemplo"><Carousel /></div>
-            <div className="grafico"><ApexChart /></div>
-          </div>
-        </div>
-      </main>
-      <Footer />
-
-      {/* Modal de edição */}
-      {editarFunc && (
-        <div className="modalBackground">
-          <div className="modalContainer">
-            <h2>Editar Funcionário</h2>
-
-            <label>Nome:</label>
-            <input
-              type="text"
-              value={editarFunc.nome}
-              onChange={e => setEditarFunc({ ...editarFunc, nome: e.target.value })}
-            />
-
-            <label>Cargo:</label>
-            <input
-              type="text"
-              value={editarFunc.cargo}
-              onChange={e => setEditarFunc({ ...editarFunc, cargo: e.target.value })}
-            />
-
-            <label>Role:</label>
-            <input
-              type="text"
-              value={editarFunc.role}
-              onChange={e => setEditarFunc({ ...editarFunc, role: e.target.value })}
-            />
-
-            <div className="modalButtons">
-              <button onClick={salvarEdicao}>Salvar</button>
-              <button onClick={() => setEditarFunc(null)}>Cancelar</button>
-            </div>
-          </div>
-        </div>
-      )}
+        )}
       </body>
     </>
   );

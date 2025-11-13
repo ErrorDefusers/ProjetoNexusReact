@@ -4,7 +4,47 @@ import loginImage from "../../assets/img/fundoLogin.svg"
 import logoo from "../../assets/img/Logotipo/Logotipo SVG/pictogramaClaro.svg";
 import Logo from "../../assets/img/imgLogin.png"
 
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import secureLocalStorage from "react-secure-storage";
+import api from "../../Services/services";
+
 export const  Login = () => {
+
+   const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
+
+  async function realizarAutenticacao(e) {
+    e.preventDefault();
+
+    if (!email || !senha) {
+      return Swal.fire("Erro!", "Preencha email e senha.", "warning");
+    }
+
+    try {
+      const resposta = await api.post("/Login", {
+        email: email,
+        password: senha,
+      });
+
+      secureLocalStorage.setItem("tokenLogin", resposta.data.token);
+
+      Swal.fire({
+        icon: "success",
+        title: "Login realizado!",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+      navigate("/Home"); 
+    } catch (error) {
+      Swal.fire("Erro!", "Email ou senha incorretos.", "error");
+      console.log(error);
+    }
+  }
+
   return (
     <div className="login-container">
       
@@ -26,17 +66,19 @@ export const  Login = () => {
           <p>Insira seus dados para acessar sua conta.</p>
         </div>
 
-        <form className="login-form">
+        <form className="login-form" onSubmit={realizarAutenticacao}>
           <label htmlFor="email">E-mail:</label>
           <input
             type="email"
             id="email"
             placeholder="fulano@gmail.com"
-            required
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="password">Senha:</label>
-          <input type="password" id="password" placeholder="********" required />
+          <input type="password" id="password" placeholder="********"  
+           onChange={(e) => setSenha(e.target.value)}
+          />
 
           <button type="submit" className="login-btn">
             Entrar

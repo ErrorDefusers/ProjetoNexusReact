@@ -1,8 +1,8 @@
-import  Header  from "../../Components/Header/header";
+import Header from "../../Components/Header/header";
 import Banner from "../../assets/img/Imagens/Banner/bannerDesktop.png";
 import ImagemHome from "../../assets/img/ImgHome.svg";
 import IconDiscord from "../../assets/img/IconDiscord.svg";
-import Footer  from "../../Components/Footer/footer";
+import Footer from "../../Components/Footer/footer";
 import logo from "../../assets/img/Logo.svg"
 // import {Carousel} from "../../Components/Carousel/carousel.jsx";
 import React from 'react';
@@ -18,7 +18,14 @@ export const Home = () => {
     return (
 
         <>
-            <Header/>
+            <Header
+            
+                Gestao="Gestão"
+                Curso="Curso"
+                Usuario="Usuário"
+                Ferramenta="Ferramentas"
+            />
+
 
             <main className="main-home">
                 <div className="banner-home">
@@ -48,7 +55,7 @@ export const Home = () => {
 
                             <div className="ferramentas_titulo">
                                 <h1>Ferramentas</h1>
-                                <Carousel/>
+                                <Carousel />
                             </div>
                             <div className="carrosel_d_ferramentas">
 
