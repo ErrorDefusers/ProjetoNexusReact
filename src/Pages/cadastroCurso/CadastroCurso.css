@@ -6,7 +6,7 @@ main.boa {
 
 body {
   background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
-  height: 999px;
+  /* height: 999px; */
 }
 
 .Janela_CadastroCurso {

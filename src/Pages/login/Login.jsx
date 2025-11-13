@@ -12,38 +12,59 @@ import api from "../../Services/services";
 
 export const  Login = () => {
 
-   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const navigate = useNavigate();
+Swal.fire({
+  icon: "success",
+  title: "Login realizado!",
+  text: "Bem-vindo(a) de volta!",
+  background: "#1a1a1d",
+  color: "#ffffff",
+  timer: 1800,
+  showConfirmButton: false,
+  timerProgressBar: true,
+  toast: true,
+  position: "top-end",
+  iconColor: "#a66bff",
 
-  async function realizarAutenticacao(e) {
-    e.preventDefault();
+  customClass: {
+    popup: "swal-popup",
+    title: "swal-title",
+    timerProgressBar: "swal-timer-bar",
+  },
+});
 
-    if (!email || !senha) {
-      return Swal.fire("Erro!", "Preencha email e senha.", "warning");
-    }
+Swal.fire({
+  icon: "error",
+  title: "Erro ao fazer login",
+  text: "Email ou senha incorretos.",
+  background: "#1a1a1d",
+  color: "#ffffff",
+  iconColor: "#ff5c74",
+  confirmButtonColor: "#a66bff",
 
-    try {
-      const resposta = await api.post("/Login", {
-        email: email,
-        password: senha,
-      });
+  customClass: {
+    popup: "swal-popup",
+    title: "swal-title",
+  },
+});
 
-      secureLocalStorage.setItem("tokenLogin", resposta.data.token);
 
-      Swal.fire({
-        icon: "success",
-        title: "Login realizado!",
-        timer: 1500,
-        showConfirmButton: false,
-      });
+return Swal.fire({
+  icon: "warning",
+  title: "Atenção!",
+  text: "Preencha email e senha.",
+  background: "#1a1a1d",
+  color: "#ffffff",
+  iconColor: "#ffd66c",
+  confirmButtonColor: "#a66bff",
 
-      navigate("/Home"); 
-    } catch (error) {
-      Swal.fire("Erro!", "Email ou senha incorretos.", "error");
-      console.log(error);
-    }
-  }
+  customClass: {
+    popup: "swal-popup",
+    title: "swal-title",
+  },
+});
+
+
+
 
   return (
     <div className="login-container">

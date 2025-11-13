@@ -74,9 +74,19 @@ main.backgroundImagem {
 }
 
 .h1dequadrado {
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 20px;
     color: #000000;
 }
+
+.botao_desconctar {
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: #551A94;
+    color: white;
+}
+
 
 .Quadradoinf {
     height: 48px;
@@ -166,14 +176,14 @@ h2.FotoPerfil {
     }
 
     .arrumandobugsdeespaco {
-    height: 546px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: -30px;
-}
+        height: 546px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: -30px;
+    }
 
     .Informações {
         width: 100%;
@@ -220,7 +230,8 @@ h2.FotoPerfil {
     .QuadradoULT {
         width: 90%;
         height: 50px;
-        margin: 0; /* centraliza todos */
+        margin: 0;
+        /* centraliza todos */
     }
 
     .imagemperfiiil {

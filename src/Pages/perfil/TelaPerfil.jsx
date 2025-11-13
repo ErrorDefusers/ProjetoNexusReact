@@ -221,6 +221,9 @@ export default function Perfil() {
                 <div className="QuadradoULT">
                   <h1 className="h1dequadrado">{usuario.setor?.tipoSetor}</h1>
                 </div>
+                <button className="botao_desconctar">
+                  Desconectar
+                </button>
               </div>
             </div>
           </div>
