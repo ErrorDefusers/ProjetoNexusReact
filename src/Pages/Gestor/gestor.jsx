@@ -116,7 +116,7 @@ export default function Gestor() {
       </main>
       <Footer />
 
-      {/* Modal de edição */}
+     
       {editarFunc && (
         <div className="modalBackground">
           <div className="modalContainer">

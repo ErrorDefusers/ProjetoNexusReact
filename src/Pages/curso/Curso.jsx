@@ -5,12 +5,12 @@ import { Botao } from "../../Components/Botao/botao";
 import "./Curso.css";
 import foto from "../../assets/img/ImgCurso.svg";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Cursos() {
   const [cursos, setCursos] = useState([]);
 
   useEffect(() => {
-    
     axios
       .get("https://localhost:7079/api/Cursos")
       .then((response) => {
@@ -44,7 +44,11 @@ export default function Cursos() {
                 />
 
                 <p>{curso.titulo}</p>
-                <Botao nomeBotao="Acessar curso" />
+
+                {/* 🔹 Botão redireciona para a rota com o id do curso */}
+                <Link to={`/cursoVideo/${curso.idCurso}`}>
+                  <Botao nomeBotao="Acessar curso" />
+                </Link>
               </div>
             ))
           ) : (

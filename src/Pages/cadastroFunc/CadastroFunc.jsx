@@ -12,6 +12,7 @@ export default function CadastroAdm() {
   const [idade, setIdade] = useState("");
   const [setorSelecionado, setSetorSelecionado] = useState("");
   const [cargoSelecionado, setCargoSelecionado] = useState("");
+  const [imagem, setImagem] = useState(null); // 🆕 Novo estado
 
   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IktheWt5IiwiZW1haWwiOiJrYXlreW5hc2NpbWVudG9lcEBnbWFpbC5jb20iLCJyb2xlIjoiVXN1YXJpbyIsIm5iZiI6MTc2MTgzMzk3OCwiZXhwIjoxNzYxODM3NTc4LCJpYXQiOjE3NjE4MzM5NzgsImlzcyI6Ik5leHVzQVBJIiwiYXVkIjoiTmV4dXNBUElVc3VhcmlvcyJ9.64bPz8MXdggl5RNi2Qi8_z1CyTta5wXjl_x35upfr7I";
 
@@ -85,7 +86,25 @@ export default function CadastroAdm() {
 
       if (!res.ok) throw new Error("Erro ao cadastrar funcionário");
 
-      const data = await res.text();
+      
+      const buscarRes = await fetch(`https://localhost:7079/api/Funcionarios/buscar?email=${email}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      const funcionario = await buscarRes.json();
+
+      
+      if (imagem && funcionario.idFuncionario) {
+        const formData = new FormData();
+        formData.append("Id", funcionario.idFuncionario);
+        formData.append("Imagem", imagem);
+
+        await fetch("https://localhost:7079/api/Funcionarios/atualizar-imagem", {
+          method: "PUT",
+          headers: { Authorization: `Bearer ${token}` },
+          body: formData
+        });
+      }
+
       Swal.fire({
         toast: true,
         position: 'top-end',
@@ -105,6 +124,7 @@ export default function CadastroAdm() {
       setIdade("");
       setSetorSelecionado("");
       setCargoSelecionado("");
+      setImagem(null);
 
     } catch (err) {
       Swal.fire({
@@ -166,6 +186,12 @@ export default function CadastroAdm() {
           <div className="field">
             <label>Senha:</label>
             <input type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Digite sua senha" />
+          </div>
+
+          
+          <div className="field">
+            <label>Imagem de Perfil:</label>
+            <input type="file" accept="image/*" onChange={e => setImagem(e.target.files[0])} />
           </div>
 
           <div className="actions">
