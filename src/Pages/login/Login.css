@@ -2,9 +2,11 @@
 
 body {
   /* height: 776px; */
+
 }
 
 .login-container {
+
   display: flex;
   height: 98vh;
   /* background: #000; */
@@ -85,10 +87,7 @@ body {
   align-items: center;
 }
 
-.login-form label {
-  font-size: 1rem;
-  margin-right: 338px;
-}
+
 
 .login-form input {
   padding: 12px;
@@ -168,133 +167,148 @@ body {
 }
 
 
-/* .swal-custom-popup {
-  border-radius: 18px !important;
-  padding: 18px !important;
-  box-shadow: 0px 0px 20px rgba(155, 92, 255, 0.3) !important;
-  backdrop-filter: blur(12px) !important;
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* background-color: #ffffff; */
 }
 
-.swal-custom-title {
-  font-size: 20px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.4px;
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.swal-custom-progress {
-  background: linear-gradient(90deg, #9b5cff, #d46cff) !important;
-} */
+.side-image {
+  width: 56%;
+  height: 100%;
+  object-fit: cover;
+}
 
-/* @media screen and (max-width: 768px){
-  .login-container{
-    display: block;
-    background-image: none;
-  }
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
 
-  .fundoLogin {
-    background-image: none;
-  }
-} */
+.logo-box {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-@media (max-width: 768px) {
+.logo-img {
+  width: 110px;
+}
+
+.subtitle {
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.divider {
+  width: 80%;
+  margin: 10px auto;
+  border: none;
+  height: 2px;
+  background-color: #d9d9d9;
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  width: 349px;
+
+}
+
+.login-form input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-btn {
+  padding: 12px;
+  background-color: #6b4eff;
+  border: none;
+  color: white;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: #551A94;
+}
+
+.login-btn:hover {
+  background-color: #5a3ef0;
+}
+
+
+@media (max-width: 900px) {
   .login-container {
-    flex-direction: column-reverse;
-    /* formulário em cima, imagem embaixo (ajusta se preferir inverso) */
-    align-items: center;
-    padding: 16px;
-    gap: 18px;
-    min-height: 100vh;
+    background-color: #0C0414;
+    flex-direction: column;
   }
 
   .login-right {
-    padding: 6px;
-    height: 100px;
+    height: 40vh;
   }
 
-
-  .login-left img {
-    width: 100%;
-    display: none;
-    max-width: 420px;
+  .side-image {
     height: 100%;
     object-fit: cover;
   }
 
-  .login-form {
-    max-width: 420px;
-    padding: 0 8px;
-  }
-
-  .login-form label {
-    margin-right: 0;
-    text-align: left;
-    font-size: 0.95rem;
-  }
-
-  .login-btn {
-    width: 90%;
-    max-width: none;
-    padding: 12px;
+  .login-left {
+    padding: 25px;
   }
 }
 
-/* Celulares pequenos (<= 420px) */
-@media (max-width: 420px) {
-  .login-container {
-    /* padding: 12px; */
-    /* gap: 10px; */
-    height: 100px;
-  }
 
-  div#root {
-    width: 1521px;
-    height: 689.6px;
-  }
-
-  body {
-    height: 689px;
+@media (max-width: 600px) {
+  .login-right {
+    display: none;
+    /* Esconde imagem no mobile pra layout mais limpo */
   }
 
   .login-left {
-    display: none;
-  }
-
-  .login-right {
-    padding: 6px;
-    height: 100px;
-    flex: 1 1 auto;
-    width: 100%;
-    max-width: 560px;
-    padding: 8px 12px;
-    justify-content: none;
-  }
-
-  .login-form {
-    width: 100%;
-    max-width: 100%;
-    gap: 10px;
-  }
-
-  .login-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
+    flex: 1;
+    justify-content: center;
+    padding: 35px 25px;
   }
 
   .logo-img {
-    width: 100px;
+    width: 90px;
   }
 
   .subtitle {
-    font-size: 1.05rem;
+    font-size: 18px;
   }
 
-  div#root {
-    width: 1521px;
-    height: 689.6px;
+  .login-form {
+    max-width: 100%;
   }
 
-  body {
-    height: 689px;
+  .login-btn {
+    font-size: 16px;
+    padding: 10px;
   }
 }

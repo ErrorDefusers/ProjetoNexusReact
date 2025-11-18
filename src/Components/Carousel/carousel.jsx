@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import "./carousel.css";
 import SetaE from "../../assets/IMG/setaE.svg";
 import SetaR from "../../assets/IMG/setaR.svg";
+import { Link } from "react-router-dom";
 
 const images = [
   { src: "https://static.vecteezy.com/system/resources/previews/017/395/377/non_2x/google-meets-icon-free-png.png", alt: "Google Meet" },
@@ -14,7 +15,7 @@ const images = [
   { src: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg", alt: "Google Calendar" },
 ];
 
-export default function Carousel() {
+export default function Carousel(props) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState("next");
   const itemsPerPage = 3;
@@ -47,11 +48,15 @@ export default function Carousel() {
         <img src={SetaE} alt="Seta esquerda" className="seta-img" />
       </button>
 
+      
       <div className={`carousel slide-${direction}`}>
         {visibleImages.map((img, index) => (
           <div className="slide active" key={index}>
-            <img src={img.src} alt={img.alt} />
+            <Link to = "/Ferramentas">
+            <img src={img.src} alt={img.alt}/>
+            </Link>
           </div>
+          
         ))}
       </div>
 

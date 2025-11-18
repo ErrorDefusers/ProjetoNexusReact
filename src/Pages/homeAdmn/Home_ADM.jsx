@@ -1,73 +1,149 @@
-import React from "react";
-import "./home_adm.css";
-// import ImagemPerfil from "../assets/Group62.svg"
-import cadastrousuario from "../../assets/img/Ícones/vectorCadastrar.svg"
-import Cursos from "../../assets/img/Ícones/vectorCursos.svg";
-import Editar from "../../assets/img/Ícones/vectorLapisEditar.svg"
-import Excluir from "../../assets/img/Ícones/vectorLixeiraExcluir.svg"
-// Importando a imagem corretamente
-import CarouselADM from "../../Components/carroselADM/carroselADM.jsx";
-// import Logo from "../assets/logotipoClaro.svg";
-import Footer from "../../Components/Footer/footer.jsx";
-import Header from "../../Components/Header/header.jsx";
+import React, { useState, useEffect } from "react";
+import "../../Pages/homeAdmn/home_adm.css";
+import Lista from "../../components/Lista/lista";
+import CarrosselADM from "../../Components/carroselADM/carroselADM";
+import Header from "../../Components/Header/header";
+import Footer from "../../Components/Footer/footer";
+import api from "../../Services/services";
+import Swal from "sweetalert2";
 
-export default function Home_ADM() {
+const HomeAdm = () => {
+  const [funcionarios, setFuncionarios] = useState([]);
+
+  function alertar(icone, mensagem) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      },
+    });
+    Toast.fire({
+      icon: icone,
+      title: mensagem,
+    });
+  }
+
+
+  async function listarFuncionario() {
+    try {
+      const resposta = await api.get("/Funcionarios/listar");
+      setFuncionarios(resposta.data);
+    } catch (error) {
+      console.error("Erro ao listar funcionários:", error);
+      alertar("error", "Erro ao listar funcionários!");
+    }
+  }
+
+  async function deletarFuncionario(funcionario) {
+    try {
+      Swal.fire({
+        title: "Você tem certeza?",
+        text: "Essa ação não poderá ser desfeita!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim, excluir!",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          await api.delete(`/Funcionarios/deletar/${funcionario.idFuncionario}`);
+          alertar("success", "Funcionário excluído com sucesso!");
+          listarFuncionario();
+        }
+      });
+    } catch (error) {
+      console.error(error);
+      alertar("error", "Erro ao excluir funcionário!");
+    }
+  }
+
+  async function editarFuncionario(funcionario) {
+    const { value: formValues } = await Swal.fire({
+      title: "Editar Funcionário",
+      html: `
+      <input id="nome" class="swal2-input" placeholder="Nome" value="${funcionario.nome}">
+      <input id="email" class="swal2-input" placeholder="Email" value="${funcionario.email}">
+      <input id="senha" type="password" class="swal2-input" placeholder="Senha (vazio = mantém)">
+      <input id="dataNascimento" type="date" class="swal2-input" placeholder="Data Nascimento" value="${funcionario.dataNascimento?.split('T')[0] || ''}">
+      <input id="cargo" class="swal2-input" placeholder="Cargo" value="${funcionario.cargo}">
+    `,
+      focusConfirm: false,
+      showCancelButton: true,
+      confirmButtonText: "OK",
+      cancelButtonText: "Cancelar",
+      preConfirm: () => {
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value.trim();
+        const dataNascimento = document.getElementById("dataNascimento").value;
+        const cargo = document.getElementById("cargo").value.trim();
+
+        if (!nome || !email || !dataNascimento || !cargo) {
+          Swal.showValidationMessage("Todos os campos obrigatórios devem ser preenchidos!");
+          return false;
+        }
+
+        return { nome, email, senha, dataNascimento, cargo };
+      },
+    });
+
+    if (formValues) {
+      try {
+        await api.put("/Funcionarios/atualizar", null, {
+          params: {
+            id: funcionario.idFuncionario,
+            nome: formValues.nome,
+            email: formValues.email,
+            senha: formValues.senha || "",
+            dataNascimento: formValues.dataNascimento,
+            cargo: formValues.cargo,
+            tipoFuncionarioId: funcionario.tipoFuncionario?.idTipoFuncionario,
+            setorId: funcionario.setor?.idSetor,
+            role: funcionario.role || "user"
+          },
+        });
+
+        alertar("success", "Funcionário atualizado com sucesso!");
+        listarFuncionario();
+      } catch (error) {
+        console.error(error);
+        alertar("error", "Erro ao atualizar funcionário!");
+      }
+    }
+  }
+
+
+
+
+  useEffect(() => {
+    listarFuncionario();
+  }, []);
+
   return (
-    <>
-      <body className="AttBodyADMH">
-        <Header
-          // Gestao="Gestão"
-          Home="Home"
-          Curso="Curso"
-          Usuario="Usuário"
-          Ferramenta="Ferramentas"
-        />
-        <main className="backgroundImagemm">
-          <div className="Janela_HomeAdm">
-            <div className="Separador">
-              <h1 className="Listagem">Listagem<hr className="HR" /></h1>
-              <div className="Setoresn">
-                <CarouselADM
-
-
-                />
-              </div>
-              {/* <div className="FotoTroca"> */}
-            </div>
-            <div className="ListagemQuadro">
-              <h1 className="LDP">Lista de Empregados</h1>
-
-              <div className="Listagemdentro">
-                <div className="Nome"><h5>Nome</h5><div className="arrumarn">Jucelino</div></div>
-                <div className="Setor"><h5>Setor</h5><div className="arrumanr">RH</div></div>
-                <div className="Cargo"><h5>Cargo</h5><div className="arrumarn">Diretor</div></div>
-                <div className="Editar"><h5>Editar</h5><div className="arrumarn"><button className="Botaofunc"><img src={Editar} alt="" /></button></div></div>
-                <div className="Excluir"><h5>Excluir</h5><div className="arrumarn"><button className="Botaofunc"><img src={Excluir} alt="" /></button></div></div>
-              </div>
-            </div>
-            {/* </div> */}
-            <div className="quadrinhojuntar">
-              <div className="quadradoCad">
-                <button type="button" className="Att">
-                  <img className="imagemss" src={cadastrousuario} alt="Ícone de curso" />
-                  <p className="Pv">Cadastro Usuário</p>
-                </button>
-              </div>
-
-
-
-              <div className="quadradoCad">
-                <button type="button" className="Att">
-                  <img className="imagemss" src={Cursos} alt="Ícone de curso" />
-                  <p className="Pv">Cursos</p>
-                </button>
-
-              </div>
-            </div>
+    <div className="AttBodyADM">
+      <Header />
+      <main className="backgroundImagem">
+        <div className="Janela_HomeAdm">
+          <h1 className="ListagemH1">Listagem</h1>
+          <div className="Setoresn">
+            <CarrosselADM />
           </div>
-        </main>
-        <Footer />
-      </body>
-    </>
+
+          <Lista
+            funcionarios={funcionarios}
+            funcExcluir={deletarFuncionario}
+            funcEditar={editarFuncionario}
+          />
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
-}
+};
+
+export default HomeAdm;

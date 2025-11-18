@@ -41,6 +41,7 @@ import "./telaperfil.css";
 import Footer from "../../Components/Footer/footer.jsx";
 import Header from "../../Components/Header/header.jsx";
 import secureLocalStorage from "react-secure-storage";
+import Login from "../../Pages/login/Login.jsx"
 
 export default function Perfil() {
   const [usuario, setUsuario] = useState(null);
@@ -221,9 +222,11 @@ export default function Perfil() {
                 <div className="QuadradoULT">
                   <h1 className="h1dequadrado">{usuario.setor?.tipoSetor}</h1>
                 </div>
-                <button className="botao_desconctar">
+                   
+                <button href="/" className="botao_desconctar"  >
                   Desconectar
                 </button>
+                 
               </div>
             </div>
           </div>
