@@ -1,12 +1,6 @@
 main.boa {
   display: flex;
   justify-content: center;
-  height: 900px;
-}
-
-body {
-  background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
-  /* height: 999px; */
 }
 
 .Janela_CadastroCurso {
@@ -15,13 +9,14 @@ body {
   background: rgba(182, 80, 229, 0.05);
   box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
   backdrop-filter: blur(5px);
-  height: 840px;
+  height: auto;
   width: 900px;
   padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 /* Imagem */
@@ -60,7 +55,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  width: 80%;
+  width: 100%;
 }
 
 .Campo {
@@ -140,6 +135,8 @@ body {
     padding: 20px;
     height: auto;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .ArrumarNomeEscolher {

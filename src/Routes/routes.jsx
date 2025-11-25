@@ -10,6 +10,7 @@ import  Ferramentas  from "../Pages/ferramenta/Ferramenta";
 import  Setor_Grafico  from "../Pages/Setor_grafico/Setor_Grafico";
 import Perfil from "../Pages/perfil/TelaPerfil";
 import CadastroCurso from "../Pages/cadastroCurso/CadastroCurso";
+import CursoVideo from "../Pages/cursoVideo/Curso";
 
 
 export const Rotas = () => {
@@ -18,15 +19,16 @@ export const Rotas = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Gestor" element={<Gestor />} />
-        <Route path="/Cadastro" element={<Cadastro/>} />
-        <Route path="/Curso" element={<Cursos/>} />
         <Route path="/Perfil" element={<Perfil/>} />
+        <Route path="/Cadastro" element={<Cadastro/>} />
+        <Route path="/Ferramentas" element={<Ferramentas/>} />
+        <Route path="/Curso" element={<Cursos/>} />
+        <Route path="/Setor" element={<Setor_Grafico/>} />
         <Route path="/Home" element={<Home/>} />
         <Route path="/HomeAdmn" element={<HomeAdmn/>} />
-        <Route path="/Ferramentas" element={<Ferramentas/>} />
-        <Route path="/Setor" element={<Setor_Grafico/>} />
-        <Route path="/CCurso" element={<CadastroCurso/>} />
+        <Route path="/CadastroCurso" element={<CadastroCurso/>} />
+        <Route path="/cursoVideo/:idCurso" element={<CursoVideo/>} />
       </Routes>
-    // </BrowserRouter>
+    
   );
 };

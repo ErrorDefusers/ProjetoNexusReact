@@ -1,97 +1,59 @@
-import React, { useState } from "react";
-import ReactApexChart from "react-apexcharts";
-import "./ApexChart.css";
+import React, { useEffect, useState } from "react";
+import Chart from "react-apexcharts";
+import axios from "axios";
+import "./linha.css";
 
-const ApexChart = () => {
-  const initialSeries = [
-    {
-      name: "Session Duration",
-      data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10],
-    },
-    {
-      name: "Page Views",
-      data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35],
-    },
-    {
-      name: "Total Visits",
-      data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47],
-    },
-  ];
+export default function AcessosVideosChart() {
+  const [dados, setDados] = useState([]);
 
-  const [series, setSeries] = useState(initialSeries);
-  const [selected, setSelected] = useState("Todos");
+  useEffect(() => {
+    axios
+      .get("https://localhost:7079/api/AcessosVideos/estatisticas")
+      .then((response) => {
+        setDados(response.data);
+      })
+      .catch((error) =>
+        console.error("Erro ao carregar estatísticas de acessos:", error)
+      );
+  }, []);
+
+  // 🔹 Exemplo: se sua API retorna { curso: "IA Descomplicada", totalAcessos: 12 }
+  const nomesCursos = dados.map((item) => item.curso);
+  const totalAcessos = dados.map((item) => item.totalAcessos);
 
   const options = {
     chart: {
-      height: 350,
-      type: "line",
+      id: "acessos-videos",
+      background: "transparent",
+      toolbar: { show: false },
       zoom: { enabled: false },
-      foreColor: "#ffffff",
     },
+    colors: ["#9B51E0"],
     dataLabels: { enabled: false },
-    stroke: {
-      width: [5, 7, 5],
-      curve: "straight",
-      dashArray: [0, 8, 5],
-    },
-    title: {
-      text: "Page Statistics",
-      align: "left",
-      style: { color: "#ffffff" },
-    },
-    legend: {
-      show: true,
-      position: "top",
-      labels: { colors: "#ffffff" },
-      onItemClick: { toggleDataSeries: true },
-    },
-    markers: { size: 0, hover: { sizeOffset: 6 } },
+    stroke: { curve: "smooth", width: 3 },
     xaxis: {
-      categories: [
-        "01 Jan", "02 Jan", "03 Jan", "04 Jan", "05 Jan", "06 Jan",
-        "07 Jan", "08 Jan", "09 Jan", "10 Jan", "11 Jan", "12 Jan",
-      ],
-      labels: { style: { colors: "#ffffff" } },
+      categories: nomesCursos,
+      labels: { style: { colors: "#fff" } },
     },
-    yaxis: { labels: { style: { colors: "#ffffff" } } },
+    yaxis: { labels: { style: { colors: "#fff" } } },
+    grid: {
+      borderColor: "#2b1544",
+      strokeDashArray: 5,
+    },
     tooltip: { theme: "dark" },
-    grid: { borderColor: "rgba(255,255,255,0.2)" },
   };
 
-  const handleFilterChange = (e) => {
-    const value = e.target.value;
-    setSelected(value);
-
-    if (value === "Todos") {
-      setSeries(initialSeries);
-    } else {
-      const filtered = initialSeries.filter((item) => item.name === value);
-      setSeries(filtered);
-    }
-  };
+  const series = [
+    {
+      name: "Total de Acessos",
+      data: totalAcessos,
+    },
+  ];
 
   return (
-    <div className="chart-container">
-      <div className="filtros">
-        <label htmlFor="filtro">Filtrar gráfico:</label>
-        <select id="filtro" value={selected} onChange={handleFilterChange}>
-          <option value="Todos">Todos</option>
-          <option value="Session Duration">Session Duration</option>
-          <option value="Page Views">Page Views</option>
-          <option value="Total Visits">Total Visits</option>
-        </select>
-      </div>
-
-      <div className="chart-wrap">
-        <ReactApexChart
-          options={options}
-          series={series}
-          type="line"
-          height={230}
-        />
-      </div>
+    <div className="linha-container">
+      <h3 className="titulo-linha">Acessos Gerais por Curso</h3>
+      <Chart options={options} series={series} type="line" height={300} />
     </div>
   );
-};
-
-export default ApexChart;
+}

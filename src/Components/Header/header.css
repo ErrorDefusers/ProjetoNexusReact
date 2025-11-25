@@ -67,9 +67,8 @@ header {
     align-items: self-end;
     width: 54px;
     height: 54px;
-    margin-right: 40px;
-    cursor: pointer;
-
+    /* margin-right: 11px; */
+    /* margin-top: 4px; */
 }
 
 .div-img img {

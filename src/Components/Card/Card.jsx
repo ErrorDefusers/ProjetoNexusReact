@@ -1,11 +1,9 @@
-import React from 'react';
-import imgCard from "../../assets/img/IconDiscord.svg";
-import { Botao } from "../../Components/Botao/botao";
 import Planilhas from "../Tools/Planilhas";
 import GoogleDrivePicker from '../Tools/GoogleDrivePicker';
 import Docs from '../Tools/Docs';
 import Calendario from '../Tools/Agenda';
 import Meet from '../Tools/Jitsi';
+import Youtube from "../Tools/Youtube";
 
 export const Card = (props) => {
     return (
@@ -19,6 +17,7 @@ export const Card = (props) => {
             {props.Titulo === "Documents" && <Docs />}
             {props.Titulo === "Agenda" && <Calendario />}
             {props.Titulo === "Meet" && <Meet />}
+            {props.Titulo === "Youtube" && <Youtube />}
             {/* Caso queira reativar o botão */}
             {/* <Botao
         nomeBotao="Acessar"

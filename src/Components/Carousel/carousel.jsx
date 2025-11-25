@@ -41,32 +41,31 @@ export default function Carousel(props) {
   return (
     <div className="carousel-container">
       <button
-        className="arrow left"
+        className="carousel-arrow left"
         onClick={prevSlide}
         disabled={current === 0}
       >
-        <img src={SetaE} alt="Seta esquerda" className="seta-img" />
+        <img src={SetaE} alt="Seta esquerda" className="carousel-seta-img" />
       </button>
 
-      
       <div className={`carousel slide-${direction}`}>
         {visibleImages.map((img, index) => (
           <div className="slide active" key={index}>
-            <Link to = "/Ferramentas">
-            <img src={img.src} alt={img.alt}/>
+            <Link to="/Ferramentas">
+              <img src={img.src} alt={img.alt} />
             </Link>
           </div>
-          
         ))}
       </div>
 
       <button
-        className="arrow right"
+        className="carousel-arrow right"
         onClick={nextSlide}
         disabled={current + itemsPerPage >= images.length}
       >
-        <img src={SetaR} alt="Seta direita" className="seta-img" />
+        <img src={SetaR} alt="Seta direita" className="carousel-seta-img" />
       </button>
+
     </div>
   );
 }

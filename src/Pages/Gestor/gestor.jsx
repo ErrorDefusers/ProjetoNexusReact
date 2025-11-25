@@ -1,81 +1,9 @@
-// import React from "react";
-// // import "../styles/tela_perfil.css";
-// import "./gestor.css";
-
-// // Imports de imagens
-// // import ImagemPerfil from "../assets/IMG/Group62.svg";
-// // import IconDiscord from "../assets/IMG/Blue.png"; // <-- adicione o caminho correto aqui
-// // import ChatGPTLogo from "../assets/IMG/ChatGPT_logo.png";
-// import Editar from "../../assets/img/Ícones/vectorLapisEditar.svg"
-
-// // Componentes
-// import ApexChart from "../../Components/Graficos/Linha/ApexChartsGestor.jsx";
-// import Footer from "../../Components/Footer/footer.jsx";
-// import Header from "../../Components/Header/header.jsx";
-
-// // Carrossel do Bootstrap
-// // import CarouselV from "../components/carroselV/CarouselV.jsx";
-// import Carousel from "../../Components/Carousel/carousel.jsx";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// export const Gestor = () => {
-//   return (
-//     <>
-//       <Header/>
-//       <main className="backgroundImagemM">
-//         <div className="Janela_Gestor">
-//           <div className="janelaMarketing">
-//             {/* <h1 className="Marketing">Marketing</h1> */}
-//             <div className="quadrado">
-//               <div className="ListaFunc">
-//                 <div className="Arrumar">
-//                 <h2 className="LDE">Marketing</h2>
-//                 </div>
-//                 <div className="Topicos">
-//                 <div className="Nomes">
-//                 <h4>Nome</h4>
-//                 <p>Jucelino</p>
-//                 </div>
-//                 <div className="Cargos">
-//                 <h4>Cargo</h4>
-//                 <p>Gerente</p>
-//                 </div>
-//                 <div className="Editar">
-//                 <h4>Editar</h4>
-//                 <button className="BotaoEditar"><img src={Editar} alt="" /></button>
-//                 </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="FerramentasGrafico">
-//             {/* <h1>Ferramentas</h1> */}
-//             <div className="Ferramntasexemplo">
-//               <Carousel/>
-//               {/* <CarouselV/> */}
-//             </div>
-//             <div className="testee">
-//               <h2>Gráfico</h2>
-//             <div className="grafico">
-//               <ApexChart />
-//             </div>
-//             </div>
-//           </div>
-//         </div>
-//       </main>
-//       <Footer />
-//     </>
-//   );
-// }
-
-
 import React, { useEffect, useState } from "react";
 import "../../Pages/Gestor/gestor.css";
 import Editar from "../../assets/img/Editar.svg";
 
 import ApexChart from "../../Components/Graficos/Pizza/ApexChart.jsx";
-import Footer from "../../Components/Footer/footer";
+import Footer from "../../Components/Footer/footer.jsx";
 import Header from "../../Components/Header/header.jsx";
 import Carousel from "../../Components/Carousel/carousel.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -124,65 +52,96 @@ export default function Gestor() {
           cargo: editarFunc.cargo,
           tipoFuncionarioId: editarFunc.tipoFuncionarioId,
           setorId: editarFunc.setorId,
-          role: editarFunc.role
-        }
+          role: editarFunc.role,
+        },
       });
 
       Swal.fire("Sucesso!", "Funcionário atualizado.", "success");
 
-
-      setFuncionarios(prev =>
-        prev.map(f => f.idFuncionario === editarFunc.idFuncionario ? editarFunc : f)
+      // Atualiza lista local
+      setFuncionarios((prev) =>
+        prev.map((f) =>
+          f.idFuncionario === editarFunc.idFuncionario ? editarFunc : f
+        )
       );
 
       setEditarFunc(null);
     } catch (erro) {
       console.error("Erro ao atualizar funcionário:", erro);
-      Swal.fire("Erro!", "Não foi possível atualizar o funcionário.", "error");
+      Swal.fire(
+        "Erro!",
+        "Não foi possível atualizar o funcionário.",
+        "error"
+      );
     }
   }
 
   return (
     <>
-      <body className="BodyAt">
-
-
+      <div className="BodyAt">
         <Header
           Home="Home"
           Curso="Curso"
           Usuario="Usuário"
           Ferramenta="Ferramentas"
         />
+
         <main className="backgroundImagemM">
           <div className="Janela_Gestor">
             <div className="janelaMarketing">
               <h1 className="Marketing">Marketing</h1>
+
               <div className="quadrado">
                 <div className="ListaFunc">
                   <div className="arruuumar">
                     <h2 className="LDE">Lista de Empregados</h2>
                   </div>
+
                   {/* Cabeçalho */}
                   <div className="Topicos">
-                    <div className="Nomes"><h4>Nome</h4></div>
-                    <div className="Cargos"><h4>Cargo</h4></div>
-                    <div className="Editar"><h4>Editar</h4></div>
+                    <div className="Nomes">
+                      <h4>Nome</h4>
+                    </div>
+                    <div className="Cargos">
+                      <h4>Cargo</h4>
+                    </div>
+                    <div className="Editar">
+                      <h4>Editar</h4>
+                    </div>
                   </div>
 
                   {funcionarios.length > 0 ? (
                     funcionarios.map((func) => (
                       <div key={func.idFuncionario} className="Topicos">
-                        <div className="Nomes"><p>{func.nome}</p></div>
-                        <div className="Cargos"><p>{func.tipoFuncionario?.tipoDeFuncionario || "Sem cargo"}</p></div>
+                        <div className="Nomes">
+                          <p>{func.nome}</p>
+                        </div>
+                        <div className="Cargos">
+                          <p>
+                            {func.tipoFuncionario?.tipoDeFuncionario ||
+                              "Sem cargo"}
+                          </p>
+                        </div>
                         <div className="Editar">
-                          <button className="BotaoEditar" onClick={() => setEditarFunc(func)}>
+                          <button
+                            className="BotaoEditar"
+                            onClick={() => setEditarFunc(func)}
+                          >
                             <img src={Editar} alt="Editar" />
                           </button>
                         </div>
                       </div>
                     ))
                   ) : (
-                    <p style={{ textAlign: "center", marginTop: "10px" }}>Nenhum funcionário encontrado.</p>
+                    <p
+                      style={{
+                        textAlign: "center",
+                        marginTop: "10px",
+                        color: "#fff",
+                      }}
+                    >
+                      Nenhum funcionário encontrado.
+                    </p>
                   )}
                 </div>
               </div>
@@ -190,11 +149,18 @@ export default function Gestor() {
 
             <div className="FerramentasGrafico">
               <h1>Ferramentas</h1>
-              <div className="Ferramntasexemplo"><Carousel /></div>
-              <div className="grafico"><ApexChart /></div>
+
+              <div className="Ferramntasexemplo">
+                <Carousel />
+              </div>
+
+              <div className="grafico">
+                <ApexChart />
+              </div>
             </div>
           </div>
         </main>
+
         <Footer />
 
         {/* Modal de edição */}
@@ -207,21 +173,27 @@ export default function Gestor() {
               <input
                 type="text"
                 value={editarFunc.nome}
-                onChange={e => setEditarFunc({ ...editarFunc, nome: e.target.value })}
+                onChange={(e) =>
+                  setEditarFunc({ ...editarFunc, nome: e.target.value })
+                }
               />
 
               <label>Cargo:</label>
               <input
                 type="text"
                 value={editarFunc.cargo}
-                onChange={e => setEditarFunc({ ...editarFunc, cargo: e.target.value })}
+                onChange={(e) =>
+                  setEditarFunc({ ...editarFunc, cargo: e.target.value })
+                }
               />
 
               <label>Role:</label>
               <input
                 type="text"
                 value={editarFunc.role}
-                onChange={e => setEditarFunc({ ...editarFunc, role: e.target.value })}
+                onChange={(e) =>
+                  setEditarFunc({ ...editarFunc, role: e.target.value })
+                }
               />
 
               <div className="modalButtons">
@@ -231,7 +203,7 @@ export default function Gestor() {
             </div>
           </div>
         )}
-      </body>
+      </div>
     </>
   );
 }

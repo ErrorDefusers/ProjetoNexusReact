@@ -3,10 +3,10 @@ import "./Ferramenta.css"
 import imgCard from "../../assets/img/IconDiscord.svg";
 import Drive from "../../assets/img/drive.svg"
 import Excel from "../../assets/img/excel.svg"
-import Discord from "../../assets/img/IconDiscord.svg"
+import Discord from "../../assets/img/DocumentsBom.png"
 import Meet from "../../assets/img/meet.svg"
 import Agenda from "../../assets/img/Imagens/Ferramentas/Agenda.png"
-import Gmail from "../../assets/img/Imagens/Ferramentas/Gmail.png"
+import Gmail from "../../assets/img/youtube.png"
 import Header from "../../Components/Header/header.jsx";
 import Footer from "../../Components/Footer/footer.jsx"
 // import { Botao } from "../../Components/Botao/botao";
@@ -70,7 +70,7 @@ export default function Ferramentas() {
           />
 
           <Card
-            Titulo="Gmail"
+            Titulo="Youtube"
             // Botao= "Acessar"
 
             imagens={Gmail}

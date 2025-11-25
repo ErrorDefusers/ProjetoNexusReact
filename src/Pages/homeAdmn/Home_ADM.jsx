@@ -126,7 +126,13 @@ const HomeAdm = () => {
 
   return (
     <div className="AttBodyADM">
-      <Header />
+      <Header
+        Home="Home"
+        Gestao="Gestão"
+        Curso="Curso"
+        Usuario="Usuário"
+        Ferramenta="Ferramentas"
+      />
       <main className="backgroundImagem">
         <div className="Janela_HomeAdm">
           <h1 className="ListagemH1">Listagem</h1>
