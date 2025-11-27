@@ -51,7 +51,7 @@ export const Login = () => {
 
 
       setTimeout(() => {
-        navigate("/Perfil");
+        navigate("/Home");
       }, 1500);
 
     } catch (error) {
