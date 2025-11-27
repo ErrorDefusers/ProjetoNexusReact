@@ -12,11 +12,11 @@ export const Card = (props) => {
             <p>{props.Titulo}</p>
 
             {/* Exibe o componente Planilhas apenas se o título for "Planilhas" */}
-            {props.Titulo === "Planilhas" && <Planilhas />}
+            {props.Titulo === "Grist" && <Planilhas />}
             {props.Titulo === "Drive" && <GoogleDrivePicker />}
             {props.Titulo === "Documents" && <Docs />}
             {props.Titulo === "Agenda" && <Calendario />}
-            {props.Titulo === "Meet" && <Meet />}
+            {props.Titulo === "Jitsi" && <Meet />}
             {props.Titulo === "Youtube" && <Youtube />}
             {/* Caso queira reativar o botão */}
             {/* <Botao

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../Pages/Gestor/gestor.css";
 import Editar from "../../assets/img/Editar.svg";
 
+
 import ApexChart from "../../Components/Graficos/Pizza/ApexChart.jsx";
 import Footer from "../../Components/Footer/footer.jsx";
 import Header from "../../Components/Header/header.jsx";

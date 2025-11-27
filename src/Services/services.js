@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Cria uma instância do Axios
 const api = axios.create({
-  baseURL: "https://localhost:7079/api"
+  baseURL: "https://apivenuework-b9hbangtb2bcapd3.brazilsouth-01.azurewebsites.net/api"
 });
 
 // // Interceptor para adicionar o token JWT em cada requisição

@@ -7,11 +7,11 @@ import SetaR from "../../assets/IMG/setaR.svg";
 import { Link } from "react-router-dom";
 
 const images = [
-  { src: "https://static.vecteezy.com/system/resources/previews/017/395/377/non_2x/google-meets-icon-free-png.png", alt: "Google Meet" },
+  { src: "https://play-lh.googleusercontent.com/1ckxjos_oOGSNOFyUE-cp7xSCoKLVgMOEAGVCgb6WDhObTlDDnyLohgtI8o1TI2c7A", alt: "Google Meet" },
   { src: "https://cdn-1.webcatalog.io/catalog/google-docs/google-docs-icon-filled-256.png?v=1757896981588", alt: "Google Docs" },
-  { src: "https://cdn-icons-png.flaticon.com/512/5968/5968557.png", alt: "Google Calendar" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png", alt: "Microsoft Teams" },
-  { src: "https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxsG72wAo9EWJR4yQWyJJaDaK1XdUso6cUMpI9hAdPUU_FNs11cY1X284vsHrnWtRw7oqRpN1m9YAg21d_aNKnIo-&format=source", alt: "Outlook" },
+  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6iWLxGM9Bm56eCWoer-WUP7O9PnAq7a1ubw&s", alt: "Google Calendar" },
+  { src: "https://static.vecteezy.com/system/resources/previews/017/395/378/non_2x/google-drive-icons-free-png.png", alt: "Microsoft Teams" },
+  { src: "https://img.freepik.com/psd-premium/logotipo-do-youtube-retangulo-vermelho-com-botao-play-branco_1131634-290.jpg?semt=ais_hybrid&w=740&q=80", alt: "Outlook" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg", alt: "Google Calendar" },
 ];
 

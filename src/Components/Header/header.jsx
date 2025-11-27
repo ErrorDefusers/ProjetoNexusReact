@@ -12,7 +12,7 @@ const Header = ({ Home, Ferramenta, Curso, Usuario, Gestao, hideCurso }) => {
             <div className="header-nav">
 
                 <div className="div-img">
-                    <Link to={"/home"}>
+                    <Link to={"/Home"}>
                         <img src={Logo} alt="Logo do ValueWork" />
                     </Link>
                 </div>
@@ -28,7 +28,7 @@ const Header = ({ Home, Ferramenta, Curso, Usuario, Gestao, hideCurso }) => {
 
                         {/* 👇 Só aparece se NÃO estiver na rota /home */}
                         {location.pathname !== "/home" && (
-                            <li><Link to="/home">{Home}</Link></li>
+                            <li><Link to="/Home">{Home}</Link></li>
                         )}
 
                         {location.pathname !== "/ferramentas" && (
@@ -41,8 +41,8 @@ const Header = ({ Home, Ferramenta, Curso, Usuario, Gestao, hideCurso }) => {
                         )}
 
 
-                        {location.pathname !== "/homeadmn" && (
-                            <li><Link to="/homeadmn">{Gestao}</Link></li>
+                        {location.pathname !== "/HomeAdm" && (
+                            <li><Link to="/HomeAdm">{Gestao}</Link></li>
                         )}
                     </ul>
                     <ul>

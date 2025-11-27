@@ -49,7 +49,7 @@ export default function ApexChart() {
     legend: {
       position: "bottom",
       fontSize: "14px",
-      labels: { colors: "#333" },
+      labels: { colors: "#ffffffff" },
       markers: { width: 12, height: 12, radius: 6 },
       formatter: function(val, opts) {
         return val + ": " + opts.w.globals.series[opts.seriesIndex];

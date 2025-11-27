@@ -10,13 +10,54 @@
     color: #ffffff;
 }
 
+.BCadastroUsuario {
+    height: 100px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 23px;
+    color: white;
+}
+
+.CadastroCursos {
+    height: 100px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 23px;
+    color: white;
+}
+
+.ajustes {
+    height: 200px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 main.backgroundImagem {
     /* background-image: url(../assets/IMG/fundoHOMEADM.svg); */
-    height: 1100px;
+    height: 1200px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-direction: column;
 }
 
 .ListagemH1 {
@@ -34,6 +75,26 @@ main.backgroundImagem {
 .Setoresn {
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
+}
+
+.TirarEfLink{
+    color: white;
+    text-decoration: none;}
+
+button.CadastroUsuario {
+    height: 100px;
+    width: 300px;
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .home-adm h1 {

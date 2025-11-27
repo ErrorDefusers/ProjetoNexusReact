@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import VideoPlayer from "../../Components/ConteudoCurso/video";
-import "../cursoVideo/Curso.css";
+import "./Curso.css";
 
 export default function CursoVideo() {
   const { idCurso } = useParams();
@@ -27,7 +27,7 @@ export default function CursoVideo() {
   return (
     <main className="backgroundImagem">
       <div className="Janela_CursoInfo">
-        <div className="InformaçõeS">
+        <div className="InformacoeS">
           <div className="Info">
             <h1 className="Cor">{curso.titulo}</h1>
           </div>
@@ -46,7 +46,7 @@ export default function CursoVideo() {
           </div>
 
           {/* 🔹 Botão Voltar */}
-          <div style={{ textAlign: "center", marginTop: "30px" }}>
+          <div style={{ textAlign: "center"}}>
             <button
               onClick={() => navigate("/Curso")}
               style={{

@@ -32,7 +32,7 @@
 /* =================== ÁREA DE GRÁFICOS =================== */
 
 .grafico {
-  width: 800px;
+  width: 840px;
   height: 450px;
   /* background-color: #ffffff; */
   border-radius: 12px;
@@ -118,7 +118,15 @@
   justify-content: space-evenly;
 }
 
-
+button.BotaoEditar {
+  width: 45px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  box-shadow: none;
+}
 
 .BotaoEditar {
   background: none;
@@ -139,6 +147,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 
 /* =================== JANELA DE MARKETING =================== */

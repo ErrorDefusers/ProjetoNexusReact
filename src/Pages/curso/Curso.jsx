@@ -4,15 +4,15 @@ import Footer from "../../Components/Footer/footer";
 import { Botao } from "../../Components/Botao/botao";
 import "./Curso.css";
 import foto from "../../assets/img/ImgCurso.svg";
-import axios from "axios";
+import api from "../../../src/Services/services";   // <---- CORRETO
 import { Link } from "react-router-dom";
 
 export default function Cursos() {
   const [cursos, setCursos] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://localhost:7079/api/Cursos")
+    api
+      .get("/Cursos")    // <---- CHAMADA CERTA
       .then((response) => {
         console.log("Cursos carregados:", response.data);
         setCursos(response.data);
@@ -24,46 +24,39 @@ export default function Cursos() {
 
   return (
     <>
-      <div className="alt">
-        <Header
-          Gestao="Gestão"
-          Home="Home"
-          // Curso="Curso"
-          Usuario="Usuário"
-          Ferramenta="Ferramentas"
-        />
+      <Header/>
 
-        <div className="main_cursos">
-          {/* <div className="img_curso"></div> */}
+      <div className="main_cursos">
+        <div className="img_curso"></div>
 
-          <div className="subtexto_cursos">
-            <h3>Cursos</h3>
-          </div>
-
-          <div className="quadro_cursos">
-            {cursos.length > 0 ? (
-              cursos.map((curso) => (
-                <div key={curso.idCurso} className="cursos">
-                  <img
-                    className="cursos_img"
-                    src={curso.imagemCapa ? curso.imagemCapa : foto}
-                    alt={curso.titulo}
-                  />
-                  <p>{curso.titulo}</p>
-
-                  <Link to={`/cursoVideo/${curso.idCurso}`}>
-                    <Botao nomeBotao="Acessar curso" />
-                  </Link>
-                </div>
-              ))
-            ) : (
-              <p style={{ color: "#fff" }}>Nenhum curso encontrado.</p>
-            )}
-          </div>
+        <div className="subtexto_cursos">
+          <h3>Cursos</h3>
         </div>
 
-        <Footer />
+        <div className="quadro_cursos">
+          {cursos.length > 0 ? (
+            cursos.map((curso) => (
+              <div key={curso.idCurso} className="cursos">
+                <img
+                  className="cursos_img"
+                  src={curso.imagemCapa ? curso.imagemCapa : foto}
+                  alt={curso.titulo}
+                />
+
+                <p>{curso.titulo}</p>
+
+                <Link to={`/cursoVideo/${curso.idCurso}`}>
+                  <Botao nomeBotao="Acessar curso" />
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p style={{ color: "#fff" }}>Nenhum curso encontrado.</p>
+          )}
+        </div>
       </div>
+
+      <Footer />
     </>
   );
 }

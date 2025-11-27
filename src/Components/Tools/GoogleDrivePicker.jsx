@@ -45,7 +45,7 @@ export default function GoogleDriveIntegration() {
             setShowActionModal(true);
           }
         }
-      } catch (err) {}
+      } catch (err) { }
     }, 500);
   };
 
@@ -140,8 +140,8 @@ export default function GoogleDriveIntegration() {
             background: "linear-gradient(135deg, #1B0034, #3B0C59)",
             borderRadius: "20px",
             padding: "40px",
-            width: "90%",
-            maxWidth: "600px",
+            width: "100%",
+            maxWidth: "730px",
             textAlign: "center",
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -150,19 +150,28 @@ export default function GoogleDriveIntegration() {
             boxShadow: "0 0 30px rgba(0,0,0,0.5)",
           }}
         >
-          {/* Botão X */}
           <button
             onClick={() => setShowActionModal(false)}
             style={{
               position: "absolute",
-              top: "10px",
-              right: "15px",
-              background: "transparent",
+              top: "-7px",
+              right: "-8px",
+              background: "rgba(255,255,255,0.9)",
               border: "none",
-              fontSize: "28px",
+              borderRadius: "50%",
+              width: "36px",
+              height: "36px",
+              fontSize: "22px",
               cursor: "pointer",
-              color: "#fff",
+              color: "#333",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+              transition: "0.2s ease",
+              marginRight: "16px",
+              marginTop: "15px",
             }}
+            onMouseOver={(e) => (e.target.style.background = "#f0f0f0")}
+            onMouseOut={(e) => (e.target.style.background = "rgba(255,255,255,0.9)")}
+            title="Fechar"
           >
             ×
           </button>
@@ -242,6 +251,10 @@ export default function GoogleDriveIntegration() {
             borderRadius: "32px",
             border: "1px solid rgba(255,255,255,0.15)",
             cursor: "pointer",
+            width:"135px",
+            height:"40px",
+            fontSize:"small",
+            fontStyle:"bold"
           }}
         >
           Abrir opções

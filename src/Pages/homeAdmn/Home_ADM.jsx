@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "../../Pages/homeAdmn/home_adm.css";
 import Lista from "../../components/Lista/lista";
+import CadastroCurso from "../cadastroCurso/CadastroCurso";
 import CarrosselADM from "../../Components/carroselADM/carroselADM";
 import Header from "../../Components/Header/header";
+import ImagemCU from "../../assets/img/Ícones/vectorCadastrar.svg"
+import ImagemCC from "../../assets/img/Ícones/vectorCursos.svg"
 import Footer from "../../Components/Footer/footer";
 import api from "../../Services/services";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const HomeAdm = () => {
   const [funcionarios, setFuncionarios] = useState([]);
@@ -145,6 +149,11 @@ const HomeAdm = () => {
             funcExcluir={deletarFuncionario}
             funcEditar={editarFuncionario}
           />
+        </div>
+
+        <div className="ajustes">
+        <button className="CadastroUsuario"><img src={ImagemCU} alt="" /><Link className="TirarEfLink" href="" to="/CadastroCurso">Cadastrar Usuario</Link></button>
+        <button className="CadastroCursos"><img style={{width:"60px"}} src={ImagemCC} alt="" /><Link className="TirarEfLink" href="" to="/Cadastro">Cadastrar Cursos</Link></button>
         </div>
       </main>
       <Footer />

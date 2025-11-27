@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -79,8 +80,8 @@ export default function Youtube() {
             background: "linear-gradient(135deg, #1B0034, #3B0C59)",
             padding: "40px",
             borderRadius: "20px",
-            width: "90%",
-            maxWidth: "600px",
+            width: "100%",
+            maxWidth: "730px",
             textAlign: "center",
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -93,14 +94,24 @@ export default function Youtube() {
             onClick={() => setShowOptionsModal(false)}
             style={{
               position: "absolute",
-              top: "10px",
-              right: "15px",
-              background: "transparent",
+              top: "-7px",
+              right: "-8px",
+              background: "rgba(255,255,255,0.9)",
               border: "none",
-              fontSize: "26px",
-              color: "white",
+              borderRadius: "50%",
+              width: "36px",
+              height: "36px",
+              fontSize: "22px",
               cursor: "pointer",
+              color: "#333",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+              transition: "0.2s ease",
+              marginRight: "16px",
+              marginTop: "15px"
             }}
+            onMouseOver={(e) => (e.target.style.background = "#f0f0f0")}
+            onMouseOut={(e) => (e.target.style.background = "rgba(255,255,255,0.9)")}
+            title="Fechar"
           >
             ×
           </button>
@@ -160,18 +171,18 @@ export default function Youtube() {
             onClick={() => setShowPlayerModal(false)}
             style={{
               position: "absolute",
-                        top: "-7px",
-                        right: "-8px",
-                        background: "rgba(255,255,255,0.9)",
-                        border: "none",
-                        borderRadius: "50%",
-                        width: "36px",
-                        height: "36px",
-                        fontSize: "22px",
-                        cursor: "pointer",
-                        color: "#333",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
-                        transition: "0.2s ease",
+              top: "-7px",
+              right: "-8px",
+              background: "rgba(255,255,255,0.9)",
+              border: "none",
+              borderRadius: "50%",
+              width: "36px",
+              height: "36px",
+              fontSize: "22px",
+              cursor: "pointer",
+              color: "#333",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+              transition: "0.2s ease",
             }}
           >
             ×
@@ -184,7 +195,7 @@ export default function Youtube() {
     );
 
   return (
-    <div style={{ textAlign: "center"}}>
+    <div style={{ textAlign: "center" }}>
       <button
         onClick={() => setShowOptionsModal(true)}
         style={{

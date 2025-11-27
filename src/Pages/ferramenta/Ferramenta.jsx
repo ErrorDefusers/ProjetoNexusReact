@@ -2,9 +2,9 @@ import React from 'react'
 import "./Ferramenta.css"
 import imgCard from "../../assets/img/IconDiscord.svg";
 import Drive from "../../assets/img/drive.svg"
-import Excel from "../../assets/img/excel.svg"
+import Excel from "../../assets/img/Grist.webp"
 import Discord from "../../assets/img/DocumentsBom.png"
-import Meet from "../../assets/img/meet.svg"
+import Meet from "../../assets/img/Jitsiking.webp"
 import Agenda from "../../assets/img/Imagens/Ferramentas/Agenda.png"
 import Gmail from "../../assets/img/youtube.png"
 import Header from "../../Components/Header/header.jsx";
@@ -43,7 +43,7 @@ export default function Ferramentas() {
           />
 
           <Card
-            Titulo="Planilhas"
+            Titulo="Grist"
             // Botao= "Acessar"
             imagens={Excel}
           />
@@ -56,7 +56,7 @@ export default function Ferramentas() {
           />
 
           <Card
-            Titulo="Meet"
+            Titulo="Jitsi"
             // Botao= "Acessar"
 
             imagens={Meet}

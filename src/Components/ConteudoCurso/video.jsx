@@ -28,8 +28,9 @@ export default function VideoPlayer({ videoId }) {
   return (
     <div className="ArrumarAA">
       <iframe
+        
         className="ArrumarVideo"
-        width="1100"
+        width="900"
         height="500"
         src={embedUrl}
         title="Curso em vídeo"
