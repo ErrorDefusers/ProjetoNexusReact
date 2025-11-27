@@ -2,59 +2,90 @@ import "./header.css";
 import Logo from "../../assets/img/Logotipo/Logotipo SVG/logotipoClaro.svg";
 import Perfil from "../../assets/img/user2.png";
 import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Header = ({ Home, Ferramenta, Curso, Usuario, Gestao, hideCurso }) => {
-    
-    const location = useLocation(); // <-- Pega a rota atual
+  const location = useLocation();
 
-    return (
-        <header className="header">
-            <div className="header-nav">
+  useEffect(() => {
+    // efeito ripple em cada link
+    const links = document.querySelectorAll(".nav-link");
 
-                <div className="div-img">
-                    <Link to={"/Home"}>
-                        <img src={Logo} alt="Logo do ValueWork" />
-                    </Link>
-                </div>
+    const handleClick = (e) => {
+      const rect = e.target.getBoundingClientRect();
+      e.target.style.setProperty("--x", e.clientX - rect.left + "px");
+      e.target.style.setProperty("--y", e.clientY - rect.top + "px");
+    };
 
-                <div className="barradepesquisa">
-                    <div className="input-group">
-                        <div className="input-icon"></div>
-                    </div>
-                </div>
+    links.forEach((link) => {
+      link.addEventListener("click", handleClick);
+    });
 
-                <nav className="menu-desktop">
-                    <ul>
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener("click", handleClick);
+      });
+    };
+  }, [location.pathname]);
 
-                        {/* 👇 Só aparece se NÃO estiver na rota /home */}
-                        {location.pathname !== "/home" && (
-                            <li><Link to="/Home">{Home}</Link></li>
-                        )}
+  return (
+    <header className="header">
+      <div className="header-nav">
 
-                        {location.pathname !== "/ferramentas" && (
-                            <li><Link to="/ferramentas">{Ferramenta}</Link></li>
-                        )}
+        <div className="div-img">
+          <Link className="nav-link" to={"/Home"}>
+            <img src={Logo} alt="Logo do ValueWork" />
+          </Link>
+        </div>
 
-                        {/* Só aparece se NÃO estiver em Curso e hideCurso for false */}
-                        {!hideCurso && location.pathname !== "/curso" && (
-                            <li><Link to="/curso">{Curso}</Link></li>
-                        )}
+        <div className="barradepesquisa">
+          <div className="input-group">
+            <div className="input-icon"></div>
+          </div>
+        </div>
 
+        <nav className="menu-desktop">
+          <ul>
 
-                        {location.pathname !== "/HomeAdm" && (
-                            <li><Link to="/HomeAdm">{Gestao}</Link></li>
-                        )}
-                    </ul>
-                    <ul>
-                        {location.pathname !== "/perfil" && (
-                            <li><Link to="/perfil">{Usuario}</Link></li>
-                        )}
-                    <img src={Perfil} alt="Imagem do usuário" />
-                    </ul>
-                </nav>
-            </div>
-        </header>
-    );
+            {location.pathname !== "/home" && (
+              <li>
+                <Link className="nav-link" to="/Home">{Home}</Link>
+              </li>
+            )}
+
+            {location.pathname !== "/ferramentas" && (
+              <li>
+                <Link className="nav-link" to="/ferramentas">{Ferramenta}</Link>
+              </li>
+            )}
+
+            {!hideCurso && location.pathname !== "/curso" && (
+              <li>
+                <Link className="nav-link" to="/curso">{Curso}</Link>
+              </li>
+            )}
+
+            {location.pathname !== "/HomeAdm" && (
+              <li>
+                <Link className="nav-link" to="/HomeAdm">{Gestao}</Link>
+              </li>
+            )}
+          </ul>
+
+          <ul>
+            {location.pathname !== "/perfil" && (
+              <li>
+                <Link className="nav-link" to="/perfil">{Usuario}</Link>
+              </li>
+            )}
+
+           
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+  );
 };
 
 export default Header;

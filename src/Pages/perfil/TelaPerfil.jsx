@@ -126,6 +126,7 @@ export default function Perfil() {
         />
 
         <main className="backgroundImagem">
+          
           <div className="Janela_Perfil">
             <div className="BolinhaFoto">
               <img
@@ -178,7 +179,7 @@ export default function Perfil() {
               />
             </div>
 
-            <h2 className="FotoPerfil">Foto de Perfil</h2>
+            <h2 className="FotoPerfil">Perfil</h2>
 
             <div className="Informações">
               <div className="arrumandobugsdeespaco">

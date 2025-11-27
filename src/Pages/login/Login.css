@@ -1,180 +1,18 @@
-/* Layout geral */
-
-body {
-  /* height: 776px; */
-
-}
-
-.login-container {
-
-  display: flex;
-  height: 98vh;
-  /* background: #000; */
-  color: white;
-  font-family: Arial, sans-serif;
-  width: 1524px;
-}
-
-.login-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 800px;
-  margin-bottom: 15px;
-}
-
-.login-left img {
-  width: 600px;
-  height: 720px;
-}
-
-.login-container {
-  background-image: url("../../assets/img//fundoLogin.svg");
-  flex: 1;
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  padding: 0px;
-  height: 775px;
-  width: 100%;
-
-}
-
-
-.logo-box {
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logo-box img {
-  width: 70px;
-  height: 70px;
-}
-
-.logo-box p {
-  color: #808080;
-}
-
-.logo-img {
-  width: 120px;
-  /* Ajuste o tamanho da logo */
-  margin-bottom: 15px;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  margin: 5px 0;
-  color: #ddd;
-}
-
-.divider {
-  border: none;
-  border-bottom: 2px solid #7c3aed;
-  width: 250px;
-  margin-top: 8px;
-}
-
-/* Formulário */
-.login-form {
-  display: flex;
-  gap: 15px;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-
-.login-form input {
-  padding: 12px;
-  /* border-radius: 12px; */
-  /* border: none; */
-  outline: none;
-  font-size: 1rem;
-  /* background: #bbb; */
-  color: white;
-  width: 100%;
-  box-sizing: border-box;
-
-  border-radius: 8px;
-  border: 0.5px solid rgba(0, 0, 0, 0.05);
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-  backdrop-filter: blur(5px);
-}
-
-.login-btn {
-  margin-top: 15px;
-  padding: 14px;
-  /* background: #7c3aed; */
-  /* border: none; */
-  /* border-radius: 12px; */
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 70%;
-
-  border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: #551A94;
-}
-
-.login-btn:hover {
-  background: #5b21b6;
-}
-
-/* Coluna da direita */
-
-
-.side-image {
-  width: 100%;
-  max-width: 548px;
-  height: 100%;
-}
-
-div#root {
-  width: 1521px;
-  height: 100%;
-}
-
-body {
-  background-color: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
-  height: none;
-}
-
-.swal-popup {
-  border-radius: 18px !important;
-  padding: 18px !important;
-  box-shadow: 0px 0px 25px rgba(166, 107, 255, 0.35) !important;
-  backdrop-filter: blur(12px) !important;
-  background: rgba(26, 26, 29, 0.85) !important;
-}
-
-.swal-title {
-  font-size: 20px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.5px !important;
-}
-
-.swal-timer-bar {
-  background: linear-gradient(90deg, #a66bff, #d98cff) !important;
-}
-
+/* --------------------------------------------- */
+/* LAYOUT GERAL                                   */
+/* --------------------------------------------- */
 
 .login-container {
   display: flex;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  /* background-color: #ffffff; */
+  color: white;
+  font-family: Arial, sans-serif;
+  background-image: url("../../assets/img//fundoLogin.svg");
+  background-size: cover;
+  background-position: center;
 }
-
 
 .login-right {
   flex: 1;
@@ -198,6 +36,10 @@ body {
   padding: 40px;
 }
 
+/* --------------------------------------------- */
+/* LOGO E TÍTULOS                                 */
+/* --------------------------------------------- */
+
 .logo-box {
   text-align: center;
   margin-bottom: 25px;
@@ -205,11 +47,12 @@ body {
 
 .logo-img {
   width: 110px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
   font-size: 22px;
-  margin-top: 8px;
+  color: #ddd;
 }
 
 .divider {
@@ -217,9 +60,12 @@ body {
   margin: 10px auto;
   border: none;
   height: 2px;
-  background-color: #d9d9d9;
+  background-color: #7c3aed;
 }
 
+/* --------------------------------------------- */
+/* FORMULÁRIO                                     */
+/* --------------------------------------------- */
 
 .login-form {
   display: flex;
@@ -231,8 +77,6 @@ body {
 .login-form label {
   margin-bottom: 5px;
   font-weight: 600;
-  width: 349px;
-
 }
 
 .login-form input {
@@ -241,19 +85,25 @@ body {
   border: 1px solid #d1d1d1;
   border-radius: 8px;
   font-size: 15px;
+
+  background: rgba(255, 255, 255, 0.02);
+  color: white;
+  backdrop-filter: blur(5px);
+  outline: none;
 }
+
+/* --------------------------------------------- */
+/* BOTÃO                                          */
+/* --------------------------------------------- */
 
 .login-btn {
   padding: 12px;
-  background-color: #6b4eff;
-  border: none;
   color: white;
   font-size: 17px;
-  border-radius: 8px;
+  border-radius: 32px;
   cursor: pointer;
   transition: 0.2s;
-  border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   background: #551A94;
 }
 
@@ -261,11 +111,14 @@ body {
   background-color: #5a3ef0;
 }
 
+/* --------------------------------------------- */
+/* RESPONSIVIDADE                                 */
+/* --------------------------------------------- */
 
 @media (max-width: 900px) {
   .login-container {
-    background-color: #0C0414;
     flex-direction: column;
+    background-color: #0C0414;
   }
 
   .login-right {
@@ -273,25 +126,16 @@ body {
   }
 
   .side-image {
-    height: 100%;
     object-fit: cover;
   }
-
-  .login-left {
-    padding: 25px;
-  }
 }
-
 
 @media (max-width: 600px) {
   .login-right {
     display: none;
-    /* Esconde imagem no mobile pra layout mais limpo */
   }
 
   .login-left {
-    flex: 1;
-    justify-content: center;
     padding: 35px 25px;
   }
 
@@ -303,12 +147,88 @@ body {
     font-size: 18px;
   }
 
-  .login-form {
-    max-width: 100%;
-  }
-
   .login-btn {
     font-size: 16px;
     padding: 10px;
   }
 }
+
+/* --------------------------------------------- */
+/* BODY E ROOT                                    */
+/* --------------------------------------------- */
+
+body {
+  background: linear-gradient(#0C0414, #1B092E, #220C39, #40156B);
+  min-height: 100vh !important;
+}
+
+div#root {
+  width: 100% !important;
+  min-height: 100vh !important;
+}
+
+/* --------------------------------------------- */
+/* SWEET ALERT - GLASSMORPHISM ROXO               */
+/* --------------------------------------------- */
+
+.swal2-popup {
+  border-radius: 20px !important;
+  padding: 24px !important;
+  background: rgba(22, 10, 34, 0.85) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 0 25px rgba(142, 66, 211, 0.35) !important;
+}
+
+.swal2-title {
+  color: #dcd3ff !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+}
+
+.swal2-html-container {
+  color: #c7c0e6 !important;
+  font-size: 16px !important;
+}
+
+.swal2-icon {
+  border-color: #8f4dff !important;
+  color: #b88aff !important;
+}
+
+.swal2-confirm {
+  background: linear-gradient(135deg, #7c3aed, #551A94) !important;
+  border-radius: 12px !important;
+  border: none !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+  font-size: 15px !important;
+  transition: 0.2s ease;
+}
+
+.swal2-confirm:hover {
+  background: linear-gradient(135deg, #6a2dd5, #4b1785) !important;
+  transform: scale(1.04);
+}
+
+.swal2-timer-progress-bar {
+  background: linear-gradient(90deg, #a66bff, #d98cff) !important;
+}
+
+/* FIX CRÍTICO – Sem esse o alert NÃO some */
+.swal2-container {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto !important;
+  z-index: 999999 !important;
+}
+
+body.swal2-shown {
+  overflow: hidden !important;
+}
+
+body.swal2-height-auto {
+  height: auto !important;
+}
+

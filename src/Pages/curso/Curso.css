@@ -109,21 +109,20 @@
     border-radius: 13px;
     box-shadow: 0 3.327px 3.327px 0 rgba(0, 0, 0, 0.25);
     height: 67px;
-    padding: 21px;
+    display: flex;
+    /* padding: 21px; */
     margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
 }
 
-
 .cursos img {
-    /* margin-top: 10px;
-    margin-bottom: 10px; */
-    height: 277px;
-    width: 320px;
-    margin-bottom: 0;
-    border-radius: 13.31px;
+     /* margin-top: 10px; */
+    border-radius: 13.31px; 
     overflow: hidden;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     display: block;
+    margin-bottom: 3px;
 
 }
 
@@ -261,4 +260,9 @@ button, .Att, .Pv {
         background-size: 300px;
         opacity: 0.3;
     }
+}
+
+.header {
+    position: relative;
+    z-index: 9999 !important;
 }

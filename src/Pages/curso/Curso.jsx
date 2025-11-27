@@ -4,7 +4,7 @@ import Footer from "../../Components/Footer/footer";
 import { Botao } from "../../Components/Botao/botao";
 import "./Curso.css";
 import foto from "../../assets/img/ImgCurso.svg";
-import api from "../../../src/Services/services";   // <---- CORRETO
+import api from "../../../src/Services/services";
 import { Link } from "react-router-dom";
 
 export default function Cursos() {
@@ -12,7 +12,7 @@ export default function Cursos() {
 
   useEffect(() => {
     api
-      .get("/Cursos")    // <---- CHAMADA CERTA
+      .get("/Cursos")
       .then((response) => {
         console.log("Cursos carregados:", response.data);
         setCursos(response.data);
@@ -24,7 +24,14 @@ export default function Cursos() {
 
   return (
     <>
-      <Header/>
+      <Header
+        Home="Home"
+        Ferramenta="Ferramentas"
+        Curso="Cursos"
+        Usuario="Perfil"
+        Gestao="Gestão"
+        
+      />
 
       <div className="main_cursos">
         <div className="img_curso"></div>

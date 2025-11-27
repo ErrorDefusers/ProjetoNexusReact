@@ -1,5 +1,4 @@
 import "./login.css";
-// import loginImage from "../assets/img/fundoLogin.svg";
 import ImgLogin from "../../assets/img/ImgLogin.png"
 import logoo from "../../assets/img/Logotipo/Logotipo SVG/pictogramaClaro.svg";
 import Logo from "../../assets/img/imgLogin.png"
@@ -18,8 +17,14 @@ export const Login = () => {
   async function realizarAutenticacao(e) {
     e.preventDefault();
 
+    // ALERTA - CAMPOS VAZIOS
     if (!email || !senha) {
-      return Swal.fire("Erro!", "Preencha email e senha.", "warning");
+      return Swal.fire({
+        icon: "warning",
+        title: "Ops...",
+        text: "Preencha email e senha para continuar.",
+        confirmButtonText: "Entendi",
+      });
     }
 
     try {
@@ -28,26 +33,43 @@ export const Login = () => {
         password: senha,
       });
 
-
       secureLocalStorage.setItem("tokenLogin", resposta.data.token);
 
+      // ALERTA - LOGIN OK
       Swal.fire({
         icon: "success",
         title: "Login realizado!",
+        text: "Bem-vindo(a) de volta!",
         timer: 1500,
+        timerProgressBar: true,
         showConfirmButton: false,
+        willClose: () => {
+          
+          Swal.close();
+        }
       });
 
-      navigate("/Perfil");
+
+      setTimeout(() => {
+        navigate("/Perfil");
+      }, 1500);
+
     } catch (error) {
-      Swal.fire("Erro!", "Email ou senha incorretos.", "error");
+
+      // ALERTA - LOGIN FALHOU
+      Swal.fire({
+        icon: "error",
+        title: "Credenciais inválidas",
+        text: "Email ou senha incorretos. Tente novamente.",
+        confirmButtonText: "Ok",
+      });
+
       console.log(error);
     }
   }
 
   return (
     <div className="login-container">
-
 
       <div className="login-right">
         <img src={ImgLogin} alt="Login visual" className="side-image" />
