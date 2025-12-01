@@ -13,7 +13,7 @@ export default function Perfil() {
 
   const navigate = useNavigate();
 
-  
+
   useEffect(() => {
     const token = secureLocalStorage.getItem("tokenLogin");
     if (!token) {
@@ -40,7 +40,7 @@ export default function Perfil() {
     }
   }, []);
 
-  
+
   useEffect(() => {
     if (!email) return;
 
@@ -70,20 +70,20 @@ export default function Perfil() {
     return <div>Carregando...</div>;
   }
 
-  
+
   const imagemPerfil = novaImagem
     ? URL.createObjectURL(novaImagem)
     : usuario.imagemPerfil
-    ? `https://localhost:7079${usuario.imagemPerfil}`
-    : ImagemDefault;
-;
+      ? `https://localhost:7079${usuario.imagemPerfil}`
+      : ImagemDefault;
+  ;
 
-  
+
   const idade =
     new Date().getFullYear() -
     new Date(usuario.dataNascimento).getFullYear();
 
-  
+
   const trocarImagem = () => {
     if (!novaImagem) return;
 
@@ -109,24 +109,27 @@ export default function Perfil() {
       .catch((err) => console.error("❌ Erro ao atualizar imagem:", err));
   };
 
-  
+
   const handleLogout = () => {
     secureLocalStorage.removeItem("tokenLogin");
-    navigate("/"); 
+    navigate("/");
   };
 
   return (
     <>
       <div className="ArrumarTamanhoBodyTelaPerfil">
         <Header
+
           Gestao="Gestão"
-          Home="Home"
           Curso="Curso"
+          Usuario="Usuário"
           Ferramenta="Ferramentas"
+          Gestor="Controle"
+          Grafico="Gráficos"
         />
 
         <main className="backgroundImagem">
-          
+
           <div className="Janela_Perfil">
             <div className="BolinhaFoto">
               <img

@@ -17,11 +17,15 @@ export default function Ferramentas() {
   return (
     <>
       <Header
+
         Gestao="Gestão"
-        Home="Home"
         Curso="Curso"
         Usuario="Usuário"
+        Ferramenta="Ferramentas"
+        Gestor="Controle"
+        Grafico="Gráficos"
       />
+
 
       <div className='main_ferramentas'>
 

@@ -10,84 +10,40 @@
     color: #ffffff;
 }
 
-.BCadastroUsuario {
-    height: 100px;
-    width: 300px;
-    background-color: white;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 23px;
-    color: white;
-}
-
-.CadastroCursos {
-    height: 100px;
-    width: 300px;
-    background-color: white;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 23px;
-    color: white;
-}
-
-.ajustes {
-    height: 200px;
-    width: 900px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
+/* --- ÁREA PRINCIPAL (remove altura fixa que quebrava tudo) --- */
 main.backgroundImagem2 {
-    /* background-image: url(../assets/IMG/fundoHOMEADM.svg); */
-    height: 1200px;
+    min-height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
 }
 
+/* --- LISTAGEM --- */
 .listagem {
-    min-height: calc(100vh - (76px + 241px + 33px));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
     color: white;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    margin-left: 0%;
-    width: 1195px;
-    height: 94%;
-    flex-shrink: 0;
-    padding: 50px;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3) inset,
+                0 -2px 4px rgba(0, 0, 0, 0.2) inset;
+
     backdrop-filter: blur(5px);
 }
 
 .ListagemH1 {
+    margin-top: 30px;
     width: 100%;
-    height: 94%;
+    text-align: center;
     color: white;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .Janela_HomeAdm {
@@ -95,44 +51,67 @@ main.backgroundImagem2 {
     flex-direction: column;
 }
 
+/* --- SETORES / FILTRO --- */
 .Setores {
     width: 100%;
     max-width: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 30px auto;
 
+    margin: 30px auto;
     padding: 20px;
 
     background: rgba(255, 255, 255, 0.05);
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
-
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
 
-
-.TirarEfLink{
+.TirarEfLink {
     color: white;
-    text-decoration: none;}
-
-button.CadastroUsuario {
-    height: 100px;
-    width: 300px;
-    border-radius: 8px;
-    border: 0.5px solid rgba(85, 26, 148, 0.05);
-    background: rgba(182, 80, 229, 0.05);
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 20px;
     text-decoration: none;
 }
 
+/* --- BOTÕES PRINCIPAIS (Cadastro de Usuário e Cursos) --- */
+.ajustes {
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.BCadastroUsuario,
+.CadastroCursos,
+button.CadastroUsuario {
+    height: 100px;
+    width: 300px;
+
+    border-radius: 8px;
+    border: 0.5px solid rgba(85, 26, 148, 0.05);
+    background: rgba(182, 80, 229, 0.05);
+
+    box-shadow: 
+        0 2px 4px rgba(255, 255, 255, 0.40) inset,
+        0 -2px 4px rgba(0, 0, 0, 0.20) inset;
+
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* --- TÍTULO --- */
 .home-adm h1 {
     font-size: 2.2rem;
     color: #ffffff;
@@ -142,55 +121,49 @@ button.CadastroUsuario {
     text-shadow: 0 0 10px rgba(182, 80, 229, 0.5);
 }
 
-
+/* --- TABELA DE FUNCIONÁRIOS --- */
 .lista-funcionarios {
     width: 95%;
     max-width: 1200px;
+
     background: rgba(182, 80, 229, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
     backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
-
-
-.lista-funcionarios p {
-    text-align: center;
-    color: #e6e6e6;
-    font-size: 1rem;
-}
-
 
 .lista-funcionarios table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    color: #ffffff;
+    color: white;
     font-size: 0.95rem;
 }
 
-
 .lista-funcionarios th {
     background: rgba(182, 80, 229, 0.15);
-    color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
     padding: 14px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-
 
 .lista-funcionarios td {
     padding: 12px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
 .lista-funcionarios tr:nth-child(even) {
     background: rgba(255, 255, 255, 0.03);
 }
 
+.lista-funcionarios tr:hover {
+    background: rgba(182, 80, 229, 0.15);
+    transition: background 0.3s ease;
+}
 
 .lista-funcionarios img {
     width: 60px;
@@ -200,13 +173,7 @@ button.CadastroUsuario {
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
-
-.lista-funcionarios tr:hover {
-    background: rgba(182, 80, 229, 0.15);
-    transition: background 0.3s ease;
-}
-
-
+/* --- RESPONSIVO --- */
 @media (max-width: 768px) {
     .home-adm h1 {
         font-size: 1.8rem;
@@ -216,13 +183,15 @@ button.CadastroUsuario {
         padding: 20px;
     }
 
-    .lista-funcionarios table {
-        font-size: 0.85rem;
+    .ajustes {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
     }
 
-    .lista-funcionarios img {
-        width: 45px;
-        height: 45px;
+    .BCadastroUsuario,
+    .CadastroCursos {
+        width: 90%;
     }
 }
 

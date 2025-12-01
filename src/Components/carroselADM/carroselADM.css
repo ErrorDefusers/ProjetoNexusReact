@@ -1,4 +1,3 @@
-
 .Setores {
   background: transparent !important;
   border: none !important;
@@ -21,7 +20,8 @@
 
 
 .seta-btn {
-  background: rgba(255, 0, 0, 0.02); 
+  background-color: #231532;
+  /* background: rgba(255, 0, 0, 0.02);  */
   border: none;
   padding: 10px;
   border-radius: 10px;
@@ -32,14 +32,14 @@
 }
 
 .seta-btn:hover {
-  background: rgba(255, 255, 255, 0.12); 
+  background-color: #231532;
   transform: scale(1.1);
 }
 
 .seta-img {
   width: 100px;
   height: 20px;
-  opacity: 0.5; 
+  opacity: 0.5;
 }
 
 
@@ -48,8 +48,8 @@
   padding: 18px;
   border-radius: 12px;
 
- 
-  background: rgba(255,255,255,0.02);
+
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(3px);
 
   text-align: center;
@@ -73,7 +73,7 @@
 .bolinha {
   width: 8px;
   height: 8px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   transition: 0.2s;
 }

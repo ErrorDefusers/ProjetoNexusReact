@@ -24,6 +24,8 @@ export const Home = () => {
                 Curso="Curso"
                 Usuario="Usuário"
                 Ferramenta="Ferramentas"
+                Gestor= "Controle"
+                Grafico = "Gráficos"
             />
 
 

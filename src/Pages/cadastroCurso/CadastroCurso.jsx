@@ -80,6 +80,9 @@ export default function CadastroCurso() {
       />
 
       <main className="boa">
+        <div className="tituloCadCurso">
+          <h1>Cadastrar Curso</h1>
+        </div>
         <div className="Janela_CadastroCurso">
           <form onSubmit={handleSubmit}>
             <div className="IMAGEMM">

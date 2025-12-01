@@ -15,6 +15,7 @@ export default function Cursos() {
       .get("/Cursos")
       .then((response) => {
         console.log("Cursos carregados:", response.data);
+        // console.log("https://localhost:5173/" + response.data.idExterno)
         setCursos(response.data);
       })
       .catch((error) => {
@@ -25,13 +26,15 @@ export default function Cursos() {
   return (
     <>
       <Header
-        Home="Home"
-        Ferramenta="Ferramentas"
-        Curso="Cursos"
-        Usuario="Perfil"
+
         Gestao="Gestão"
-        
+        Curso="Curso"
+        Usuario="Usuário"
+        Ferramenta="Ferramentas"
+        Gestor="Controle"
+        Grafico="Gráficos"
       />
+
 
       <div className="main_cursos">
         <div className="img_curso"></div>
@@ -46,7 +49,7 @@ export default function Cursos() {
               <div key={curso.idCurso} className="cursos">
                 <img
                   className="cursos_img"
-                  src={curso.imagemCapa ? curso.imagemCapa : foto}
+                  src={curso.imagemCapa ? "https://localhost:7079/" + curso.imagemCapa.replace("wwwroot/", "") : foto}
                   alt={curso.titulo}
                 />
 

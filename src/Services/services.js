@@ -1,9 +1,13 @@
 // src/services/api.js
 import axios from "axios";
 
+const apiExterna = "https://apivenuework-b9hbangtb2bcapd3.brazilsouth-01.azurewebsites.net/api";
+
+const apiInterna = "https://localhost:7079/api";
+
 // Cria uma instância do Axios
 const api = axios.create({
-  baseURL: "https://apivenuework-b9hbangtb2bcapd3.brazilsouth-01.azurewebsites.net/api"
+  baseURL: apiInterna
 });
 
 // // Interceptor para adicionar o token JWT em cada requisição

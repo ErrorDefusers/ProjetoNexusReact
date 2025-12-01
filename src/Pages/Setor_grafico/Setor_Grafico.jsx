@@ -8,7 +8,16 @@ import CarouselV from "../../Components/CarouselV/carouselV.jsx";
 export default function Setor_Grafico() {
   return (
     <>
-      <Header />
+      <Header
+
+        Gestao="Gestão"
+        Curso="Curso"
+        Usuario="Usuário"
+        Ferramenta="Ferramentas"
+        Gestor="Controle"
+        Grafico="Gráficos"
+      />
+
       <main className="main-grafico">
         <div className="titulo">
           <h1>Gráficos</h1>

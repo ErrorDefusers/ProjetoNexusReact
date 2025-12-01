@@ -80,12 +80,16 @@ export default function Gestor() {
   return (
     <>
       <div className="BodyAt">
-        <Header
-          Home="Home"
-          Curso="Curso"
-          Usuario="Usuário"
-          Ferramenta="Ferramentas"
-        />
+                  <Header
+            
+                Gestao="Gestão"
+                Curso="Curso"
+                Usuario="Usuário"
+                Ferramenta="Ferramentas"
+                Gestor= "Controle"
+                Grafico = "Gráficos"
+            />
+
 
         <main className="backgroundImagemM">
           <div className="Janela_Gestor">

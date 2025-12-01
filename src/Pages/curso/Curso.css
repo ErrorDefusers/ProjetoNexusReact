@@ -45,6 +45,16 @@
 
 }
 
+.cursos img {
+    height: 300px;
+    width: 318px;
+    /* margin-top: 10px; */
+    border-radius: 13.31px;
+    overflow: hidden;
+    /* margin: 20px auto; */
+    display: block;
+    margin-bottom: 3px;
+}
 
 .subtexto_cursos {
     display: flex;

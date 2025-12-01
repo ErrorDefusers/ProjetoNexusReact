@@ -14,7 +14,8 @@
   border-radius: 8px;
   border: 0.5px solid rgba(85, 26, 148, 0.05);
   background: rgba(182, 80, 229, 0.05);
-  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset,
+              0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
   backdrop-filter: blur(5px);
   height: 740px;
   width: 500px;
@@ -34,7 +35,6 @@
 .grafico {
   width: 840px;
   height: 450px;
-  /* background-color: #ffffff; */
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -43,57 +43,50 @@
   overflow: hidden;
 }
 
-.FerramentasGrafico {
-  height: 786.71px;
+/* Container que junta gráficos + carrossel */
+.area-graficos-e-ferramentas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Wrapper dos dois gráficos lado a lado */
+.graficos-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* Card de cada gráfico */
+.chart-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  color: white;
-  margin-top: -20px;
+  gap: 1.2rem;
+  padding: 2rem;
+  background-color: #1b1129;
+  border-radius: 16px;
+  color: #ffffff;
+  width: 420px; /* ajusta conforme necessário */
 }
 
-/* =================== FERRAMENTAS =================== */
+/* =================== TEXTOS / LISTAGENS =================== */
 
-.ferramentas {
-  height: 100px;
-  width: 100px;
-  background-color: white;
-  margin: 0 -60px;
-}
-
-.Marketing {
-  font-size: 2.2em;
-  line-height: 1.1;
+.Cargos {
   display: flex;
-  justify-content: center;
-  color: white;
-}
-
-.Ferramenta {
-  background-color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 10px;
-  height: 100px;
   width: 100px;
+  align-items: start;
+}
+
+.Nomes {
+  width: 80px;
+}
+
+.Cargos p {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.2s ease;
+  align-items: start;
 }
-
-.Ferramenta:hover {
-  transform: scale(1.05);
-}
-
-.carrosel_ferramentas {
-  height: 70px;
-  width: 70px;
-  object-fit: contain;
-}
-
-/* =================== LISTAGENS E TABELAS =================== */
 
 .Topicos {
   display: flex;
@@ -111,7 +104,6 @@
 }
 
 .ListaFunc {
-  /* margin-top: 20px; */
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -142,12 +134,74 @@ button.BotaoEditar {
   border-radius: 8px;
   border: 0.5px solid rgba(85, 26, 148, 0.05);
   background: rgba(182, 80, 229, 0.05);
-  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset,
+              0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
   backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+}
+
+/* =================== FERRAMENTAS (CARROSSEL) =================== */
+
+.ferramentas {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  margin: 0 -60px;
+}
+
+.Marketing {
+  font-size: 2.2em;
+  line-height: 1.1;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+/* Container do carrossel à direita dos gráficos */
+.FerramentasGrafico {
+  height: 654.71px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  margin-top: -20px;
+}
+
+/* Se quiser colar no canto direito da tela independente dos gráficos, trocar por:
+.FerramentasGrafico {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+}
+*/
+
+.Ferramenta {
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+  margin: 12px 0;
+}
+
+.Ferramenta:hover {
+  transform: scale(1.05);
+}
+
+.carrosel_ferramentas {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
 }
 
 /* =================== JANELA DE MARKETING =================== */
@@ -159,48 +213,53 @@ button.BotaoEditar {
 }
 
 .backgroundImagemM {
-  /* background-image: url("data:image/svg+xml,%3csvg%20width='1580'%20height='1704'%20viewBox='0%200%201580%201704'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_786_21)'%3e%3crect%20width='1580'%20height='1704'%20fill='black'/%3e%3cg%20filter='url(%23filter0_f_786_21)'%3e%3cellipse%20cx='178'%20cy='1213'%20rx='284'%20ry='281'%20fill='url(%23paint0_linear_786_21)'/%3e%3c/g%3e%3cg%20filter='url(%23filter1_f_786_21)'%3e%3cellipse%20cx='1450'%20cy='555'%20rx='284'%20ry='281'%20fill='url(%23paint1_linear_786_21)'/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter%20id='filter0_f_786_21'%20x='-356'%20y='682'%20width='1068'%20height='1062'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='125'%20result='effect1_foregroundBlur_786_21'/%3e%3c/filter%3e%3cfilter%20id='filter1_f_786_21'%20x='916'%20y='24'%20width='1068'%20height='1062'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='125'%20result='effect1_foregroundBlur_786_21'/%3e%3c/filter%3e%3clinearGradient%20id='paint0_linear_786_21'%20x1='178'%20y1='932'%20x2='178'%20y2='1494'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20offset='0.0865385'%20stop-color='%235170FF'/%3e%3cstop%20offset='0.5'%20stop-color='%23B13D7E'/%3e%3cstop%20offset='0.879808'%20stop-color='%23562984'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_786_21'%20x1='1450'%20y1='274'%20x2='1450'%20y2='836'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20offset='0.0865385'%20stop-color='%235170FF'/%3e%3cstop%20offset='0.5'%20stop-color='%23B13D7E'/%3e%3cstop%20offset='0.879808'%20stop-color='%23562984'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_786_21'%3e%3crect%20width='1580'%20height='1704'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"); */
   height: 970px;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 60px;
 }
 
+/* 🔥 Ajuste final: carrossel + lista alinhados perfeitamente */
 .Arrumar {
   display: flex;
   justify-content: center;
 }
 
 .Ferramntasexemplo {
-  height: 100px;
-  /* background-color: black; */
   width: 820px;
   height: 115px;
   flex-shrink: 0;
   border-radius: 8px;
   border: 0.5px solid rgba(85, 26, 148, 0.05);
   background: rgba(182, 80, 229, 0.05);
-  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset,
+              0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.graficos-container {
+    display: flex;
 }
 
 .testee {
   height: 600px;
   width: 820px;
   display: flex;
-  align-content: center;
-  background-color: black;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 8px;
   border: 0.5px solid rgba(85, 26, 148, 0.05);
   background: rgba(182, 80, 229, 0.05);
-  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset, 0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.40) inset,
+              0 -2px 4px 0 rgba(0, 0, 0, 0.20) inset;
   backdrop-filter: blur(5px);
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .BodyAt {
@@ -210,17 +269,4 @@ button.BotaoEditar {
 .arruuumar {
   display: flex;
   justify-content: center;
-}
-
-.chart-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 2rem;
-  background-color: #1b1129;
-  border-radius: 16px;
-  color: #ffffff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  width: 100%;
 }
